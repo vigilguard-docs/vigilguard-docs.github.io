@@ -1,0 +1,597 @@
+---
+import { Icon } from "astro-icon/components";
+import logo from "../../assets/vigilguard.svg";
+import vigilscanLogo from "../../assets/vigilscan.svg";
+import vendorguardLogo from "../../assets/vendorguard.svg";
+import Building from "lucide-static/icons/building.svg";
+import FileText from "lucide-static/icons/file-text.svg";
+import Briefcase from "lucide-static/icons/briefcase.svg";
+import LogIn from "lucide-static/icons/log-in.svg";
+import ShieldCheck from "lucide-static/icons/shield-check.svg";
+import Users from "lucide-static/icons/users.svg";
+
+// Fully qualified links to prevent documentation sub-path issues
+const productLinks = [
+  { name: "VigilScan", href: "https://vigilguard.com/vigilscan", logo: vigilscanLogo },
+  { name: "VendorGuard", href: "https://vigilguard.com/vendorguard", logo: vendorguardLogo },
+];
+
+const companyLinks = [
+  { name: "About Us", href: "https://vigilguard.com/aboutus", icon: Building },
+  { name: "Terms & Privacy", href: "https://vigilguard.com/terms-and-privacy", icon: FileText },
+  { name: "Careers", href: "https://vigilguard.com/careers", icon: Briefcase },
+];
+
+const loginLinks = [
+  {
+    name: "VigilScan Login",
+    href: "https://vigilscan.vigilguard.com/",
+    icon: ShieldCheck,
+  },
+  {
+    name: "VendorGuard Login",
+    href: "https://vendorguard.vigilguard.com",
+    icon: LogIn,
+  },
+  {
+    name: "Vendor Portal Login",
+    href: "https://vendors.vendorguard.vigilguard.com",
+    icon: Users,
+  },
+];
+---
+
+<header class="header">
+  <div class="header-container">
+    <div class="left-section">
+      <a href="https://vigilguard.com/" class="logo-link" aria-label="VigilGuard Home">
+        <img
+          src={logo.src}
+          alt="VigilGuard Logo"
+          class="logo-img"
+          width="24"
+          height="24"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="logo-text">VigilGuard</span>
+      </a>
+
+      <nav class="desktop-nav">
+        {
+          productLinks.map((link) => (
+            <a href={link.href} class="nav-link">
+              <img
+                src={link.logo.src}
+                alt=""
+                class="nav-icon"
+                width="20"
+                height="20"
+                loading="lazy"
+                decoding="async"
+              />
+              {link.name}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+
+    <div class="header-actions">
+      <div class="company-dropdown" id="company-dropdown">
+        <button id="company-btn" class="company-btn" aria-haspopup="true">
+          Company<Icon name="lucide:chevron-down" class="company-caret" />
+        </button>
+        <div id="company-menu" class="company-menu hidden">
+          {
+            companyLinks.map((link) => (
+              <a href={link.href} class="company-menu-link">
+                <link.icon class="menu-icon" />
+                {link.name}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="company-dropdown" id="login-dropdown">
+        <button id="login-btn" class="company-btn" aria-haspopup="true">
+          Login<Icon name="lucide:chevron-down" class="company-caret" />
+        </button>
+        <div id="login-menu" class="company-menu hidden">
+          {
+            loginLinks.map((link) => (
+              <a
+                href={link.href}
+                class="company-menu-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.name}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <a href="https://vigilguard.com/contact" class="contact-btn">Contact Us</a>
+
+      <div class="mobile-product-links">
+        <a href="https://vigilguard.com/vigilscan" aria-label="VigilScan EASM Platform">
+          <img
+            src={vigilscanLogo.src}
+            alt="EASM Platform"
+            class="mobile-product-icon"
+            width="24"
+            height="24"
+          />
+        </a>
+        <a href="https://vigilguard.com/vendorguard" aria-label="VendorGuard ITRM Platform">
+          <img
+            src={vendorguardLogo.src}
+            alt="VendorGuard ITRM Platform"
+            class="mobile-product-icon"
+            width="24"
+            height="24"
+          />
+        </a>
+      </div>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle theme"
+        class="theme-toggle"
+      >
+        <Icon name="lucide:sun" id="theme-icon-sun" class="icon" />
+        <Icon name="lucide:moon" id="theme-icon-moon" class="icon hidden" />
+      </button>
+
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Open menu"
+        class="mobile-menu-btn"
+      >
+        <Icon name="lucide:menu" id="menu-icon-open" class="icon" />
+        <Icon name="lucide:x" id="menu-icon-close" class="icon hidden" />
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <p class="mobile-section-label">Products</p>
+    {
+      productLinks.map((link) => (
+        <a href={link.href} class="mobile-nav-link">
+          <img
+            src={link.logo.src}
+            alt=""
+            class="nav-icon"
+            width="20"
+            height="20"
+            loading="lazy"
+            decoding="async"
+          />
+          {link.name}
+        </a>
+      ))
+    }
+
+    <div class="mobile-divider"></div>
+    <p class="mobile-section-label">Company</p>
+    {
+      companyLinks.map((link) => (
+        <a href={link.href} class="mobile-nav-link">
+          <link.icon class="menu-icon" />
+          {link.name}
+        </a>
+      ))
+    }
+
+    <div class="mobile-divider"></div>
+    <p class="mobile-section-label">Portals</p>
+    {
+      loginLinks.map((link) => (
+        <a href={link.href} class="mobile-nav-link" target="_blank">
+          {link.name}
+        </a>
+      ))
+    }
+
+    <a href="https://vigilguard.com/contact" class="mobile-contact-btn">Contact Us</a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--header-gradient);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid var(--border-translucent);
+  }
+
+  .header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+  }
+
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .logo-img {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  .logo-text {
+    font-weight: 700;
+    background: linear-gradient(
+      to right,
+      var(--brand-pink),
+      var(--brand-purple)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+
+  .nav-icon {
+    height: 1.25rem;
+    width: auto;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+
+  .company-dropdown {
+    position: relative;
+    display: none;
+  }
+
+  .company-btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .company-btn:hover {
+    color: var(--text-primary);
+  }
+
+  .company-caret {
+    height: 1rem;
+    width: 1rem;
+    transition: transform 0.2s;
+  }
+
+  .company-caret.rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .company-menu {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    width: 12rem;
+    border-radius: 0.375rem;
+    background: var(--mobile-nav-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-translucent);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+  }
+
+  .company-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .company-menu-link:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+
+  .menu-icon {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .contact-btn {
+    display: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    text-decoration: none;
+  }
+
+  .mobile-product-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 0.5rem;
+  }
+
+  .mobile-product-icon {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  .theme-toggle {
+    padding: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-translucent);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: var(--text-secondary);
+  }
+
+  .mobile-menu-btn {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    background: var(--mobile-nav-bg);
+    border-top: 1px solid var(--border-translucent);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .mobile-section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    padding: 0.5rem 0.75rem 0.25rem;
+    margin: 0;
+  }
+
+  .mobile-divider {
+    height: 1px;
+    background: var(--border-translucent);
+    margin: 0.5rem 0.75rem;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .mobile-contact-btn {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    text-align: center;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--btn-translucent-bg);
+    text-decoration: none;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  @media (min-width: 640px) {
+    .header-container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .header-container {
+      padding: 0 2rem;
+    }
+    .desktop-nav {
+      display: flex;
+    }
+    .company-dropdown {
+      display: block;
+    }
+    .contact-btn {
+      display: block;
+    }
+    .mobile-product-links {
+      display: none;
+    }
+    .mobile-menu-btn {
+      display: none;
+    }
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  const headerInit = () => {
+    const themeBtn = document.getElementById("theme-toggle");
+    const sunIcon = document.getElementById("theme-icon-sun");
+    const moonIcon = document.getElementById("theme-icon-moon");
+
+    const updateThemeIcon = (theme: string) => {
+      sunIcon?.classList.toggle("hidden", theme === "light");
+      moonIcon?.classList.toggle("hidden", theme !== "light");
+    };
+
+    updateThemeIcon(
+      document.documentElement.getAttribute("data-theme") || "dark"
+    );
+
+    themeBtn?.addEventListener("click", () => {
+      const theme =
+        document.documentElement.getAttribute("data-theme") || "dark";
+      const newTheme = theme === "light" ? "dark" : "light";
+
+      document.body.style.transition = "none";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      updateThemeIcon(newTheme);
+
+      requestAnimationFrame(() => {
+        document.body.style.transition = "";
+      });
+    });
+
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIconOpen = document.getElementById("menu-icon-open");
+    const menuIconClose = document.getElementById("menu-icon-close");
+
+    mobileMenuBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+      menuIconOpen?.classList.toggle("hidden");
+      menuIconClose?.classList.toggle("hidden");
+    });
+
+    const setupDropdown = (btnId: string, menuId: string, caretSelector: string) => {
+      const btn = document.getElementById(btnId);
+      const menu = document.getElementById(menuId);
+      const caret = btn?.querySelector(caretSelector);
+
+      const toggle = (show?: boolean) => {
+        const isCurrentlyHidden = menu?.classList.contains("hidden");
+        const shouldShow = show !== undefined ? show : isCurrentlyHidden;
+
+        if (shouldShow) {
+          document
+            .querySelectorAll(".company-menu")
+            .forEach((m) => m.classList.add("hidden"));
+          document
+            .querySelectorAll(".company-caret")
+            .forEach((c) => c.classList.remove("rotate-180"));
+        }
+
+        menu?.classList.toggle("hidden", !shouldShow);
+        caret?.classList.toggle("rotate-180", shouldShow);
+      };
+
+      btn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggle();
+      });
+
+      return { btn, menu, toggle };
+    };
+
+    const companyDropdown = setupDropdown(
+      "company-btn",
+      "company-menu",
+      ".company-caret"
+    );
+    const loginDropdown = setupDropdown(
+      "login-btn",
+      "login-menu",
+      ".company-caret"
+    );
+
+    document.addEventListener("click", (e) => {
+      const target = e.target as Node;
+      if (!document.getElementById("company-dropdown")?.contains(target)) {
+        companyDropdown.toggle(false);
+      }
+      if (!document.getElementById("login-dropdown")?.contains(target)) {
+        loginDropdown.toggle(false);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        companyDropdown.toggle(false);
+        loginDropdown.toggle(false);
+        mobileMenu?.classList.add("hidden");
+        menuIconOpen?.classList.remove("hidden");
+        menuIconClose?.classList.add("hidden");
+      }
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", headerInit);
+  document.addEventListener("astro:after-swap", headerInit);
+</script>

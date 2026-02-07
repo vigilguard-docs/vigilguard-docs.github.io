@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Documentation Access">
+  
+  <div class="page-wrapper">
+    <main class="access-box">
+      <h1 class="heading">
+        VigilScan Documentation Access
+      </h1>
+      
+      <p class="description">
+        Detailed documentation for our 997+ security scanners is private. 
+        Please request access via our GitHub portal to be invited to the repository.
+      </p>
+
+      <a 
+        href="https://github.com/vigilguard/vigilguard-docs.github.io/issues/new?template=request_access.yml"
+        class="github-btn"
+      >
+        Request Access via GitHub
+      </a>
+    </main>
+  </div>
+
+</Layout>
+
+<style>
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding-top: 4rem; /* Space for fixed header */
+  }
+
+  .access-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 60vh; /* Exactly 60% of the page height */
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .heading {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    background: linear-gradient(to right, #ff3b8f, #a259ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .description {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--text-secondary, #9ca3af);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .github-btn {
+    display: inline-block;
+    background: #a259ff;
+    color: #ffffff;
+    padding: 1.25rem 3rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(162, 89, 255, 0.4);
+  }
+
+  .github-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(162, 89, 255, 0.6);
+    background: #b370ff;
+  }
+
+  @media (max-width: 768px) {
+    .access-box {
+      height: auto;
+      min-height: 60vh;
+      padding-top: 5rem;
+    }
+  }
+</style>

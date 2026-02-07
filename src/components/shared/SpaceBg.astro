@@ -1,0 +1,127 @@
+---
+function createStars(count = 100) {
+  return Array.from({ length: count }, () => ({
+    cx: `${Math.random() * 100}%`,
+    cy: `${Math.random() * 100}%`,
+    r: Math.random() + 0.5,
+  }));
+}
+const starGroups = [createStars(200), createStars(200), createStars(200)];
+---
+
+<div class="stars-wrapper" aria-hidden="true">
+  {
+    starGroups.map((stars) => (
+      <svg class="stars" width="100%" height="100%" preserveAspectRatio="none">
+        {stars.map((star) => (
+          <circle class="star" cx={star.cx} cy={star.cy} r={star.r} />
+        ))}
+      </svg>
+    ))
+  }
+  <svg class="extras" width="100%" height="100%" preserveAspectRatio="none">
+    <defs>
+      <radialGradient id="comet-gradient-dark" cx="0" cy=".5" r="0.5">
+        <stop offset="0%" stop-color="rgba(166,141,248,0.8)"></stop>
+        <stop offset="100%" stop-color="rgba(255,255,255,0)"></stop>
+      </radialGradient>
+      <radialGradient id="comet-gradient-light" cx="0" cy=".5" r="0.5">
+        <stop offset="0%" stop-color="rgba(99,65,232,0.6)"></stop>
+        <stop offset="100%" stop-color="rgba(131,4,4,0)"></stop>
+      </radialGradient>
+    </defs>
+    <g transform="rotate(-135)"
+      ><ellipse class="comet comet-a" cx="0" cy="0" rx="150" ry="2"
+      ></ellipse></g
+    >
+    <g transform="rotate(20)"
+      ><ellipse class="comet comet-b" cx="100%" cy="0" rx="150" ry="2"
+      ></ellipse></g
+    >
+    <g transform="rotate(300)"
+      ><ellipse class="comet comet-c" cx="40%" cy="100%" rx="150" ry="2"
+      ></ellipse></g
+    >
+  </svg>
+</div>
+
+<style>
+  .stars-wrapper {
+    background: var(--bg-primary);
+    --comet-url: url(#comet-gradient-dark);
+    --twinkle-duration: 4s;
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+  }
+  html[data-theme="light"] .stars-wrapper {
+    --comet-url: url(#comet-gradient-light);
+  }
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: twinkle var(--twinkle-duration) ease-in-out infinite;
+  }
+  .stars:nth-child(2) {
+    animation-delay: calc(var(--twinkle-duration) * -0.33);
+  }
+  .stars:nth-child(3) {
+    animation-delay: calc(var(--twinkle-duration) * -0.66);
+  }
+  .star {
+    fill: var(--text-primary);
+    transition: fill 0.3s ease;
+  }
+  .star:nth-child(3n) {
+    opacity: 0.8;
+  }
+  .star:nth-child(7n) {
+    opacity: 0.6;
+  }
+  .star:nth-child(13n) {
+    opacity: 0.4;
+  }
+  .star:nth-child(19n) {
+    opacity: 0.2;
+  }
+  .comet {
+    fill: var(--comet-url);
+    transform-origin: center center;
+    animation: comet 10s linear infinite;
+    transition: fill 0.3s ease;
+  }
+  .comet-b {
+    animation-delay: -3.3s;
+  }
+  .comet-c {
+    animation-delay: -5s;
+  }
+  @keyframes twinkle {
+    25% {
+      opacity: 0;
+    }
+  }
+  @keyframes comet {
+    0%,
+    40% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    60%,
+    100% {
+      transform: translateX(-100vmax);
+      opacity: 0;
+    }
+  }
+</style>

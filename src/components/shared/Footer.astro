@@ -1,0 +1,275 @@
+---
+import Github from "lucide-static/icons/github.svg";
+import Linkedin from "lucide-static/icons/linkedin.svg";
+import Twitter from "lucide-static/icons/twitter.svg";
+import Bluesky from "lucide-static/icons/drone.svg";
+import Mail from "lucide-static/icons/mail.svg";
+import Status from "lucide-static/icons/activity.svg";
+import FileText from "lucide-static/icons/file-text.svg";
+
+import VigilScanLogo from "../../assets/vigilscan.svg";
+import VendorGuardLogo from "../../assets/vendorguard.svg";
+---
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3 class="footer-heading">Products</h3>
+      <ul class="footer-links">
+        <li>
+          <a href="https://vigilguard.com/vigilscan" class="product-link" data-astro-prefetch="false">
+            <VigilScanLogo class="product-logo" />
+            <span>VigilScan</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vigilguard.com/vendorguard" class="product-link" data-astro-prefetch="false">
+            <VendorGuardLogo class="product-logo" />
+            <span>VendorGuard</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Company</h3>
+      <ul class="footer-links">
+        <li>
+          <a href="https://vigilguard.com/contact" class="cta-link" data-astro-prefetch="false">
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="https://vigilguard.com/aboutus" data-astro-prefetch="false">About Us</a>
+        </li>
+        <li>
+          <a href="https://vigilguard.com/careers" data-astro-prefetch="false">Careers</a>
+        </li>
+        <li>
+          <a href="https://vigilguard.com/terms-and-privacy" data-astro-prefetch="false">
+            Terms & Privacy
+          </a>
+        </li>
+        <li>
+          <a href="https://vigilguard.com/" data-astro-prefetch="false">Home</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Resources</h3>
+      <ul class="footer-links">
+        <li>
+          <a
+            href="https://vigilscan.vigilguard.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <VigilScanLogo class="product-logo" />
+            <span>VigilScan Login</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://vendorguard.vigilguard.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <VendorGuardLogo class="product-logo" />
+            <span>VendorGuard Login</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://vendors.vendorguard.vigilguard.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <VendorGuardLogo class="product-logo" />
+            <span>Vendor Login</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://vigilguard.statuspage.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Status class="product-logo" />
+            <span>App Status</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://docs.vigilguard.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FileText class="product-logo" />
+            <span>Docs</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Find Us</h3>
+      <ul class="footer-links social-links">
+        <li>
+          <a
+            href="https://github.com/vigilguard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github class="icon" />
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/company/vigilguard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin class="icon" />
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://x.com/VigilGuardCom"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Twitter class="icon" />
+            <span>Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://bsky.app/profile/vigilguard.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Bluesky class="icon" />
+            <span>Bluesky</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@vigilguard.com">
+            <Mail class="icon" />
+            <span>info@vigilguard.com</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; {new Date().getFullYear()} VigilGuard. All rights reserved.
+  </div>
+</footer>
+
+<style>
+  [cite_start]/* Styles remain identical to your provided source [cite: 16-31] */
+  .site-footer {
+    padding: 60px 20px 40px;
+    border-top: 1px solid var(--border-secondary);
+    background: rgba(var(--bg-primary-rgb), 0.9);
+    color: var(--text-secondary);
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-heading {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--brand-purple);
+  }
+
+  .cta-link {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    font-weight: 500;
+    width: fit-content;
+  }
+
+  .product-logo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform 0.2s;
+  }
+
+  .social-links a:hover .icon {
+    transform: scale(1.1);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    border-top: 1px solid var(--border-secondary);
+    padding-top: 25px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
