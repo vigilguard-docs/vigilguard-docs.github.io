@@ -1,0 +1,44 @@
+name: Request Documentation Access
+description: Request access to the private VigilScan documentation repository.
+title: "[Access Request]: YOUR_GITHUB_USERNAME"
+labels: ["access-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Welcome to VigilGuard Security Docs
+        Please fill out this form to request read-access to the `vigilscan-doc` repository.
+  - type: input
+    id: username
+    attributes:
+      label: GitHub Username
+      description: The exact GitHub username you want invited.
+      placeholder: e.g. sriram
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Use Case
+      options:
+        - Security Researcher
+        - Client / Partner
+        - Internal Auditor
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: justification
+    attributes:
+      label: Justification
+      description: Briefly explain why you need access to the scanner documentation.
+      placeholder: I am conducting a security assessment of...
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Non-Disclosure Agreement
+      options:
+        - label: I agree not to redistribute the contents of the private documentation.
+          required: true

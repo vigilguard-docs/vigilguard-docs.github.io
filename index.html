@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VigilScan Documentation | Access Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Specific overrides for the landing page content */
+        body {
+            padding-top: 4rem; /* Header height offset */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: var(--bg-primary);
+        }
+        .access-block {
+            max-width: 650px;
+            width: 100%;
+            padding: 3rem;
+            text-align: center;
+            background: var(--section-bg-gradient);
+            border: 1px solid var(--border-translucent);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px var(--shadow-color-strong);
+        }
+        .request-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            background: var(--brand-purple);
+            color: #ffffff !important;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px var(--glow-color);
+        }
+        .request-btn:hover {
+            transform: translateY(-2px);
+            background: var(--brand-pink);
+            opacity: 1;
+        }
+        /* Fix for SVGs since we aren't using Astro-Icon component */
+        .icon, .menu-icon, .product-logo {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-container">
+    <div class="left-section">
+      <a href="/" class="logo-link" aria-label="VigilGuard Home">
+        <span class="logo-text">VigilGuard</span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="https://vigilguard.com/vigilscan" class="nav-link">VigilScan</a>
+        <a href="https://vigilguard.com/vendorguard" class="nav-link">VendorGuard</a>
+      </nav>
+    </div>
+
+    <div class="header-actions">
+      <a href="https://vigilguard.com/contact" class="contact-btn">Contact Us</a>
+      <button id="theme-toggle" type="button" class="theme-toggle">
+        <span id="theme-icon-sun">☀️</span>
+        <span id="theme-icon-moon" class="hidden">🌙</span>
+      </button>
+      <button id="mobile-menu-btn" type="button" class="mobile-menu-btn">
+        <span>Menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <p class="mobile-section-label">Products</p>
+    <a href="https://vigilguard.com/vigilscan" class="mobile-nav-link">VigilScan</a>
+    <a href="https://vigilguard.com/vendorguard" class="mobile-nav-link">VendorGuard</a>
+    <div class="mobile-divider"></div>
+    <a href="https://vigilguard.com/contact" class="mobile-contact-btn">Contact Us</a>
+  </div>
+</header>
+
+<main class="main-content">
+    <div class="access-block">
+        <h1 class="heading-xl logo-text">VigilScan Docs</h1>
+        <p class="subheading">
+            Technical documentation for 997+ automated security scanners is restricted. 
+        </p>
+        <p>Access is granted on an as-needed basis via our private repository.</p>
+        
+        <a href="https://github.com/vigilguard/vigilguard-docs.github.io/issues/new?template=request_access.yml" 
+           class="request-btn">
+           Request Access via GitHub
+        </a>
+    </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3 class="footer-heading">Products</h3>
+      <ul class="footer-links">
+        <li><a href="https://vigilguard.com/vigilscan">VigilScan</a></li>
+        <li><a href="https://vigilguard.com/vendorguard">VendorGuard</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-heading">Company</h3>
+      <ul class="footer-links">
+        <li><a href="https://vigilguard.com/contact" class="cta-link">Contact Us</a></li>
+        <li><a href="https://vigilguard.com/aboutus">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-heading">Resources</h3>
+      <ul class="footer-links">
+        <li><a href="https://vigilguard.statuspage.io" target="_blank">App Status</a></li>
+        <li><a href="https://docs.vigilguard.com/">Docs</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-heading">Social</h3>
+      <ul class="footer-links">
+        <li><a href="https://github.com/vigilguard" target="_blank">GitHub</a></li>
+        <li><a href="https://linkedin.com/company/vigilguard" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 VigilGuard. All rights reserved.
+  </div>
+</footer>
+
+<script>
+    // Exact Theme Toggle Logic from your Header.astro
+    const themeBtn = document.getElementById("theme-toggle");
+    const sunIcon = document.getElementById("theme-icon-sun");
+    const moonIcon = document.getElementById("theme-icon-moon");
+    const html = document.documentElement;
+
+    const updateThemeIcon = (theme) => {
+      sunIcon.classList.toggle("hidden", theme === "light");
+      moonIcon.classList.toggle("hidden", theme !== "light");
+    };
+
+    themeBtn.addEventListener("click", () => {
+      const theme = html.getAttribute("data-theme") || "dark";
+      const newTheme = theme === "light" ? "dark" : "light";
+      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    // Mobile Menu Logic
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+</script>
+
+</body>
+</html>
