@@ -1,15 +1,29 @@
-<svg fill="none" height="512" viewBox="0 0 60 60" width="512" xmlns="http://www.w3.org/2000/svg">
-  <linearGradient id="paint0_linear_202_1103" gradientUnits="userSpaceOnUse" x1="30" x2="30" y1="3" y2="57">
-    <stop offset="0" stop-color="#ce9ffc"/>
-    <stop offset="1" stop-color="#7367f0"/>
-  </linearGradient>
-  
-  <path d="m51 14c-12.467-.005-18.034-7.609-19.551-10.17-.304-.514-.851-.83-1.449-.83s-1.144.316-1.449.83c-1.517 2.561-7.084 10.165-19.551 10.17-1.104 0-2 .896-2 2v11c0 19.096 16.575 27.645 20.951 29.568.649.285 1.341.432 2.049.432s1.4-.147 2.049-.432c4.376-1.923 20.951-10.472 20.951-29.568v-11c0-1.104-.896-2-2-2z" fill="url(#paint0_linear_202_1103)"/>
+<svg width="512" height="512" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vgGradient" x1="30" x2="30" y1="3" y2="57" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ce9ffc"/>
+      <stop offset="1" stop-color="#7367f0"/>
+    </linearGradient>
 
-  <path d="M21 20h13.5l4.5 4.5v18.5h-18v-23zm13 1v4h4l-4-4z" fill="white"/>
+    <mask id="docMask" maskUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="white"/>
 
-  <!-- document lines -->
-  <rect x="25" y="30" width="10" height="1.6" rx="0.8" fill="#7367f0"/>
-  <rect x="25" y="34" width="10" height="1.6" rx="0.8" fill="#7367f0"/>
-  <rect x="25" y="38" width="10" height="1.6" rx="0.8" fill="#7367f0"/>
+      <path
+        d="M21 20h13.5l4.5 4.5v18.5h-18v-23zm13 1v4h4l-4-4z"
+        fill="black"
+      />
+    </mask>
+  </defs>
+
+  <path
+    fill="url(#vgGradient)"
+    mask="url(#docMask)"
+    d="m51 14c-12.467-.005-18.034-7.609-19.551-10.17-.304-.514-.851-.83-1.449-.83s-1.144.316-1.449.83c-1.517 2.561-7.084 10.165-19.551 10.17-1.104 0-2 .896-2 2v11c0 19.096 16.575 27.645 20.951 29.568.649.285 1.341.432 2.049.432s1.4-.147 2.049-.432c4.376-1.923 20.951-10.472 20.951-29.568v-11c0-1.104-.896-2-2-2z"
+  />
+
+  <!-- Document lines drawn ON TOP -->
+  <rect x="25" y="29" width="10" height="1.6" rx="0.8" fill="url(#vgGradient)"/>
+  <rect x="25" y="33" width="10" height="1.6" rx="0.8" fill="url(#vgGradient)"/>
+  <rect x="25" y="37" width="10" height="1.6" rx="0.8" fill="url(#vgGradient)"/>
 </svg>
+
