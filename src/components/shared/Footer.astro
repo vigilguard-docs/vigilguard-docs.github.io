@@ -5,10 +5,10 @@ import Twitter from "lucide-static/icons/twitter.svg";
 import Bluesky from "lucide-static/icons/drone.svg";
 import Mail from "lucide-static/icons/mail.svg";
 import Status from "lucide-static/icons/activity.svg";
-import FileText from "lucide-static/icons/file-text.svg";
 
 import VigilScanLogo from "../../assets/vigilscan.svg";
 import VendorGuardLogo from "../../assets/vendorguard.svg";
+import VigilGuardDocsLogo from "../../assets/vigilguard-docs.svg";
 ---
 
 <footer class="site-footer">
@@ -17,15 +17,33 @@ import VendorGuardLogo from "../../assets/vendorguard.svg";
       <h3 class="footer-heading">Products</h3>
       <ul class="footer-links">
         <li>
-          <a href="http://vigilguard.com/vigilscan" class="product-link" data-astro-prefetch="false">
+          <a
+            href="http://vigilguard.com/vigilscan"
+            class="product-link"
+            data-astro-prefetch="false"
+          >
             <VigilScanLogo class="product-logo" />
             <span>VigilScan</span>
           </a>
         </li>
         <li>
-          <a href="http://vigilguard.com/vendorguard" class="product-link" data-astro-prefetch="false">
+          <a
+            href="http://vigilguard.com/vendorguard"
+            class="product-link"
+            data-astro-prefetch="false"
+          >
             <VendorGuardLogo class="product-logo" />
             <span>VendorGuard</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://docs.vigilguard.com/"
+            class="product-link"
+            data-astro-prefetch="false"
+          >
+            <VigilGuardDocsLogo class="product-logo" />
+            <span>VigilGuard Docs</span>
           </a>
         </li>
       </ul>
@@ -35,18 +53,29 @@ import VendorGuardLogo from "../../assets/vendorguard.svg";
       <h3 class="footer-heading">Company</h3>
       <ul class="footer-links">
         <li>
-          <a href="http://vigilguard.com/contact" class="contact-btn" data-astro-prefetch="false">
+          <a
+            href="http://vigilguard.com/contact"
+            class="contact-btn"
+            data-astro-prefetch="false"
+          >
             Contact Us
           </a>
         </li>
         <li>
-          <a href="http://vigilguard.com/aboutus" data-astro-prefetch="false">About Us</a>
+          <a href="http://vigilguard.com/aboutus" data-astro-prefetch="false"
+            >About Us</a
+          >
         </li>
         <li>
-          <a href="http://vigilguard.com/careers" data-astro-prefetch="false">Careers</a>
+          <a href="http://vigilguard.com/careers" data-astro-prefetch="false"
+            >Careers</a
+          >
         </li>
         <li>
-          <a href="http://vigilguard.com/terms-and-privacy" data-astro-prefetch="false">
+          <a
+            href="http://vigilguard.com/terms-and-privacy"
+            data-astro-prefetch="false"
+          >
             Terms & Privacy
           </a>
         </li>
@@ -94,6 +123,18 @@ import VendorGuardLogo from "../../assets/vendorguard.svg";
 
         <li>
           <a
+            href="https://docs.vigilguard.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <VigilGuardDocsLogo class="product-logo" />
+            <span>VigilGuard Docs</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a
             href="https://vigilguard.statuspage.io"
             target="_blank"
             rel="noopener noreferrer"
@@ -103,16 +144,6 @@ import VendorGuardLogo from "../../assets/vendorguard.svg";
           </a>
         </li>
 
-        <li>
-          <a
-            href="https://docs.vigilguard.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FileText class="product-logo" />
-            <span>Docs</span>
-          </a>
-        </li>
       </ul>
     </div>
 
@@ -226,19 +257,21 @@ import VendorGuardLogo from "../../assets/vendorguard.svg";
     color: var(--brand-purple);
   }
 
-.contact-btn {
-  padding: 6px 12px;
-  border-radius: 6px;
-  background: var(--btn-primary-bg);
-  color: black ;
-  font-size: 0.875rem;
-  font-weight: 500;
-  width: fit-content;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  transition: background 0.2s ease, color 0.2s ease;
-}
+  .contact-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: var(--btn-primary-bg);
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: fit-content;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
 
   .product-logo {
     width: 22px;
@@ -274,23 +307,21 @@ import VendorGuardLogo from "../../assets/vendorguard.svg";
     }
   }
 
+  .footer-links a:not(.contact-btn) {
+    color: var(--text-secondary);
+  }
 
-.footer-links a:not(.contact-btn) {
-  color: var(--text-secondary);
-}
+  .footer-links a:not(.contact-btn):hover {
+    color: var(--brand-purple);
+  }
 
-.footer-links a:not(.contact-btn):hover {
-  color: var(--brand-purple);
-}
+  .footer-links a.contact-btn {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+  }
 
-.footer-links a.contact-btn {
-  background: var(--btn-primary-bg);
-  color: var(--btn-primary-text);
-}
-
-.footer-links a.contact-btn:hover {
-  background: var(--btn-primary-bg-hover);
-  color: var(--btn-primary-text);
-}
-
+  .footer-links a.contact-btn:hover {
+    background: var(--btn-primary-bg-hover);
+    color: var(--btn-primary-text);
+  }
 </style>
