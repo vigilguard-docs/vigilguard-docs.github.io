@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import logo from "../../assets/vigilguard.svg";
 import vigilscanLogo from "../../assets/vigilscan.svg";
+import scannowLogo from "../../assets/scannow.svg";
 import vendorguardLogo from "../../assets/vendorguard.svg";
 import Building from "lucide-static/icons/building.svg";
 import FileText from "lucide-static/icons/file-text.svg";
@@ -10,16 +11,33 @@ import LogIn from "lucide-static/icons/log-in.svg";
 import ShieldCheck from "lucide-static/icons/shield-check.svg";
 import Users from "lucide-static/icons/users.svg";
 
-// Fully qualified links to prevent documentation sub-path issues
 const productLinks = [
-  { name: "VigilScan", href: "https://vigilguard.com/vigilscan", logo: vigilscanLogo },
-  { name: "VendorGuard", href: "https://vigilguard.com/vendorguard", logo: vendorguardLogo },
+  {
+    name: "VigilScan",
+    href: "/vigilscan",
+    logo: vigilscanLogo,
+  },
+  {
+    name: "VendorGuard",
+    href: "/vendorguard",
+    logo: vendorguardLogo,
+  },
+  {
+    name: "Free ScanNow",
+    href: "https://scannow.vigilguard.com",
+    logo: scannowLogo,
+    highlight: true,
+  },
 ];
 
 const companyLinks = [
-  { name: "About Us", href: "https://vigilguard.com/aboutus", icon: Building },
-  { name: "Terms & Privacy", href: "https://vigilguard.com/terms-and-privacy", icon: FileText },
-  { name: "Careers", href: "https://vigilguard.com/careers", icon: Briefcase },
+  { name: "About Us", href: "/aboutus", icon: Building },
+  {
+    name: "Terms & Privacy",
+    href: "/terms-and-privacy",
+    icon: FileText,
+  },
+  { name: "Careers", href: "/careers", icon: Briefcase },
 ];
 
 const loginLinks = [
@@ -44,7 +62,11 @@ const loginLinks = [
 <header class="header">
   <div class="header-container">
     <div class="left-section">
-      <a href="https://vigilguard.com/" class="logo-link" aria-label="VigilGuard Home">
+      <a
+        href="/"
+        class="logo-link"
+        aria-label="VigilGuard Home"
+      >
         <img
           src={logo.src}
           alt="VigilGuard Logo"
@@ -60,7 +82,11 @@ const loginLinks = [
       <nav class="desktop-nav">
         {
           productLinks.map((link) => (
-            <a href={link.href} class="nav-link">
+            <a
+              href={link.href}
+              class={`nav-link ${link.highlight ? "nav-link-animated" : ""}`}
+              data-astro-prefetch="false"
+            >
               <img
                 src={link.logo.src}
                 alt=""
@@ -70,7 +96,7 @@ const loginLinks = [
                 loading="lazy"
                 decoding="async"
               />
-              {link.name}
+              {link.highlight ? <span>{link.name}</span> : link.name}
             </a>
           ))
         }
@@ -85,7 +111,11 @@ const loginLinks = [
         <div id="company-menu" class="company-menu hidden">
           {
             companyLinks.map((link) => (
-              <a href={link.href} class="company-menu-link">
+              <a
+                href={link.href}
+                class="company-menu-link"
+                data-astro-prefetch="false"
+              >
                 <link.icon class="menu-icon" />
                 {link.name}
               </a>
@@ -114,10 +144,15 @@ const loginLinks = [
         </div>
       </div>
 
-      <a href="https://vigilguard.com/contact" class="contact-btn">Contact Us</a>
+      <a href="/contact" class="contact-btn" data-astro-prefetch="false"
+        >Contact Us</a
+      >
 
       <div class="mobile-product-links">
-        <a href="https://vigilguard.com/vigilscan" aria-label="VigilScan EASM Platform">
+        <a
+          href="https://vigilguard.com/vigilscan"
+          aria-label="VigilScan EASM Platform"
+        >
           <img
             src={vigilscanLogo.src}
             alt="EASM Platform"
@@ -126,10 +161,28 @@ const loginLinks = [
             height="24"
           />
         </a>
-        <a href="https://vigilguard.com/vendorguard" aria-label="VendorGuard ITRM Platform">
+        <a
+          href="https://vigilguard.com/vendorguard"
+          data-astro-prefetch="false"
+          aria-label="VendorGuard ITRM Platform"
+        >
           <img
             src={vendorguardLogo.src}
             alt="VendorGuard ITRM Platform"
+            class="mobile-product-icon"
+            width="24"
+            height="24"
+          />
+        </a>
+
+        <a
+          href="https://scannow.vigilguard.com"
+          data-astro-prefetch="false"
+          aria-label="Free ScanNow"
+        >
+          <img
+            src={scannowLogo.src}
+            alt="Free ScanNow"
             class="mobile-product-icon"
             width="24"
             height="24"
@@ -182,7 +235,7 @@ const loginLinks = [
     <p class="mobile-section-label">Company</p>
     {
       companyLinks.map((link) => (
-        <a href={link.href} class="mobile-nav-link">
+        <a href={link.href} class="mobile-nav-link" data-astro-prefetch="false">
           <link.icon class="menu-icon" />
           {link.name}
         </a>
@@ -199,7 +252,9 @@ const loginLinks = [
       ))
     }
 
-    <a href="https://vigilguard.com/contact" class="mobile-contact-btn">Contact Us</a>
+    <a href="/contact" class="mobile-contact-btn" data-astro-prefetch="false"
+      >Contact Us</a
+    >
   </div>
 </header>
 
@@ -454,6 +509,26 @@ const loginLinks = [
     text-decoration: none;
   }
 
+  .nav-link-animated span {
+    background-image: linear-gradient(
+      -225deg,
+      #7367f0 0%,
+      #ce9ffc 50%,
+      #7367f0 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+  }
+
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+
   .hidden {
     display: none !important;
   }
@@ -491,17 +566,18 @@ const loginLinks = [
 
 <script>
   const headerInit = () => {
+    // --- Theme Toggle Logic ---
     const themeBtn = document.getElementById("theme-toggle");
     const sunIcon = document.getElementById("theme-icon-sun");
     const moonIcon = document.getElementById("theme-icon-moon");
 
-    const updateThemeIcon = (theme: string) => {
+    const updateThemeIcon = (theme) => {
       sunIcon?.classList.toggle("hidden", theme === "light");
       moonIcon?.classList.toggle("hidden", theme !== "light");
     };
 
     updateThemeIcon(
-      document.documentElement.getAttribute("data-theme") || "dark"
+      document.documentElement.getAttribute("data-theme") || "dark",
     );
 
     themeBtn?.addEventListener("click", () => {
@@ -509,16 +585,19 @@ const loginLinks = [
         document.documentElement.getAttribute("data-theme") || "dark";
       const newTheme = theme === "light" ? "dark" : "light";
 
+      // Instant switch - disable transitions temporarily
       document.body.style.transition = "none";
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
       updateThemeIcon(newTheme);
 
+      // Re-enable after paint
       requestAnimationFrame(() => {
         document.body.style.transition = "";
       });
     });
 
+    // --- Mobile Menu Logic ---
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     const menuIconOpen = document.getElementById("menu-icon-open");
@@ -530,15 +609,17 @@ const loginLinks = [
       menuIconClose?.classList.toggle("hidden");
     });
 
-    const setupDropdown = (btnId: string, menuId: string, caretSelector: string) => {
+    // --- Dropdown Management Logic ---
+    const setupDropdown = (btnId, menuId, caretSelector) => {
       const btn = document.getElementById(btnId);
       const menu = document.getElementById(menuId);
       const caret = btn?.querySelector(caretSelector);
 
-      const toggle = (show?: boolean) => {
+      const toggle = (show) => {
         const isCurrentlyHidden = menu?.classList.contains("hidden");
         const shouldShow = show !== undefined ? show : isCurrentlyHidden;
 
+        // If we are opening one, close all other menus first
         if (shouldShow) {
           document
             .querySelectorAll(".company-menu")
@@ -563,14 +644,15 @@ const loginLinks = [
     const companyDropdown = setupDropdown(
       "company-btn",
       "company-menu",
-      ".company-caret"
+      ".company-caret",
     );
     const loginDropdown = setupDropdown(
       "login-btn",
       "login-menu",
-      ".company-caret"
+      ".company-caret",
     );
 
+    // Close menus when clicking outside
     document.addEventListener("click", (e) => {
       const target = e.target as Node;
       if (!document.getElementById("company-dropdown")?.contains(target)) {
@@ -581,6 +663,7 @@ const loginLinks = [
       }
     });
 
+    // Close on Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         companyDropdown.toggle(false);
@@ -592,6 +675,7 @@ const loginLinks = [
     });
   };
 
+  // Re-run on both initial load and Astro page transitions
   document.addEventListener("DOMContentLoaded", headerInit);
   document.addEventListener("astro:after-swap", headerInit);
 </script>
