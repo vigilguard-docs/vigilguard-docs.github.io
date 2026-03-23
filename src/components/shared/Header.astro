@@ -2,59 +2,182 @@
 import { Icon } from "astro-icon/components";
 import logo from "../../assets/vigilguard.svg";
 import vigilscanLogo from "../../assets/vigilscan.svg";
-import scannowLogo from "../../assets/scannow.svg";
 import vendorguardLogo from "../../assets/vendorguard.svg";
+import crisisreadyLogo from "../../assets/crisisready.svg";
+import scannowLogo from "../../assets/scannow.svg";
 import Building from "lucide-static/icons/building.svg";
-import FileText from "lucide-static/icons/file-text.svg";
 import Briefcase from "lucide-static/icons/briefcase.svg";
-import LogIn from "lucide-static/icons/log-in.svg";
 import ShieldCheck from "lucide-static/icons/shield-check.svg";
-import Users from "lucide-static/icons/users.svg";
+import vigilguardocLogo from "../../assets/vigilguard-docs.svg";
 
-const productLinks = [
+const productGroups = [
   {
-    name: "VigilScan",
-    href: "https://vigilguard.com/vigilscan",
-    logo: vigilscanLogo,
+    title: "EXTERNAL RISK INTELLIGENCE",
+    links: [
+      {
+        name: "VigilScan",
+        href: "https://vigilguard.com/vigilscan",
+        logo: vigilscanLogo,
+        desc: "Continuously discover, map, and monitor your external attack surface across domains, cloud assets, and exposed services with real-time visibility into evolving risk.\n\nWithout active mapping, 'Shadow IT' and forgotten assets become the easiest entry points for attackers. Failing to monitor these exposures in real-time allows vulnerabilities to persist undetected until they are exploited in a breach.",
+      },
+      {
+        name: "VigilScan CrisisReady",
+        href: "https://vigilguard.com/crisisready",
+        logo: crisisreadyLogo,
+        desc: "Run realistic, data-driven crisis simulations powered by your live VigilScan environment to evaluate response, decision-making, and organizational resilience under pressure.\n\nTheoretical security plans often crumble during a real attack. Without regular pressure-testing of your leadership and technical teams, you remain unaware of critical communication gaps that lead to delayed containment and increased recovery costs.",
+      },
+    ],
   },
   {
-    name: "VendorGuard",
-    href: "https://vigilguard.com/vendorguard",
-    logo: vendorguardLogo,
-  },
-  {
-    name: "Free ScanNow",
-    href: "https://scannow.vigilguard.com",
-    logo: scannowLogo,
-    highlight: true,
+    title: "VENDOR RISK MANAGEMENT",
+    links: [
+      {
+        name: "VendorGuard",
+        href: "https://vigilguard.com/vendorguard",
+        logo: vendorguardLogo,
+        desc: "Automate vendor risk assessments and continuously manage third-party exposure with structured workflows, real-time insights, and full lifecycle visibility across your supply chain.\n\nA single compromised vendor can bypass all your internal defenses. Relying on manual, point-in-time assessments leaves you blind to your vendors' shifting security postures, significantly increasing the likelihood of a third-party data breach.",
+      },
+    ],
   },
 ];
 
-const companyLinks = [
-  { name: "About Us", href: "https://vigilguard.com/aboutus", icon: Building },
+const freeToolsGroups = [
   {
-    name: "Terms & Privacy",
-    href: "https://vigilguard.com/terms-and-privacy",
-    icon: FileText,
+    title: "EMAIL SECURITY",
+    links: [
+      {
+        name: "MX Record Checker",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This tool validates your Mail Exchanger (MX) records to ensure mail servers are correctly configured, prioritized, and redundant. \n\nFailure to maintain proper MX configurations can lead to total email downtime or 'black-holed' communications.",
+      },
+      {
+        name: "SPF/DKIM/DMARC Scan",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This scan audits your email authentication protocols (SPF, DKIM, and DMARC) to verify that only authorized servers can send mail on your behalf. \n\nWeak authentication is the primary vector for domain spoofing and phishing.",
+      },
+      {
+        name: "Email Blacklist Check",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This check cross-references your sending IP and domain against over 100 global Real-time Blackhole Lists (RBLs). \n\nBeing blacklisted means your legitimate business emails will be automatically blocked by major providers.",
+      },
+    ],
   },
-  { name: "Careers", href: "https://vigilguard.com/careers", icon: Briefcase },
+  {
+    title: "DNS & NETWORK",
+    links: [
+      {
+        name: "DNS Health Check",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This diagnostic identifies DNS misconfigurations, lame delegations, and missing records. \n\nDNS is the 'phonebook' of the internet; a single error can make your entire digital presence vanish.",
+      },
+      {
+        name: "Whois Lookup",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This tool retrieves registration ownership, registrar details, and administrative contact data. \n\nLosing track of registration data often leads to accidental domain expiration, which is frequently exploited by squatters.",
+      },
+    ],
+  },
+  {
+    title: "WEB & ENCRYPTION",
+    links: [
+      {
+        name: "SSL/TLS Inspector",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This inspector evaluates certificate validity, encryption suite strength, and protocol support. \n\nExpired or weak certificates trigger security warnings, driving users away from your site.",
+      },
+      {
+        name: "HTTP Header Security",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This tool analyzes critical security headers like HSTS, CSP, and X-Frame-Options. \n\nMissing headers leave your site wide open to Cross-Site Scripting (XSS) and Clickjacking.",
+      },
+    ],
+  },
 ];
 
-const loginLinks = [
+const loginGroups = [
   {
-    name: "VigilScan Login",
-    href: "https://vigilscan.vigilguard.com/",
-    icon: ShieldCheck,
+    title: "EXTERNAL RISK INTELLIGENCE",
+    links: [
+      {
+        name: "VigilScan Login",
+        href: "https://vigilscan.vigilguard.com/",
+        logo: vigilscanLogo,
+        desc: "Access your centralized EASM dashboard to manage discovered assets and prioritize vulnerabilities.\n\nWithout active monitoring, shadow IT assets can appear and be exploited within hours.",
+      },
+      {
+        name: "CrisisReady Login",
+        href: "https://crisisready.vigilguard.com",
+        logo: crisisreadyLogo,
+        desc: "Launch breach and attack simulations based on your real-world attack surface data.\n\nRegular simulation ensures your detection and response workflows are functional before a real threat actor strikes.",
+      },
+    ],
   },
   {
-    name: "VendorGuard Login",
-    href: "https://vendorguard.vigilguard.com",
-    icon: LogIn,
+    title: "VENDOR RISK MANAGEMENT",
+    links: [
+      {
+        name: "VendorGuard Login",
+        href: "https://vendorguard.vigilguard.com",
+        logo: vendorguardLogo,
+        desc: "Manage your third-party ecosystem and automate vendor risk assessments.\n\nManaging vendors manually leaves your organization legally liable for breaches occurring in third-party environments.",
+      },
+      {
+        name: "Vendor Portal Login",
+        href: "https://vendors.vendorguard.vigilguard.com",
+        logo: vendorguardLogo,
+        desc: "Secure entry point for your vendors to submit security evidence.\n\nThis portal centralizes communication, ensuring vendors fulfill their security obligations quickly.",
+      },
+    ],
+  },
+];
+
+const companyGroups = [
+  {
+    title: "RESOURCES",
+    links: [
+      {
+        name: "Docs",
+        href: "https://docs.vigilguard.com",
+        icon: vigilguardocLogo,
+        desc: "Technical documentation and API references.\n\nOperating without clear guardrails leads to misconfigurations. Proper docs ensure defenses are implemented correctly.",
+      },
+      {
+        name: "Blog",
+        href: "https://docs.vigilguard.com/blog",
+        iconName: "lucide:terminal",
+        desc: "Latest threat intelligence and security research.\n\nFailing to stay updated leaves your organization reactive rather than proactive against emerging attack vectors.",
+      },
+    ],
   },
   {
-    name: "Vendor Portal Login",
-    href: "https://vendors.vendorguard.vigilguard.com",
-    icon: Users,
+    title: "COMPANY",
+    links: [
+      {
+        name: "About Us",
+        href: "https://vigilguard.com/aboutus",
+        icon: Building,
+        desc: "Our mission to secure the digital frontier.\n\nUnderstanding the expertise behind your security partners is essential to ensuring your risk strategy is aligned.",
+      },
+      {
+        name: "Careers",
+        href: "https://vigilguard.com/careers",
+        icon: Briefcase,
+        desc: "Join our team of risk strategists.\n\nWe constantly recruit top-tier talent to stay ahead of sophisticated adversaries.",
+      },
+      {
+        name: "Terms & Conditions",
+        href: "https://vigilguard.com/terms-and-privacy",
+        icon: ShieldCheck,
+        desc: "Legal framework and data privacy commitments.\n\nNon-compliance poses a massive financial threat. Clearly defined standards protect both parties.",
+      },
+    ],
   },
 ];
 ---
@@ -62,150 +185,190 @@ const loginLinks = [
 <header class="header">
   <div class="header-container">
     <div class="left-section">
-      <a
-        href="https://vigilguard.com"
-        class="logo-link"
-        aria-label="VigilGuard Home"
-      >
+      <a href="/" class="logo-link" aria-label="VigilGuard Home">
         <img
           src={logo.src}
           alt="VigilGuard Logo"
           class="logo-img"
           width="24"
           height="24"
-          loading="lazy"
-          decoding="async"
         />
         <span class="logo-text">VigilGuard</span>
       </a>
-
-      <nav class="desktop-nav">
-        {
-          productLinks.map((link) => (
-            <a
-              href={link.href}
-              class={`nav-link ${link.highlight ? "nav-link-animated" : ""}`}
-              data-astro-prefetch="false"
-            >
-              <img
-                src={link.logo.src}
-                alt=""
-                class="nav-icon"
-                width="20"
-                height="20"
-                loading="lazy"
-                decoding="async"
-              />
-              {link.highlight ? <span>{link.name}</span> : link.name}
-            </a>
-          ))
-        }
-      </nav>
     </div>
 
+    <nav class="desktop-nav">
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger"
+          >Products<Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              productGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => (
+                    <a
+                      href={link.href}
+                      class="popdown-link product-link"
+                      data-desc={link.desc}
+                    >
+                      <img src={link.logo.src} alt="" width="18" height="18" />
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <p class="preview-desc">
+              Unified intelligence across your external attack surface.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger nav-link-animated"
+          ><span>Free Tools</span><Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              freeToolsGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => (
+                    <a
+                      href={link.href}
+                      class="popdown-link product-link"
+                      data-desc={link.desc}
+                    >
+                      <img src={link.logo.src} alt="" width="18" height="18" />
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <p class="preview-desc">
+              Instant security intelligence for your infrastructure.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger"
+          >Login<Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              loginGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => (
+                    <a
+                      href={link.href}
+                      class="popdown-link product-link"
+                      target="_blank"
+                      data-desc={link.desc}
+                    >
+                      <img src={link.logo.src} alt="" width="18" height="18" />
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <p class="preview-desc">
+              Secure access to your VigilGuard protection suites.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger"
+          >Company<Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              companyGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => {
+                    const IconComp = link.icon;
+                    return (
+                      <a
+                        href={link.href}
+                        class="popdown-link product-link"
+                        data-desc={link.desc}
+                      >
+                        {/* 1. If it has a standard SVG logo */}
+                        {link.logo && (
+                          <img
+                            src={link.logo.src}
+                            alt=""
+                            width="18"
+                            height="18"
+                          />
+                        )}
+
+                        {/* 2. If it's a Lucide name string (the Blog) */}
+                        {link.iconName && (
+                          <Icon name={link.iconName} class="icon-small" />
+                        )}
+
+                        {/* 3. If it's an imported Static SVG (Building/Briefcase) */}
+                        {!link.logo && !link.iconName && IconComp && (
+                          <IconComp class="icon-small" />
+                        )}
+
+                        {link.name}
+                      </a>
+                    );
+                  })}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <p class="preview-desc">
+              Inside the mission to secure the digital frontier.
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <div class="header-actions">
-      <div class="company-dropdown" id="company-dropdown">
-        <button id="company-btn" class="company-btn" aria-haspopup="true">
-          Company<Icon name="lucide:chevron-down" class="company-caret" />
-        </button>
-        <div id="company-menu" class="company-menu hidden">
-          {
-            companyLinks.map((link) => (
-              <a
-                href={link.href}
-                class="company-menu-link"
-                data-astro-prefetch="false"
-              >
-                <link.icon class="menu-icon" />
-                {link.name}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-
-      <div class="company-dropdown" id="login-dropdown">
-        <button id="login-btn" class="company-btn" aria-haspopup="true">
-          Login<Icon name="lucide:chevron-down" class="company-caret" />
-        </button>
-        <div id="login-menu" class="company-menu hidden">
-          {
-            loginLinks.map((link) => (
-              <a
-                href={link.href}
-                class="company-menu-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.name}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-
-      <a href="/contact" class="contact-btn" data-astro-prefetch="false"
-        >Contact Us</a
-      >
-
-      <div class="mobile-product-links">
-        <a
-          href="https://vigilguard.com/vigilscan"
-          aria-label="VigilScan EASM Platform"
-        >
-          <img
-            src={vigilscanLogo.src}
-            alt="EASM Platform"
-            class="mobile-product-icon"
-            width="24"
-            height="24"
-          />
-        </a>
-        <a
-          href="https://vigilguard.com/vendorguard"
-          data-astro-prefetch="false"
-          aria-label="VendorGuard ITRM Platform"
-        >
-          <img
-            src={vendorguardLogo.src}
-            alt="VendorGuard ITRM Platform"
-            class="mobile-product-icon"
-            width="24"
-            height="24"
-          />
-        </a>
-
-        <a
-          href="https://scannow.vigilguard.com"
-          data-astro-prefetch="false"
-          aria-label="Free ScanNow"
-        >
-          <img
-            src={scannowLogo.src}
-            alt="Free ScanNow"
-            class="mobile-product-icon"
-            width="24"
-            height="24"
-          />
-        </a>
-      </div>
-
-      <button
-        id="theme-toggle"
-        type="button"
-        aria-label="Toggle theme"
-        class="theme-toggle"
-      >
+      <a href="https://vigilguard.com/contact" class="contact-btn">Contact Us</a>
+      <button id="theme-toggle" type="button" class="theme-toggle">
         <Icon name="lucide:sun" id="theme-icon-sun" class="icon" />
         <Icon name="lucide:moon" id="theme-icon-moon" class="icon hidden" />
       </button>
-
-      <button
-        id="mobile-menu-btn"
-        type="button"
-        aria-label="Open menu"
-        class="mobile-menu-btn"
-      >
+      <button id="mobile-menu-btn" type="button" class="mobile-menu-btn">
         <Icon name="lucide:menu" id="menu-icon-open" class="icon" />
         <Icon name="lucide:x" id="menu-icon-close" class="icon hidden" />
       </button>
@@ -213,48 +376,31 @@ const loginLinks = [
   </div>
 
   <div id="mobile-menu" class="mobile-menu hidden">
-    <p class="mobile-section-label">Products</p>
-    {
-      productLinks.map((link) => (
-        <a href={link.href} class="mobile-nav-link">
-          <img
-            src={link.logo.src}
-            alt=""
-            class="nav-icon"
-            width="20"
-            height="20"
-            loading="lazy"
-            decoding="async"
-          />
-          {link.name}
-        </a>
-      ))
-    }
-
-    <div class="mobile-divider"></div>
-    <p class="mobile-section-label">Company</p>
-    {
-      companyLinks.map((link) => (
-        <a href={link.href} class="mobile-nav-link" data-astro-prefetch="false">
-          <link.icon class="menu-icon" />
-          {link.name}
-        </a>
-      ))
-    }
-
-    <div class="mobile-divider"></div>
-    <p class="mobile-section-label">Portals</p>
-    {
-      loginLinks.map((link) => (
-        <a href={link.href} class="mobile-nav-link" target="_blank">
-          {link.name}
-        </a>
-      ))
-    }
-
-    <a href="/contact" class="mobile-contact-btn" data-astro-prefetch="false"
-      >Contact Us</a
+    <span class="mobile-group-label">PRODUCTS & ACCESS</span>
+    <a href="https://vigilguard.com/vigilscan" class="mobile-nav-link">VigilScan</a>
+    <a href="https://vigilguard.com/crisisready" class="mobile-nav-link">CrisisReady</a>
+    <a href="https://vigilguard.com/vendorguard" class="mobile-nav-link">VendorGuard</a>
+    <a
+      href="https://vendors.vendorguard.vigilguard.com"
+      class="mobile-nav-link login-mobile-link">Vendor Portal</a
     >
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">TOOLS</span>
+    <a href="https://scannow.vigilguard.com" class="mobile-nav-link"
+      >Free Scan</a
+    >
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">RESOURCES</span>
+    <a href="https://docs.vigilguard.com" class="mobile-nav-link">Docs</a>
+    <a href="https://vigilguard.com/aboutus" class="mobile-nav-link">About Us</a>
+    <a href="https://vigilguard.com/careers" class="mobile-nav-link">Careers</a>
+    <a href="https://vigilguard.com/terms-and-privacy" class="mobile-nav-link">Terms & Privacy</a>
+
+    <a href="/contact" class="mobile-contact-btn">Contact Us</a>
   </div>
 </header>
 
@@ -271,19 +417,14 @@ const loginLinks = [
   }
 
   .header-container {
-    max-width: 1280px;
+    max-width: 1024px; /* Reduced for "middleish" look */
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 4rem;
-  }
-
-  .left-section {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    position: relative;
   }
 
   .logo-link {
@@ -292,12 +433,6 @@ const loginLinks = [
     gap: 0.5rem;
     text-decoration: none;
   }
-
-  .logo-img {
-    height: 1.5rem;
-    width: auto;
-  }
-
   .logo-text {
     font-weight: 700;
     background: linear-gradient(
@@ -312,136 +447,123 @@ const loginLinks = [
 
   .desktop-nav {
     display: none;
-    align-items: center;
-    gap: 1.5rem;
   }
-
-  .nav-link {
+  .mobile-menu-btn {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
+  }
+  .contact-btn {
+    display: none;
   }
 
-  .nav-link:hover {
-    color: var(--text-primary);
-  }
-
-  .nav-icon {
-    height: 1.25rem;
-    width: auto;
+  @media (min-width: 1024px) {
+    .desktop-nav {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .mobile-menu-btn {
+      display: none !important;
+    }
+    .contact-btn {
+      display: flex !important;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      text-decoration: none;
+    }
   }
 
   .header-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
-  .company-dropdown {
-    position: relative;
-    display: none;
-  }
-
-  .company-btn {
-    font-size: 0.875rem;
+  .popdown-trigger {
+    background: none;
+    border: none;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     font-weight: 500;
     color: var(--text-secondary);
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-
-  .company-btn:hover {
-    color: var(--text-primary);
-  }
-
-  .company-caret {
-    height: 1rem;
-    width: 1rem;
-    transition: transform 0.2s;
-  }
-
-  .company-caret.rotate-180 {
-    transform: rotate(180deg);
-  }
-
-  .company-menu {
-    position: absolute;
-    right: 0;
-    margin-top: 0.5rem;
-    width: 12rem;
-    border-radius: 0.375rem;
-    background: var(--mobile-nav-bg);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--border-translucent);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 0;
-  }
-
-  .company-menu-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .company-menu-link:hover {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-  }
-
-  .menu-icon {
-    height: 1rem;
-    width: 1rem;
-  }
-
-  .contact-btn {
-    display: none;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    background: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-    text-decoration: none;
-  }
-
-  .mobile-product-links {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-right: 0.5rem;
-  }
-
-  .mobile-product-icon {
-    height: 1.5rem;
-    width: auto;
-  }
-
-  .theme-toggle {
     padding: 0.5rem;
-    border-radius: 9999px;
+  }
+
+  .popdown-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    margin-top: 1rem;
+    width: 90vw;
+    max-width: 1100px;
+    background: var(--mobile-nav-bg);
     border: 1px solid var(--border-translucent);
-    background: var(--bg-secondary);
-    cursor: pointer;
+    display: flex;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .popdown-left {
+    width: 40%;
+    padding: 1.5rem 2rem;
+    border-right: 1px solid var(--border-translucent);
+    white-space: nowrap;
+  }
+  .popdown-right {
+    width: 60%;
+    padding: 2.5rem;
+    background: rgba(120, 120, 120, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .popdown-group {
+    margin-bottom: 1.25rem;
+  }
+  .popdown-title {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 0.75rem;
+  }
+
+  .popdown-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+  }
+  .popdown-link:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+
+  .preview-desc {
+    white-space: pre-line;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 95%;
+    text-align: left;
   }
 
   .icon {
@@ -449,64 +571,67 @@ const loginLinks = [
     width: 1.25rem;
     color: var(--text-secondary);
   }
-
-  .mobile-menu-btn {
-    padding: 0.5rem;
-    border-radius: 0.375rem;
+  .icon-small {
+    width: 18px;
+    height: 18px;
     color: var(--text-secondary);
-    background: none;
-    border: none;
-    cursor: pointer;
+  }
+  .company-caret {
+    height: 1rem;
+    width: 1rem;
+    transition: transform 0.2s;
+  }
+  .rotate-180 {
+    transform: rotate(180deg);
   }
 
+  .theme-toggle,
+  .mobile-menu-btn {
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-translucent);
+    background: var(--bg-secondary);
+    cursor: pointer;
+  }
   .mobile-menu {
     background: var(--mobile-nav-bg);
     border-top: 1px solid var(--border-translucent);
-    backdrop-filter: blur(8px);
-    padding: 0.75rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
   }
-
-  .mobile-section-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .mobile-group-label {
+    font-size: 0.65rem;
+    font-weight: 700;
     color: var(--text-secondary);
-    padding: 0.5rem 0.75rem 0.25rem;
-    margin: 0;
+    padding: 0.75rem 0.75rem 0.25rem;
   }
-
+  .mobile-nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+  }
   .mobile-divider {
     height: 1px;
     background: var(--border-translucent);
-    margin: 0.5rem 0.75rem;
+    margin: 0.5rem 0;
   }
-
-  .mobile-nav-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    text-decoration: none;
-  }
-
   .mobile-contact-btn {
     display: block;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     padding: 0.75rem;
     text-align: center;
     border-radius: 0.375rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
     background: var(--btn-translucent-bg);
+    color: var(--text-primary);
     text-decoration: none;
+    font-weight: 600;
+  }
+  .hidden {
+    display: none !important;
   }
 
   .nav-link-animated span {
@@ -522,160 +647,87 @@ const loginLinks = [
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
   }
-
   @keyframes textclip {
     to {
       background-position: 200% center;
-    }
-  }
-
-  .hidden {
-    display: none !important;
-  }
-
-  @media (min-width: 640px) {
-    .header-container {
-      padding: 0 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .header-container {
-      padding: 0 2rem;
-    }
-    .desktop-nav {
-      display: flex;
-    }
-    .company-dropdown {
-      display: block;
-    }
-    .contact-btn {
-      display: block;
-    }
-    .mobile-product-links {
-      display: none;
-    }
-    .mobile-menu-btn {
-      display: none;
-    }
-    .mobile-menu {
-      display: none !important;
     }
   }
 </style>
 
 <script>
   const headerInit = () => {
-    // --- Theme Toggle Logic ---
     const themeBtn = document.getElementById("theme-toggle");
-    const sunIcon = document.getElementById("theme-icon-sun");
-    const moonIcon = document.getElementById("theme-icon-moon");
-
-    const updateThemeIcon = (theme) => {
-      sunIcon?.classList.toggle("hidden", theme === "light");
-      moonIcon?.classList.toggle("hidden", theme !== "light");
+    const updateIcon = (t) => {
+      document
+        .getElementById("theme-icon-sun")
+        ?.classList.toggle("hidden", t === "light");
+      document
+        .getElementById("theme-icon-moon")
+        ?.classList.toggle("hidden", t !== "light");
     };
-
-    updateThemeIcon(
-      document.documentElement.getAttribute("data-theme") || "dark",
-    );
-
+    updateIcon(document.documentElement.getAttribute("data-theme") || "dark");
     themeBtn?.addEventListener("click", () => {
-      const theme =
-        document.documentElement.getAttribute("data-theme") || "dark";
-      const newTheme = theme === "light" ? "dark" : "light";
-
-      // Instant switch - disable transitions temporarily
-      document.body.style.transition = "none";
+      const newTheme =
+        document.documentElement.getAttribute("data-theme") === "light"
+          ? "dark"
+          : "light";
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
-      updateThemeIcon(newTheme);
-
-      // Re-enable after paint
-      requestAnimationFrame(() => {
-        document.body.style.transition = "";
-      });
+      updateIcon(newTheme);
     });
 
-    // --- Mobile Menu Logic ---
-    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-    const menuIconOpen = document.getElementById("menu-icon-open");
-    const menuIconClose = document.getElementById("menu-icon-close");
-
-    mobileMenuBtn?.addEventListener("click", () => {
+    mobileBtn?.addEventListener("click", () => {
       mobileMenu?.classList.toggle("hidden");
-      menuIconOpen?.classList.toggle("hidden");
-      menuIconClose?.classList.toggle("hidden");
+      document.getElementById("menu-icon-open")?.classList.toggle("hidden");
+      document.getElementById("menu-icon-close")?.classList.toggle("hidden");
     });
 
-    // --- Dropdown Management Logic ---
-    const setupDropdown = (btnId, menuId, caretSelector) => {
-      const btn = document.getElementById(btnId);
-      const menu = document.getElementById(menuId);
-      const caret = btn?.querySelector(caretSelector);
+    const wrappers = document.querySelectorAll(".popdown-wrapper");
+    wrappers.forEach((wrap) => {
+      const trigger = wrap.querySelector(".popdown-trigger");
+      const menu = wrap.querySelector(".popdown-content");
+      const caret = wrap.querySelector(".company-caret");
+      const preview = wrap.querySelector(".preview-desc");
+      const links = wrap.querySelectorAll(".popdown-link");
+      const defaultText = preview?.textContent;
 
-      const toggle = (show) => {
-        const isCurrentlyHidden = menu?.classList.contains("hidden");
-        const shouldShow = show !== undefined ? show : isCurrentlyHidden;
-
-        // If we are opening one, close all other menus first
-        if (shouldShow) {
-          document
-            .querySelectorAll(".company-menu")
-            .forEach((m) => m.classList.add("hidden"));
-          document
-            .querySelectorAll(".company-caret")
-            .forEach((c) => c.classList.remove("rotate-180"));
-        }
-
-        menu?.classList.toggle("hidden", !shouldShow);
-        caret?.classList.toggle("rotate-180", shouldShow);
-      };
-
-      btn?.addEventListener("click", (e) => {
+      trigger?.addEventListener("click", (e) => {
         e.stopPropagation();
-        toggle();
+        const isHidden = menu?.classList.contains("hidden");
+        document
+          .querySelectorAll(".popdown-content")
+          .forEach((m) => m.classList.add("hidden"));
+        document
+          .querySelectorAll(".company-caret")
+          .forEach((c) => c.classList.remove("rotate-180"));
+        if (isHidden) {
+          menu?.classList.remove("hidden");
+          caret?.classList.add("rotate-180");
+        }
       });
 
-      return { btn, menu, toggle };
-    };
-
-    const companyDropdown = setupDropdown(
-      "company-btn",
-      "company-menu",
-      ".company-caret",
-    );
-    const loginDropdown = setupDropdown(
-      "login-btn",
-      "login-menu",
-      ".company-caret",
-    );
-
-    // Close menus when clicking outside
-    document.addEventListener("click", (e) => {
-      const target = e.target as Node;
-      if (!document.getElementById("company-dropdown")?.contains(target)) {
-        companyDropdown.toggle(false);
-      }
-      if (!document.getElementById("login-dropdown")?.contains(target)) {
-        loginDropdown.toggle(false);
-      }
+      links.forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+          if (preview) preview.textContent = link.getAttribute("data-desc");
+        });
+        link.addEventListener("mouseleave", () => {
+          if (preview) preview.textContent = defaultText;
+        });
+      });
     });
 
-    // Close on Escape key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        companyDropdown.toggle(false);
-        loginDropdown.toggle(false);
-        mobileMenu?.classList.add("hidden");
-        menuIconOpen?.classList.remove("hidden");
-        menuIconClose?.classList.add("hidden");
-      }
+    document.addEventListener("click", () => {
+      document
+        .querySelectorAll(".popdown-content")
+        .forEach((m) => m.classList.add("hidden"));
+      document
+        .querySelectorAll(".company-caret")
+        .forEach((c) => c.classList.remove("rotate-180"));
     });
   };
 
-  // Re-run on both initial load and Astro page transitions
   document.addEventListener("DOMContentLoaded", headerInit);
   document.addEventListener("astro:after-swap", headerInit);
 </script>
