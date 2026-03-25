@@ -226,8 +226,8 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc">
-              Unified intelligence across your external attack surface.
+            <p class="preview-desc preview-title">
+              Unified intelligence across your </br> external attack surface.
             </p>
           </div>
         </div>
@@ -261,7 +261,7 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc">
+            <p class="preview-desc preview-title">
               Instant security intelligence for your infrastructure.
             </p>
           </div>
@@ -297,7 +297,7 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc">
+            <p class="preview-desc preview-title">
               Secure access to your VigilGuard protection suites.
             </p>
           </div>
@@ -354,7 +354,7 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc">
+            <p class="preview-desc preview-title">
               Inside the mission to secure the digital frontier.
             </p>
           </div>
@@ -509,7 +509,7 @@ const companyGroups = [
     background: var(--mobile-nav-bg);
     border: 1px solid var(--border-translucent);
     display: flex;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
   }
@@ -523,7 +523,7 @@ const companyGroups = [
   .popdown-right {
     width: 60%;
     padding: 2.5rem;
-    background: rgba(120, 120, 120, 0.05);
+    background: rgb(206, 159, 252,  0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -564,6 +564,14 @@ const companyGroups = [
     color: var(--text-secondary);
     max-width: 95%;
     text-align: left;
+  }
+
+  .preview-title {
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
   }
 
   .icon {
