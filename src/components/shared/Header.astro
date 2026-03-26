@@ -185,7 +185,7 @@ const companyGroups = [
 <header class="header">
   <div class="header-container">
     <div class="left-section">
-      <a href="/" class="logo-link" aria-label="VigilGuard Home">
+      <a href="https://vigilguard.com" class="logo-link" aria-label="VigilGuard Home">
         <img
           src={logo.src}
           alt="VigilGuard Logo"
@@ -226,8 +226,8 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc preview-title">
-              Unified intelligence across your </br> external attack surface.
+            <p class="preview-desc">
+              <strong>Unified intelligence across your <br /> external attack surface.</strong>
             </p>
           </div>
         </div>
@@ -261,8 +261,8 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc preview-title">
-              Instant security intelligence for your infrastructure.
+            <p class="preview-desc">
+              <strong>Instant security intelligence for your infrastructure.</strong>
             </p>
           </div>
         </div>
@@ -297,8 +297,8 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc preview-title">
-              Secure access to your VigilGuard protection suites.
+            <p class="preview-desc">
+              <strong>Secure access to your VigilGuard protection suites.</strong>
             </p>
           </div>
         </div>
@@ -354,8 +354,8 @@ const companyGroups = [
             }
           </div>
           <div class="popdown-right">
-            <p class="preview-desc preview-title">
-              Inside the mission to secure the digital frontier.
+            <p class="preview-desc">
+              <strong>Inside the mission to secure the digital frontier.</strong>
             </p>
           </div>
         </div>
@@ -498,6 +498,10 @@ const companyGroups = [
     padding: 0.5rem;
   }
 
+  .popdown-trigger:hover {
+    transform: scale(1.07);
+  }
+
   .popdown-content {
     position: absolute;
     left: 50%;
@@ -564,14 +568,6 @@ const companyGroups = [
     color: var(--text-secondary);
     max-width: 95%;
     text-align: left;
-  }
-
-  .preview-title {
-    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    text-align: center;
   }
 
   .icon {
