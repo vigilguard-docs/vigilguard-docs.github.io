@@ -1,0 +1,157 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const posts = import.meta.glob("./*.md", { eager: true });
+// ✅ This is correct — Vite just wants this exact syntax
+const rawFiles = import.meta.glob("./*.md", { eager: true, query: "?raw", import: "default" });
+
+function truncate(text, max = 160) {
+  if (!text || typeof text !== "string") return "";
+
+  const clean = text.replace(/\s+/g, " ").trim();
+
+  if (clean.length <= max) return clean;
+
+  let cut = clean.slice(0, max);
+
+  // try word boundary
+  const lastSpace = cut.lastIndexOf(" ");
+  if (lastSpace > max * 0.6) {
+    cut = cut.slice(0, lastSpace);
+  }
+
+  return cut.trim() + "...";
+}
+function extractText(path, post) {
+  const description = post.frontmatter?.description ?? "";
+
+  const raw = rawFiles[path];
+  let body = "";
+  if (raw) {
+    body = raw
+      .replace(/---[\s\S]*?---/, "")
+      .replace(/^#{1,6}.+$/gm, "")
+      .replace(/[#>*_`[\]()-]/g, "")
+      .replace(/\n+/g, " ")
+      .trim();
+  }
+
+  if (description && body) return `${description} — ${body}`;
+  if (description) return description;
+  body = body.replace(/\s+/g, " ").trim();
+  return body;
+}
+
+const allPosts = Object.entries(posts)
+  .map(([path, post]) => {
+    const fullSlug = path.replace("./", "").replace(".md", "");
+    const rawText = extractText(path, post);
+
+    return {
+      url: `/blog/${fullSlug}`,
+      title: post.frontmatter?.title ?? "Untitled",
+      date: post.frontmatter?.date ?? "",
+      preview: truncate(rawText, 265), // generate a preview from description + content
+    };
+  })
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+---
+
+<Layout title="Blog">
+  <section class="blog-hero">
+    <h1>Insights on Risk, Security, and Adversarial Thinking</h1>
+    <p>Not compliance. Not checklists. Real-world security.</p>
+  </section>
+
+  <div class="blog-container">
+    {allPosts.map((post) => (
+      <div class="blog-card">
+        <div class="blog-card-inner">
+          <p class="blog-date">{post.date}</p>
+
+          <a href={post.url} class="blog-title">
+            <h2>{post.title}</h2>
+          </a>
+
+          <p class="blog-preview">{post.preview}</p>
+
+          <a href={post.url} class="read-more">
+            Read more →
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</Layout>
+
+<style>
+.blog-hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 20px;
+  text-align: center;
+}
+
+.blog-hero h1 {
+  font-size: 36px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.blog-hero p {
+  opacity: 0.7;
+  font-size: 16px;
+}
+
+.blog-container {
+  max-width: 900px;
+  margin: 20px auto 60px;
+  padding: 0 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.blog-card {
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(120,120,255,0.2), rgba(0,0,0,0));
+}
+
+.blog-card-inner {
+  background: var(--background);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.blog-title {
+  text-decoration: none;
+}
+
+.blog-title h2 {
+  margin: 6px 0;
+  font-size: 22px;
+}
+
+.blog-date {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.blog-preview {
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.read-more {
+  font-size: clamp(.8rem, .8vw, 1rem);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.read-more:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+</style>

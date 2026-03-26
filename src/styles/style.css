@@ -204,3 +204,75 @@ p {
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   margin-bottom: 1rem;
 }
+
+
+
+/* ===== BLOG TYPOGRAPHY ===== */
+
+.content-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Headings */
+.content-container h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.content-container h2 {
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 14px;
+}
+
+.content-container h3 {
+  font-size: 22px;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.content-container p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 14px 0;
+  opacity: 0.9;
+}
+
+/* Lists */
+.content-container ul {
+  padding-left: 20px;
+  margin: 12px 0;
+}
+
+.content-container li {
+  margin: 6px 0;
+}
+
+/* Strong emphasis */
+.content-container strong {
+  font-weight: 600;
+}
+
+/* Horizontal spacing */
+.content-container hr {
+  margin: 40px 0;
+  opacity: 0.2;
+}
+
+/* Improve readability */
+.content-container {
+  letter-spacing: 0.2px;
+}
+
+/* Dark/light compatibility */
+:root[data-theme="dark"] .content-container {
+  color: #e5e7eb;
+}
+
+:root[data-theme="light"] .content-container {
+  color: #111827;
+}

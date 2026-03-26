@@ -6,27 +6,134 @@ import IndexBg from "../components/shared/IndexBg.astro";
 import "../styles/style.css";
 
 const { title } = Astro.props;
+
+// detect if we are on a blog post
+const isBlogPost =
+  Astro.url.pathname.startsWith("/blog/") && Astro.url.pathname !== "/blog";
 ---
 
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | VigilGuard</title>
     <link rel="icon" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap"
+    />
     <script is:inline>
       const theme = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", theme);
     </script>
+    <style is:global>
+      .circle-back-link {
+        position: fixed;
+        bottom: 30%;
+        left: 2rem;
+        z-index: 1000;
+      }
+
+      .circle-back-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        background: var(--bg-tertiary, #252635);
+        border-radius: 50%;
+        color: var(--text-primary, #ffffff);
+        text-decoration: none;
+        font-size: 1.75rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px var(--shadow-color, rgba(0, 0, 0, 0.4));
+        border: 1px solid var(--border-translucent, rgba(255, 255, 255, 0.1));
+      }
+
+      .circle-back-btn:hover {
+        transform: scale(1.05);
+        background: var(--bg-secondary, #1a1b26);
+        box-shadow: 0 4px 12px var(--shadow-color-strong, rgba(0, 0, 0, 0.5));
+      }
+
+      .circle-back-btn {
+        display: flex;
+        animation: pulseOutline 2s ease-in-out infinite;
+      }
+
+      @keyframes pulseOutline {
+        0% {
+          box-shadow: 0 0 0 0 var(--glow-color, rgba(115, 103, 240, 0.4));
+          border-color: var(--border-translucent, rgba(255, 255, 255, 0.1));
+        }
+        50% {
+          box-shadow: 0 0 0 2px var(--glow-color, rgba(115, 103, 240, 0.2));
+          border-color: var(--accent, #7367f0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 var(--glow-color, rgba(115, 103, 240, 0));
+          border-color: var(--border-translucent, rgba(255, 255, 255, 0.1));
+        }
+      }
+
+      /* Mobile styles - top center positioning */
+      @media (max-width: 768px) {
+        .circle-back-link {
+          position: fixed;
+          bottom: auto;
+          top: 12px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1000;
+        }
+
+        .circle-back-btn {
+          width: 2.5rem;
+          height: 2.5rem;
+          font-size: 1.5rem;
+          background: var(--bg-tertiary, #252635);
+          box-shadow: 0 2px 12px var(--shadow-color, rgba(0, 0, 0, 0.4));
+        }
+
+        .circle-back-btn:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Light theme adjustments - uses your existing theme variables */
+      [data-theme="light"] .circle-back-btn {
+        background: var(--bg-tertiary, #e8ebf0);
+        color: var(--text-primary, #1a1b26);
+        border: 1px solid var(--border-translucent, rgba(0, 0, 0, 0.1));
+      }
+
+      [data-theme="light"] .circle-back-btn:hover {
+        background: var(--bg-secondary, #f0f2f5);
+      }
+    </style>
   </head>
   <body>
     <Header />
     <IndexBg />
+
     <main class="relative z-10">
-      <slot />
+      <div class="content-container">
+        <slot />
+      </div>
     </main>
+
     <Footer />
     <CookieConsent />
+
+    {
+      isBlogPost && (
+        <div class="circle-back-link">
+          <a href="/blog" class="circle-back-btn" aria-label="Back to blog">
+            ←
+          </a>
+        </div>
+      )
+    }
   </body>
 </html>
