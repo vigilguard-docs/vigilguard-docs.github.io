@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/tailwind": "^6.0.2",
     "@iconify-json/lucide": "^1.2.72",
     "astro": "^6.1.1",
     "astro-compress": "^2.3.8",
