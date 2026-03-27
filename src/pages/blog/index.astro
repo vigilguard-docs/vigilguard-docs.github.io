@@ -82,6 +82,11 @@ const allPosts = Object.entries(posts)
       </div>
     ))}
   </div>
+
+  <!-- Floating back button -->
+  <div class="circle-back-link">
+    <a href="/" class="circle-back-btn" aria-label="Back to Home">←</a>
+  </div>
 </Layout>
 
 <style>
@@ -153,5 +158,80 @@ const allPosts = Object.entries(posts)
 .read-more:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+/* Floating back button with pulsing outline */
+.circle-back-link {
+  position: fixed;
+  bottom: auto;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.circle-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--bg-tertiary, #252635);
+  border-radius: 50%;
+  color: var(--text-primary, #ffffff);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 12px var(--shadow-color, rgba(0, 0, 0, 0.4));
+  border: 1px solid var(--border-translucent, rgba(255, 255, 255, 0.1));
+  animation: pulseOutline 2s ease-in-out infinite;
+}
+
+.circle-back-btn:hover {
+  transform: scale(1.05);
+  background: var(--bg-secondary, #1a1b26);
+}
+
+@keyframes pulseOutline {
+  0% {
+    box-shadow: 0 0 0 0 var(--glow-color, rgba(115, 103, 240, 0.4));
+    border-color: var(--border-translucent, rgba(255, 255, 255, 0.1));
+  }
+  50% {
+    box-shadow: 0 0 0 6px var(--glow-color, rgba(115, 103, 240, 0.2));
+    border-color: var(--accent, #7367f0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--glow-color, rgba(115, 103, 240, 0));
+    border-color: var(--border-translucent, rgba(255, 255, 255, 0.1));
+  }
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .circle-back-btn {
+  background: var(--bg-tertiary, #e8ebf0);
+  color: var(--text-primary, #1a1b26);
+  border: 1px solid var(--border-translucent, rgba(0, 0, 0, 0.1));
+  animation: pulseOutlineLight 2s ease-in-out infinite;
+}
+
+[data-theme="light"] .circle-back-btn:hover {
+  background: var(--bg-secondary, #f0f2f5);
+}
+
+@keyframes pulseOutlineLight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(115, 103, 240, 0.3);
+    border-color: var(--border-translucent, rgba(0, 0, 0, 0.1));
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(115, 103, 240, 0.15);
+    border-color: var(--accent, #7367f0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(115, 103, 240, 0);
+    border-color: var(--border-translucent, rgba(0, 0, 0, 0.1));
+  }
 }
 </style>
