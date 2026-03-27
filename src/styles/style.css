@@ -10,6 +10,14 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+nav, header, a, button, p, span, li {
+  font-family: inherit;
+}
+
 :root {
   /* Dark Theme (Default) */
   --bg-primary: #0b0c0e;
@@ -238,7 +246,7 @@ p {
 /* Paragraphs */
 .content-container p {
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.5;
   margin: 14px 0;
   opacity: 0.9;
 }

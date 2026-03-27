@@ -9,14 +9,13 @@ description: "Security is broken. We built VigilGuard to rethink external risk, 
 
 Security, as it exists today, is not built for how attacks actually happen.
 
-Most platforms measure compliance.  
-Some measure exposure.  
-Very few understand intent.
+- Most platforms measure compliance.  
+- Some measure exposure.  
+- Very few understand intent.
 
-Attackers do not think in controls.  
-They think in pathways, timing, and opportunity.
+Attackers do not think in controls.  They think in pathways, timing, and opportunity.
 
-That gap is where VigilGuard was built.
+*That gap is where VigilGuard was built.*
 
 ---
 
@@ -30,11 +29,9 @@ Enterprises have invested heavily in:
 
 And yet breaches continue to happen.
 
-Not because organizations lack tools.  
-But because the model itself is flawed.
+Not because organizations lack tools. But because the model itself is flawed.
 
-Security is treated as a checklist.  
-Attackers treat it as a system.
+*Security is treated as a checklist.  Attackers treat it as a system.*
 
 ---
 
@@ -58,8 +55,7 @@ VigilScan was built to answer a simple question:
 
 **What can an attacker see from the outside?**
 
-Not just ports and headers.  
-But patterns:
+Not just ports and headers... But patterns:
 
 - Organizational behavior  
 - Technology exposure  
@@ -67,6 +63,8 @@ But patterns:
 - Attack pre-positioning  
 
 It moves beyond scanning into understanding.
+
+*Agentic eyes to help you understand your external risk*
 
 ---
 
@@ -82,15 +80,15 @@ They assume:
 
 We know that is not how risk works.
 
-VendorGuard continuously evaluates vendor posture,  
-not just what they say, but what they expose.
+VendorGuard continuously evaluates vendor posture,not just what they say, but what they expose.
+
+*Single source, to assess your vendors*
 
 ---
 
 ## CrisisReady
 
 Most organizations do not fail because they lack plans.
-
 They fail because they have never operated under pressure.
 
 CrisisReady focuses on:
@@ -99,8 +97,9 @@ CrisisReady focuses on:
 - Cross-functional coordination  
 - Real-world scenario execution  
 
-It is not training.  
-It is simulation of reality.
+It is not training. It is simulation of reality.
+
+*Building CrisisReady into 
 
 ---
 
@@ -112,8 +111,7 @@ VigilGuard brings these together:
 - **VendorGuard** → Third-party risk  
 - **CrisisReady** → Operational readiness  
 
-Not as separate tools,  
-but as a unified model of risk.
+*Not as separate tools, but as a unified model of risk.*
 
 ---
 

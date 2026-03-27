@@ -9,32 +9,22 @@ description: "External presence is not just footprint. It is the system attacker
 
 Most security programs are built around what they control.
 
-Identity.  
-Endpoints.  
-Access.  
+- Identity
+- Endpoints  
+- Access  
 
 That is not where attacks start.
-
 Attackers begin with what they can observe without permission.
-
-Your external presence is not a perimeter.  
-It is a dataset.
+Your external presence is not a perimeter. It is a dataset.
 
 ---
 
 ## Enumeration Is Not Scanning
 
-Security teams talk about scanning.
+Security teams talk about scanning. Attackers perform enumeration. There is a difference.
 
-Attackers perform enumeration.
-
-There is a difference.
-
-Scanning answers:  
-*What is open?*
-
-Enumeration answers:  
-*What exists, how it connects, and what it implies.*
+Scanning answers:  *What is open?* \
+Enumeration answers:  *What exists, how it connects, and what it implies.*
 
 That includes:
 
@@ -44,15 +34,13 @@ That includes:
 - API surface inference from traffic patterns  
 - Vendor-linked infrastructure  
 
-By the time a scanner runs, the attacker already has a map.
+*By the time a scanner runs, the attacker already has a map.*
 
 ---
 
 ## The System You Don’t See
 
-No single system owns your external presence.
-
-It is the aggregation of:
+No single system owns your external presence. It is the aggregation of:
 
 - Engineering decisions  
 - Shadow infrastructure  
@@ -60,11 +48,9 @@ It is the aggregation of:
 - Legacy artifacts  
 - Temporary environments that never got removed  
 
-Individually, these are manageable.
+Individually, these are manageable. In aggregate, they form a system no one designed, but everyone depends on.
 
-In aggregate, they form a system no one designed, but everyone depends on.
-
-That is the system attackers study.
+*That is the system attackers study.*
 
 ---
 
@@ -80,13 +66,10 @@ Examples:
 - A vendor with broad access exposing predictable authentication flows  
 - TLS or email misconfigurations that enable trust manipulation  
 
-These are not isolated issues.
-
-They are entry points that align.
-
+These are not isolated issues. They are entry points that align.
 Attackers do not exploit vulnerabilities.
 
-They exploit relationships between them.
+*They exploit relationships between them.*
 
 ---
 
@@ -102,10 +85,9 @@ Assets appear and disappear constantly:
 - Access patterns drift  
 
 The longer something exists, the more likely it is to become misaligned.
-
 Attackers benefit from that drift.
 
-Most defenses do not account for it.
+*Most defenses do not account for it.*
 
 ---
 
@@ -119,23 +101,19 @@ They produce lists:
 - Findings  
 - Scores  
 
-But lists do not explain risk.
-
-Understanding requires:
+But lists do not explain risk. Understanding requires:
 
 - Correlation across domains  
 - Context of how assets are used  
 - Awareness of attacker workflows  
 
-Without that, teams respond to symptoms, not structure.
+*Without that, teams respond to symptoms, not structure.*
 
 ---
 
 ## What Actually Matters
 
-External risk is not about counting exposures.
-
-It is about identifying paths.
+External risk is not about counting exposures. It is about identifying paths.
 
 That means asking:
 
@@ -143,16 +121,14 @@ That means asking:
 - What can be inferred from that discovery?  
 - What can be chained into access or influence?  
 
-If you cannot answer those, you do not understand your attack surface.
+*If you cannot answer those, you do not understand your attack surface.*
 
 ---
 
 ## Final Thought
 
 You do not defend what you own.
-
 You defend what can be observed, mapped, and combined against you.
-
 That is your external presence.
 
-And that is where the attack begins. s
+**And that is where the attack begins.**

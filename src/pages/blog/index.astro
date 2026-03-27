@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 
 const posts = import.meta.glob("./*.md", { eager: true });
-// ✅ This is correct — Vite just wants this exact syntax
 const rawFiles = import.meta.glob("./*.md", {
   eager: true,
   query: "?raw",
@@ -11,24 +10,16 @@ const rawFiles = import.meta.glob("./*.md", {
 
 function truncate(text, max = 160) {
   if (!text || typeof text !== "string") return "";
-
   const clean = text.replace(/\s+/g, " ").trim();
-
   if (clean.length <= max) return clean;
-
   let cut = clean.slice(0, max);
-
-  // try word boundary
   const lastSpace = cut.lastIndexOf(" ");
-  if (lastSpace > max * 0.6) {
-    cut = cut.slice(0, lastSpace);
-  }
-
+  if (lastSpace > max * 0.6) cut = cut.slice(0, lastSpace);
   return cut.trim() + "...";
 }
+
 function extractText(path, post) {
   const description = post.frontmatter?.description ?? "";
-
   const raw = rawFiles[path];
   let body = "";
   if (raw) {
@@ -39,23 +30,20 @@ function extractText(path, post) {
       .replace(/\n+/g, " ")
       .trim();
   }
-
   if (description && body) return `${description} — ${body}`;
   if (description) return description;
-  body = body.replace(/\s+/g, " ").trim();
-  return body;
+  return body.replace(/\s+/g, " ").trim();
 }
 
 const allPosts = Object.entries(posts)
   .map(([path, post]) => {
     const fullSlug = path.replace("./", "").replace(".md", "");
     const rawText = extractText(path, post);
-
     return {
       url: `/blog/${fullSlug}`,
       title: post.frontmatter?.title ?? "Untitled",
       date: post.frontmatter?.date ?? "",
-      preview: truncate(rawText, 265), // generate a preview from description + content
+      preview: truncate(rawText, 265),
     };
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -68,27 +56,30 @@ const allPosts = Object.entries(posts)
   </section>
 
   <div class="blog-container">
+    <div id="search"></div>
+
     {
       allPosts.map((post) => (
-        <div class="blog-card">
+        <a href={post.url} class="blog-card">
           <div class="blog-card-inner">
             <p class="blog-date">{post.date}</p>
-
-            <a href={post.url} class="blog-title">
-              <h2>{post.title}</h2>
-            </a>
-
+            <h2 class="blog-title">{post.title}</h2>
             <p class="blog-preview">{post.preview}</p>
-
-            <a href={post.url} class="read-more">
-              Read more →
-            </a>
+            <span class="read-more">Read more →</span>
           </div>
-        </div>
+        </a>
       ))
     }
   </div>
 </Layout>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js" is:inline></script>
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    new PagefindUI({ element: "#search", showImages: false });
+  });
+</script>
 
 <style>
   .blog-hero {
@@ -116,16 +107,28 @@ const allPosts = Object.entries(posts)
     margin: 20px auto 60px;
     padding: 0 0px;
     display: grid;
-    gap: 20px;
+    gap: 12px;
   }
 
   .blog-card {
-    position: relative; /* Added to support the clickable overlay */
+    display: block;
+    text-decoration: none;
+    color: inherit;
     border-radius: 12px;
     padding: 1px;
     background: linear-gradient(
       135deg,
       rgba(120, 120, 255, 0.2),
+      rgba(0, 0, 0, 0)
+    );
+    transition: background 0.2s ease;
+    line-height: -50%;
+  }
+
+  .blog-card:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(120, 120, 255, 0.4),
       rgba(0, 0, 0, 0)
     );
   }
@@ -137,21 +140,6 @@ const allPosts = Object.entries(posts)
   }
 
   .blog-title {
-    text-decoration: none;
-  }
-
-  /* This makes the entire card clickable */
-  .blog-title::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-  }
-
-  .blog-title h2 {
     margin: 6px 0;
     font-size: 22px;
   }
@@ -164,19 +152,16 @@ const allPosts = Object.entries(posts)
   .blog-preview {
     font-size: 14px;
     opacity: 0.75;
-    margin: 10px 0;
-    line-height: 1.6;
+    margin: 4px 0 8px;
+    line-height: 1.1;
   }
 
   .read-more {
     font-size: clamp(0.8rem, 0.8vw, 1rem);
-    text-decoration: none;
     opacity: 0.8;
-    position: relative;
-    z-index: 2; /* Ensures "Read more" remains hoverable individually */
   }
 
-  .read-more:hover {
+  .blog-card:hover .read-more {
     opacity: 1;
     text-decoration: underline;
   }
