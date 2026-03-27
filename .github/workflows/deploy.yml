@@ -18,9 +18,7 @@ jobs:
       - name: Install, build, and upload
         uses: withastro/action@v3
         with:
-          # Forces the runner to Node 24 (fixing the deprecation warning)
           node-version: 24
-          # Forces npm to ignore the Astro 5 vs 6 version conflict
           package_manager_args: --legacy-peer-deps
 
   deploy:
