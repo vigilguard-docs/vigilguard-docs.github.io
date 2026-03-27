@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
@@ -7,10 +7,10 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://docs.vigilguard.com",
   output: 'static',
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
     icon({
       include: {
         lucide: ["*"],
