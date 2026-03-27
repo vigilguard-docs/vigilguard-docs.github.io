@@ -3,7 +3,11 @@ import Layout from "../../layouts/Layout.astro";
 
 const posts = import.meta.glob("./*.md", { eager: true });
 // ✅ This is correct — Vite just wants this exact syntax
-const rawFiles = import.meta.glob("./*.md", { eager: true, query: "?raw", import: "default" });
+const rawFiles = import.meta.glob("./*.md", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
 
 function truncate(text, max = 160) {
   if (!text || typeof text !== "string") return "";
@@ -64,173 +68,116 @@ const allPosts = Object.entries(posts)
   </section>
 
   <div class="blog-container">
-    {allPosts.map((post) => (
-      <div class="blog-card">
-        <div class="blog-card-inner">
-          <p class="blog-date">{post.date}</p>
+    {
+      allPosts.map((post) => (
+        <div class="blog-card">
+          <div class="blog-card-inner">
+            <p class="blog-date">{post.date}</p>
 
-          <a href={post.url} class="blog-title">
-            <h2>{post.title}</h2>
-          </a>
+            <a href={post.url} class="blog-title">
+              <h2>{post.title}</h2>
+            </a>
 
-          <p class="blog-preview">{post.preview}</p>
+            <p class="blog-preview">{post.preview}</p>
 
-          <a href={post.url} class="read-more">
-            Read more →
-          </a>
+            <a href={post.url} class="read-more">
+              Read more →
+            </a>
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-
-  <!-- Back button to home -->
-  <div class="circle-back-link">
-    <a href="/" class="circle-back-btn" aria-label="Back to Home">←</a>
+      ))
+    }
   </div>
 </Layout>
 
 <style>
-.blog-hero {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 20px 20px;
-  text-align: center;
-}
-
-.blog-hero h1 {
-  font-size: 36px;
-  line-height: 1.3;
-  margin-bottom: 12px;
-}
-
-.blog-hero p {
-  opacity: 0.7;
-  font-size: 16px;
-}
-
-.blog-container {
-  max-width: 900px;
-  margin: 20px auto 60px;
-  padding: 0 20px;
-  display: grid;
-  gap: 20px;
-}
-
-.blog-card {
-  border-radius: 12px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(120,120,255,0.2), rgba(0,0,0,0));
-}
-
-.blog-card-inner {
-  background: var(--background);
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.blog-title {
-  text-decoration: none;
-}
-
-.blog-title h2 {
-  margin: 6px 0;
-  font-size: 22px;
-}
-
-.blog-date {
-  font-size: 12px;
-  opacity: 0.5;
-}
-
-.blog-preview {
-  font-size: 14px;
-  opacity: 0.75;
-  margin: 10px 0;
-  line-height: 1.6;
-}
-
-.read-more {
-  font-size: clamp(.8rem, .8vw, 1rem);
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.read-more:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.circle-back-link {
-  position: fixed;
-  bottom: auto;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-}
-
-.circle-back-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  background: var(--bg-tertiary, #252635);
-  border-radius: 50%;
-  color: var(--text-primary, #ffffff);
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 12px var(--shadow-color, rgba(0, 0, 0, 0.4));
-  border: 1px solid var(--border-translucent, rgba(255, 255, 255, 0.1));
-  animation: pulseOutline 2s ease-in-out infinite;
-}
-
-.circle-back-btn:hover {
-  transform: scale(1.05);
-  background: var(--bg-secondary, #1a1b26);
-}
-
-@keyframes pulseOutline {
-  0% {
-    box-shadow: 0 0 0 0 var(--glow-color, rgba(115, 103, 240, 0.4));
-    border-color: var(--border-translucent, rgba(255, 255, 255, 0.1));
+  .blog-hero {
+    font-family: "Space Grotesk", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px 20px;
+    text-align: center;
   }
-  50% {
-    box-shadow: 0 0 0 6px var(--glow-color, rgba(115, 103, 240, 0.2));
-    border-color: var(--accent, #7367f0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 var(--glow-color, rgba(115, 103, 240, 0));
-    border-color: var(--border-translucent, rgba(255, 255, 255, 0.1));
-  }
-}
 
-/* Light theme adjustments */
-[data-theme="light"] .circle-back-btn {
-  background: var(--bg-tertiary, #e8ebf0);
-  color: var(--text-primary, #1a1b26);
-  border: 1px solid var(--border-translucent, rgba(0, 0, 0, 0.1));
-  animation: pulseOutlineLight 2s ease-in-out infinite;
-}
+  .blog-hero h1 {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
 
-[data-theme="light"] .circle-back-btn:hover {
-  background: var(--bg-secondary, #f0f2f5);
-}
+  .blog-hero p {
+    opacity: 0.7;
+    font-size: 16px;
+  }
 
-@keyframes pulseOutlineLight {
-  0% {
-    box-shadow: 0 0 0 0 rgba(115, 103, 240, 0.3);
-    border-color: var(--border-translucent, rgba(0, 0, 0, 0.1));
+  .blog-container {
+    font-family: "Space Grotesk", sans-serif;
+    max-width: 900px;
+    margin: 20px auto 60px;
+    padding: 0 0px;
+    display: grid;
+    gap: 20px;
   }
-  50% {
-    box-shadow: 0 0 0 6px rgba(115, 103, 240, 0.15);
-    border-color: var(--accent, #7367f0);
+
+  .blog-card {
+    position: relative; /* Added to support the clickable overlay */
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(120, 120, 255, 0.2),
+      rgba(0, 0, 0, 0)
+    );
   }
-  100% {
-    box-shadow: 0 0 0 0 rgba(115, 103, 240, 0);
-    border-color: var(--border-translucent, rgba(0, 0, 0, 0.1));
+
+  .blog-card-inner {
+    background: var(--background);
+    padding: 20px;
+    border-radius: 12px;
   }
-}
+
+  .blog-title {
+    text-decoration: none;
+  }
+
+  /* This makes the entire card clickable */
+  .blog-title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .blog-title h2 {
+    margin: 6px 0;
+    font-size: 22px;
+  }
+
+  .blog-date {
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  .blog-preview {
+    font-size: 14px;
+    opacity: 0.75;
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+
+  .read-more {
+    font-size: clamp(0.8rem, 0.8vw, 1rem);
+    text-decoration: none;
+    opacity: 0.8;
+    position: relative;
+    z-index: 2; /* Ensures "Read more" remains hoverable individually */
+  }
+
+  .read-more:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
 </style>

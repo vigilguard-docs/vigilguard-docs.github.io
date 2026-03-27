@@ -3,15 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host --force",
     "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^6.0.2",
     "@iconify-json/lucide": "^1.2.72",
-    "astro": "^5.16.7",
+    "astro": "^6.1.1",
     "astro-compress": "^2.3.8",
     "astro-icon": "^1.1.5",
     "lucide": "^0.552.0",
