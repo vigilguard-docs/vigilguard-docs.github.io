@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: "External Presence Is the Attack Surface"
-date: "2026-03-26"
+date: "2025-07-08"
 description: "External presence is not just footprint. It is the system attackers model, map, and exploit."
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: "Why We Built VigilGuard"
-date: "2026-03-25"
+date: "2025-07-01"
 description: "Security is broken. We built VigilGuard to rethink external risk, adversarial behavior, and real-world readiness."
 ---
 
