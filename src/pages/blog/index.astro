@@ -8,7 +8,7 @@ const rawFiles = import.meta.glob("./*.md", {
   import: "default",
 });
 
-function truncate(text, max = 160) {
+function truncate(text, max = 265) {
   if (!text || typeof text !== "string") return "";
   const clean = text.replace(/\s+/g, " ").trim();
   if (clean.length <= max) return clean;
@@ -19,19 +19,22 @@ function truncate(text, max = 160) {
 }
 
 function extractText(path, post) {
-  const description = post.frontmatter?.description ?? "";
   const raw = rawFiles[path];
+  const title = post.frontmatter?.title ?? "";
   let body = "";
   if (raw) {
     body = raw
       .replace(/---[\s\S]*?---/, "")
-      .replace(/^#{1,6}.+$/gm, "")
+      .replace(/^#{1,6}\s*.+$/gm, "")
+      .replace(/^layout:.*$/gm, "")
       .replace(/[#>*_`[\]()-]/g, "")
       .replace(/\n+/g, " ")
       .trim();
   }
-  if (description && body) return `${description} — ${body}`;
-  if (description) return description;
+  if (title) {
+    const escaped = title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    body = body.replace(new RegExp(escaped, "g"), "");
+  }
   return body.replace(/\s+/g, " ").trim();
 }
 
@@ -47,6 +50,9 @@ const allPosts = Object.entries(posts)
     };
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const pinned = allPosts.find(p => p.url.includes("why-vigilguard"));
+const rest = allPosts.filter(p => !p.url.includes("why-vigilguard"));
 ---
 
 <Layout title="Blog">
@@ -58,18 +64,33 @@ const allPosts = Object.entries(posts)
   <div class="blog-container">
     <div id="search"></div>
 
-    {
-      allPosts.map((post) => (
-        <a href={post.url} class="blog-card">
-          <div class="blog-card-inner">
-            <p class="blog-date">{post.date}</p>
-            <h2 class="blog-title">{post.title}</h2>
-            <p class="blog-preview">{post.preview}</p>
-            <span class="read-more">Read more →</span>
+    {pinned && (
+      <a href={pinned.url} class="blog-card pinned">
+        <div class="blog-card-inner">
+          <div class="pinned-header">
+            <svg class="pin-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2l-2-2z"/>
+            </svg>
+            <span class="pin-label">Pinned</span>
           </div>
-        </a>
-      ))
-    }
+          <p class="blog-date">{pinned.date}</p>
+          <h2 class="blog-title">{pinned.title}</h2>
+          <p class="blog-preview">{pinned.preview}</p>
+          <span class="read-more">Read more →</span>
+        </div>
+      </a>
+    )}
+
+    {rest.map((post) => (
+      <a href={post.url} class="blog-card">
+        <div class="blog-card-inner">
+          <p class="blog-date">{post.date}</p>
+          <h2 class="blog-title">{post.title}</h2>
+          <p class="blog-preview">{post.preview}</p>
+          <span class="read-more">Read more →</span>
+        </div>
+      </a>
+    ))}
   </div>
 </Layout>
 
@@ -105,7 +126,7 @@ const allPosts = Object.entries(posts)
     font-family: "Space Grotesk", sans-serif;
     max-width: 900px;
     margin: 20px auto 60px;
-    padding: 0 0px;
+    padding: 0;
     display: grid;
     gap: 12px;
   }
@@ -116,27 +137,42 @@ const allPosts = Object.entries(posts)
     color: inherit;
     border-radius: 12px;
     padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(120, 120, 255, 0.2),
-      rgba(0, 0, 0, 0)
-    );
+    background: linear-gradient(135deg, rgba(120, 120, 255, 0.2), rgba(0, 0, 0, 0));
     transition: background 0.2s ease;
-    line-height: -50%;
   }
 
   .blog-card:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(120, 120, 255, 0.4),
-      rgba(0, 0, 0, 0)
-    );
+    background: linear-gradient(135deg, rgba(120, 120, 255, 0.4), rgba(0, 0, 0, 0));
+  }
+
+  .blog-card.pinned {
+    background: linear-gradient(135deg, rgba(136, 81, 172, 0.35), rgba(0, 0, 0, 0));
   }
 
   .blog-card-inner {
     background: var(--background);
     padding: 20px;
     border-radius: 12px;
+  }
+
+  .pinned-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+
+  .pin-icon {
+    opacity: 0.45;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .pin-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.45;
   }
 
   .blog-title {
