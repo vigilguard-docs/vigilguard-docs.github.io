@@ -17,13 +17,13 @@ const currentYear = new Date().getFullYear();
         <h3 class="footer-heading">External Risk</h3>
         <ul class="footer-links">
           <li>
-            <a href="https://vigilguard.com/vigilscan" target="_blank">
+            <a href="https://vigilguard.com/vigilscan">
               <img src={VigilScanLogo.src} class="product-logo" alt="" />
               <span>VigilScan EASM</span>
             </a>
           </li>
           <li>
-            <a href="https://vigilguard.com/crisisready">
+            <a href="/crisisready">
               <img src={VigilScanLogo.src} class="product-logo" alt="" />
               <span>CrisisReady</span>
             </a>
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear();
         <h3 class="footer-heading">Vendor Risk</h3>
         <ul class="footer-links">
           <li>
-            <a href="https://vigilguard.com/vendorguard" target="_blank">
+            <a href="https://vigilguard.com/vendorguard">
               <img src={VendorGuardLogo.src} class="product-logo" alt="" />
               <span>VendorGuard VRM</span>
             </a>
@@ -156,7 +156,6 @@ const currentYear = new Date().getFullYear();
 
 <style>
   .site-footer {
-    padding: 60px 20px 40px;
     border-top: 1px solid var(--border-secondary);
     background: rgba(var(--bg-primary-rgb), 0.9);
     color: var(--text-secondary);
@@ -165,13 +164,15 @@ const currentYear = new Date().getFullYear();
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 60px 40px 40px;
   }
 
   .footer-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin-bottom: 40px;
+    justify-items: center;
   }
 
   .footer-column {
@@ -303,7 +304,8 @@ const currentYear = new Date().getFullYear();
     }
   }
 
-.footer-column {
+
+  .footer-column {
   display: flex;
   flex-direction: column;
   gap: 16px;
