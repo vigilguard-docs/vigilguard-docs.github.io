@@ -7,19 +7,17 @@ import BlueskyLogo from "../../assets/bluesky.svg";
 import DocsLogo from "../../assets/vigilguard-docs.svg";
 import vigilguardBlogLogo from "../../assets/vigilguard-blog.svg";
 
-
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-grid">
-      
       <div class="footer-column">
         <h3 class="footer-heading">External Risk</h3>
         <ul class="footer-links">
           <li>
-            <a href="https://vigilguard.com/vigilscan">
+            <a href="https://vigilguard.com/vigilscan" target="_blank">
               <img src={VigilScanLogo.src} class="product-logo" alt="" />
               <span>VigilScan EASM</span>
             </a>
@@ -43,7 +41,7 @@ const currentYear = new Date().getFullYear();
         <h3 class="footer-heading">Vendor Risk</h3>
         <ul class="footer-links">
           <li>
-            <a href="https://vigilguard.com/vendorguard">
+            <a href="https://vigilguard.com/vendorguard" target="_blank">
               <img src={VendorGuardLogo.src} class="product-logo" alt="" />
               <span>VendorGuard VRM</span>
             </a>
@@ -55,7 +53,10 @@ const currentYear = new Date().getFullYear();
             </a>
           </li>
           <li>
-            <a href="https://vendors.vendorguard.vigilguard.com" class="login-link">
+            <a
+              href="https://vendors.vendorguard.vigilguard.com"
+              class="login-link"
+            >
               <Icon name="lucide:users" class="icon" />
               <span>Vendor Portal</span>
             </a>
@@ -79,7 +80,7 @@ const currentYear = new Date().getFullYear();
             </a>
           </li>
           <li>
-            <a href="https://docs.vigilguard.com/blog" class="login-link">
+            <a href="https://docs.vigilguard.com/blog">
               <img src={vigilguardBlogLogo.src} class="product-logo" alt="" />
               <span>Security Blog</span>
             </a>
@@ -90,10 +91,10 @@ const currentYear = new Date().getFullYear();
       <div class="footer-column">
         <h3 class="footer-heading">Company</h3>
         <ul class="footer-links">
-          <li><a href="https://vigilguard.com/aboutus">About Us</a></li>
-          <li><a href="https://vigilguard.com/careers">Careers</a></li>
-          <li><a href="https://vigilguard.com/contact">Contact Support</a></li>
-          <li><a href="https://vigilguard.com/terms-and-privacy">Terms & Privacy</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/contact">Contact Support</a></li>
+          <li><a href="/terms-and-privacy">Terms & Privacy</a></li>
         </ul>
       </div>
     </div>
@@ -101,21 +102,53 @@ const currentYear = new Date().getFullYear();
     <div class="footer-bottom-row">
       <div class="bottom-left">
         <ul class="social-links">
-          <li><a href="https://github.com/vigilguard" target="_blank" aria-label="GitHub"><Icon name="lucide:github" class="icon" /></a></li>
-          <li><a href="https://linkedin.com/company/vigilguard" target="_blank" aria-label="LinkedIn"><Icon name="lucide:linkedin" class="icon" /></a></li>
-          <li><a href="https://x.com/VigilGuardCom" target="_blank" aria-label="Twitter"><Icon name="lucide:twitter" class="icon" /></a></li>
-          <li><a href="https://bsky.app/profile/vigilguard.com" target="_blank" aria-label="Bluesky"><img src={BlueskyLogo.src} class="icon" alt="" /></a></li>
-          <li><a href="mailto:info@vigilguard.com" aria-label="Email"><Icon name="lucide:mail" class="icon" /></a></li>
+          <li>
+            <a
+              href="https://github.com/vigilguard"
+              target="_blank"
+              aria-label="GitHub"><Icon name="lucide:github" class="icon" /></a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/company/vigilguard"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><Icon name="lucide:linkedin" class="icon" /></a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/VigilGuardCom"
+              target="_blank"
+              aria-label="Twitter"
+              ><Icon name="lucide:twitter" class="icon" /></a>
+          </li>
+          <li>
+            <a
+              href="https://bsky.app/profile/vigilguard.com"
+              target="_blank"
+              aria-label="Bluesky"
+              ><img src={BlueskyLogo.src} class="icon" alt="" /></a>
+          </li>
+          <li>
+            <a href="mailto:info@vigilguard.com" aria-label="Email"
+              ><Icon name="lucide:mail" class="icon" /></a>
+          </li>
         </ul>
         <div class="bottom-divider"></div>
-        <a href="https://vigilguard.statuspage.io" target="_blank" class="status-link">
+        <a
+          href="https://vigilguard.statuspage.io"
+          target="_blank"
+          class="status-link"
+        >
           <Icon name="lucide:activity" class="status-icon" />
           <span>Systems Operational</span>
         </a>
       </div>
 
       <div class="bottom-right">
-        <span class="copyright-text">&copy; {currentYear} VigilGuard. All rights reserved.</span>
+        <span class="copyright-text"
+          >&copy; {currentYear} VigilGuard. All rights reserved.</span
+        >
       </div>
     </div>
   </div>
@@ -148,7 +181,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-heading {
-    font-size: clamp(0.8rem, 2vw, .9rem);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     font-weight: 600;
     color: var(--text-primary);
     text-transform: uppercase;
@@ -166,7 +199,7 @@ const currentYear = new Date().getFullYear();
 
   .footer-links a {
     text-decoration: none;
-    font-size: clamp(0.8rem, 1.5vw, .9rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -182,7 +215,8 @@ const currentYear = new Date().getFullYear();
     color: var(--brand-purple) !important;
   }
 
-  .product-logo, .icon {
+  .product-logo,
+  .icon {
     width: 20px;
     height: 20px;
   }
@@ -218,7 +252,9 @@ const currentYear = new Date().getFullYear();
 
   .social-links a {
     color: var(--text-secondary);
-    transition: transform 0.2s, color 0.2s;
+    transition:
+      transform 0.2s,
+      color 0.2s;
     display: flex;
   }
 
@@ -266,6 +302,45 @@ const currentYear = new Date().getFullYear();
       display: none;
     }
   }
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Remove align-items: center */
+}
+
+.footer-heading {
+  font-size: clamp(0.8rem, 2vw, .9rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0; /* Reset margin */
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: clamp(0.8rem, 1.5vw, .9rem);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  /* Remove justify-content: center */
+}
+
+
+
 
   @media (max-width: 768px) {
     .footer-grid {
