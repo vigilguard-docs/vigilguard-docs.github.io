@@ -3,182 +3,191 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="VigilScan Documentation Access">
-  <div class="page-wrapper">
-    <main class="access-box">
-      <h1 class="heading">VigilScan Documentation</h1>
+  <div class="page">
 
-      <p class="description">
-        Detailed documentation for our <strong>997+ security scanners</strong> is
-        maintained in a private repository. If you would like access, please
-        submit a request through our GitHub access portal.
-      </p>
+    <div class="badge">
+      <span class="dot"></span>
+      Documentation Access
+    </div>
 
-      <div class="button-group">
-        <a
-          href="https://github.com/vigilguard-docs/vigilguard-docs.github.io/issues/new?template=request_access.yml"
-          class="btn-primary"
-          target="_blank"
-          rel="noopener"
-        >
-          Request Access via GitHub
-        </a>
+    <h1 class="headline">
+      1000+ Signals, translated into scanners.<br />
+      <em>Request access to get started.</em>
+    </h1>
 
-        <div class="divider">or</div>
+    <p class="desc">
+      Our scanner documentation is maintained in a private repository to protect
+      methodology and prevent adversarial reverse-engineering. Request access via GitHub
+      or open the docs if you're already approved.
+    </p>
 
-        <a
-          href="https://github.com/vigilguard-docs/vigilscan-docs"
-          class="btn-secondary"
-          target="_blank"
-          rel="noopener"
-        >
-          Already have access? Open Documentation
-        </a>
+    <div class="actions">
+      <a
+        href="https://github.com/vigilguard-docs/vigilguard-docs.github.io/issues/new?template=request_access.yml"
+        class="btn-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        Request Access via GitHub
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+
+      <a
+        href="https://github.com/vigilguard-docs/vigilscan-docs"
+        class="btn-ghost"
+        target="_blank"
+        rel="noopener"
+      >
+        Already have access? Open Docs →
+      </a>
+    </div>
+
+    <div class="meta">
+      <div class="meta-item">
+        <span class="meta-num">997+</span>
+        <span class="meta-label">Scanners documented</span>
       </div>
-    </main>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-num">12</span>
+        <span class="meta-label">Risk dimensions</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-num">Private</span>
+        <span class="meta-label">Access controlled</span>
+      </div>
+    </div>
+
   </div>
 </Layout>
 
 <style>
-.page-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  padding-top: 5rem;
-}
-
-.access-box {
-  text-align: center;
-  max-width: 780px;
-  padding: 2rem;
-}
-
-.heading {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.15;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.description {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 2.8rem;
-}
-
-.button-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-/* Primary button */
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.9rem 2.6rem;
-  border-radius: 999px;
-
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-
-  background: var(--accent-gradient);
-  color: #fff;
-
-  border: 1px solid var(--border-translucent);
-
-  box-shadow:
-    0 8px 20px var(--shadow-color),
-    0 0 14px var(--glow-color);
-
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    filter 0.18s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.05);
-
-  box-shadow:
-    0 12px 28px var(--shadow-color-strong),
-    0 0 18px var(--glow-color);
-}
-
-/* Secondary button */
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.9rem 2.6rem;
-  border-radius: 999px;
-
-  font-weight: 600;
-  font-size: 1rem;
-
-  color: var(--accent);
-  border: 2px solid var(--border-translucent);
-  background: var(--bg-translucent);
-
-  transition:
-    transform 0.18s ease,
-    background 0.18s ease,
-    border-color 0.18s ease;
-}
-
-.btn-secondary:hover {
-  transform: translateY(-2px);
-  background: rgba(115, 103, 240, 0.1);
-  border-color: var(--accent);
-}
-
-/* Divider */
-
-.divider {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-}
-
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--border-translucent);
-}
-
-.divider::before {
-  margin-right: 0.8rem;
-}
-
-.divider::after {
-  margin-left: 0.8rem;
-}
-
-@media (max-width: 768px) {
-  .heading {
-    font-size: 2.2rem;
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 120px 4vw 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 32px;
   }
 
-  .description {
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-purple);
+    border: 1px solid rgba(115, 103, 240, 0.3);
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(115, 103, 240, 0.06);
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-purple);
+    box-shadow: 0 0 8px var(--brand-purple);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .headline {
+    font-size: clamp(2.8rem, 5vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  .headline em {
+    font-style: normal;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .desc {
     font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 540px;
   }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-ghost {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--brand-purple); }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-translucent);
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-num { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.03em; line-height: 1; }
+  .meta-label { font-size: 0.7rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .meta-divider { width: 1px; height: 32px; background: var(--border-translucent); }
+
+
+.headline, .desc, .meta {
+  max-width: none;
+  width: 100%;
 }
+
+  @media (max-width: 768px) {
+    .page { padding: 100px 24px 60px; align-items: center; text-align: center; }
+    .desc { max-width: 100%; }
+    .actions { justify-content: center; }
+    .meta { justify-content: center; }
+  }
 </style>
