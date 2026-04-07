@@ -1,14 +1,21 @@
 <svg fill="none" height="512" viewBox="0 0 60 60" width="512" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="paint0_linear_203_10034" gradientUnits="userSpaceOnUse" x1="30" x2="30" y1="4" y2="57">
-      <stop offset="0" stop-color="#ce9ffc"></stop>
-      <stop offset="1" stop-color="#7367f0"></stop>
+      <stop offset="0" stop-color="#ce9ffc"/>
+      <stop offset="1" stop-color="#7367f0"/>
     </linearGradient>
-  </defs>
-  
-  <path fill="url(#paint0_linear_203_10034)" d="m51 15c-12.467-.005-18.034-7.609-19.551-10.17-.304-.514-.851-.83-1.449-.83s-1.144.316-1.449.83c-1.517 2.561-7.084 10.165-19.551 10.17-1.104 0-2 .896-2 2v10c0 19.096 16.575 27.645 20.951 29.568.649.285 1.341.432 2.049.432s1.4-.147 2.049-.432c4.376-1.923 20.951-10.472 20.951-29.568v-10c0-1.104-.896-2-2-2z" />
-  
-  <g stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 27 L24 33 L18 39" fill="none" /> <path d="M29 41 L35 25" /> <path d="M38 39 L44 39" /> </g>
-</svg>
 
+    <mask id="terminalCutoutMask">
+      <rect width="60" height="60" fill="white"/>
+      <path d="M18 27 L24 33 L18 39" fill="none" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M29 41 L35 25" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M38 39 L44 39" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+
+  <path
+    fill="url(#paint0_linear_203_10034)"
+    mask="url(#terminalCutoutMask)"
+    d="m51 15c-12.467-.005-18.034-7.609-19.551-10.17-.304-.514-.851-.83-1.449-.83s-1.144.316-1.449.83c-1.517 2.561-7.084 10.165-19.551 10.17-1.104 0-2 .896-2 2v10c0 19.096 16.575 27.645 20.951 29.568.649.285 1.341.432 2.049.432s1.4-.147 2.049-.432c4.376-1.923 20.951-10.472 20.951-29.568v-10c0-1.104-.896-2-2-2z"
+  />
+</svg>
