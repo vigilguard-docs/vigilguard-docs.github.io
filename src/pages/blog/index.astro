@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import vigilguardBlog from "../../assets/vigilguard-blog.svg";
 
 const posts = import.meta.glob("./*.md", { eager: true });
 const rawFiles = import.meta.glob("./*.md", {
@@ -56,8 +57,15 @@ const rest = allPosts.filter(p => !p.url.includes("why-vigilguard"));
 ---
 
 <Layout title="Blog">
+      <div class="eyebrow">
+      <span class="dot"></span>
+      VigilGuard Blog
+    </div>
+
   <section class="blog-hero">
-    <h1>Insights on Risk, Security, and Adversarial Thinking</h1>
+  <img src={vigilguardBlog.src} alt="VigilGuard Blog" width=128" />
+
+    <h1>Blog: Insights on Risk, Security, and Adversarial Thinking</h1>
     <p>Not compliance. Not checklists. Real-world security.</p>
   </section>
 
@@ -154,7 +162,31 @@ const rest = allPosts.filter(p => !p.url.includes("why-vigilguard"));
     padding: 20px;
     border-radius: 12px;
   }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-purple);
+    border: 1px solid rgba(115, 103, 240, 0.3);
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(115, 103, 240, 0.06);
+    width: fit-content;
+    margin-top: 20px ; margin-bottom: -80px;
+  }
 
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-purple);
+    box-shadow: 0 0 8px var(--brand-purple);
+    animation: pulse 2s ease-in-out infinite;
+  }
   .pinned-header {
     display: flex;
     align-items: center;
