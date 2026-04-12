@@ -56,7 +56,7 @@ const pinned = allPosts.find(p => p.url.includes("why-vigilguard"));
 const rest = allPosts.filter(p => !p.url.includes("why-vigilguard"));
 ---
 
-<Layout title="Blog">
+<Layout title="Blog" isWide={true}>
       <div class="eyebrow">
       <span class="dot"></span>
       VigilGuard Blog

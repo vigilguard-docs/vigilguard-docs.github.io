@@ -6,11 +6,11 @@ import IndexBg from "../components/shared/IndexBg.astro";
 import vigilguardBlogLogo from "../assets/vigilguard-blog.svg";
 import "../styles/style.css";
 
-const { title, frontmatter } = Astro.props;
+const { title, frontmatter, isWide } = Astro.props;
 
 const path = Astro.url.pathname.replace(/\/$/, "");
 const segments = path.split('/').filter(Boolean);
-const isBlogPost = segments.length >= 2 && segments[0] === 'blog';
+const isBlogPost = segments.length >= 2 && (segments[0] === 'blog' || segments[0] === 'learning');
 
 const displayTitle = frontmatter?.title || title;
 const date = frontmatter?.date || "";
@@ -34,12 +34,12 @@ const date = frontmatter?.date || "";
 
     {isBlogPost && (
       <div class="circle-back-link">
-        <a href="/blog" class="circle-back-btn" aria-label="Back to Blog">←</a>
+        <a href={segments[0] === 'learning' ? '/learning' : '/blog'} class="circle-back-btn" aria-label="Back">←</a>
       </div>
     )}
 
     <main class="relative z-10">
-      <article class="content-container">
+      <article class={isWide ? "wide-container" : "content-container"}>
         {isBlogPost && (
           <header class="post-research-header">
             <div class="terminal-meta">
@@ -62,6 +62,13 @@ const date = frontmatter?.date || "";
 </html>
 
 <style is:global>
+  .wide-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    background-color: var(--bg-primary);
+  }
+
   .markdown-body,
   .markdown-body p,
   .markdown-body li {

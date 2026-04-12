@@ -1,0 +1,71 @@
+---
+title: "BAS: Breach & Attack Simulation"
+date: 2026-04-11
+layout: ../../layouts/Layout.astro
+---
+
+# Breach & Attack Simulation (BAS)
+
+You have controls. You've spent significant budget deploying them. The question you probably can't answer with confidence is: do they actually work against the attacks happening right now?
+
+## What It Actually Is
+
+Breach and Attack Simulation is the automated, continuous testing of security controls against real-world attack techniques — mapped to frameworks like MITRE ATT&CK — to validate whether those controls detect, prevent, or alert as expected. BAS platforms simulate attacker behavior across the kill chain: initial access, lateral movement, privilege escalation, data exfiltration, command and control. They do this continuously, not as a one-time exercise.
+
+The output isn't a pentest report. It's an ongoing, operational signal: here are the attack techniques your controls failed against, here is where detection gaps exist, here is how your posture has changed since last week.
+
+## The Problem BAS Solves
+
+Security teams make a persistent and dangerous assumption: that deployed controls are working controls. A firewall rule exists — therefore traffic is blocked. An EDR is installed — therefore malware is detected. A SIEM alert is configured — therefore the SOC will see the attack.
+
+None of these are the same thing. Controls fail silently. Configurations drift. Rule sets go stale. Agent coverage has gaps. Alert logic that worked against last year's techniques doesn't work against this year's. The only way to know whether a control is actually providing the protection you're crediting it for is to test it — against realistic techniques, regularly.
+
+Traditional approaches to this problem — annual penetration tests, red team exercises — are valuable but insufficient. They're point-in-time. Your environment changes continuously. A pentest from six months ago tells you about your posture six months ago. BAS tells you about your posture today.
+
+## What BAS Actually Tests
+
+A mature BAS program covers the full attack lifecycle:
+
+**Initial access** — phishing simulation, credential stuffing, exploitation of external-facing vulnerabilities. Does your email security catch the payload? Does your EDR fire on execution?
+
+**Lateral movement** — pass-the-hash, Kerberoasting, SMB exploitation, living-off-the-land techniques using legitimate Windows tools. Can an attacker move from a compromised workstation to a domain controller without triggering an alert?
+
+**Privilege escalation** — local admin abuse, token impersonation, misconfigured service accounts. How far can an attacker elevate from a standard user context?
+
+**Data exfiltration** — DNS tunneling, HTTPS exfiltration to known-bad destinations, large file transfers to cloud storage. Does your DLP catch it? Does your network monitoring flag it?
+
+**Command and control** — beacon traffic to C2 infrastructure, domain fronting, encrypted channels. Does your proxy or firewall block the callback? Does your SIEM correlate the pattern?
+
+Each of these maps to specific ATT&CK techniques, so findings are immediately actionable — you know exactly which technique failed which control, and you can cross-reference against threat intelligence on which techniques active threat actors in your sector are using.
+
+## How BAS Differs from Pentesting and Red Teaming
+
+Penetration testing is skilled, manual, and bounded. A team of testers is given scope and time, they find what they can find, and they write a report. It's valuable for depth — a skilled pentester will find things an automated platform won't. It's limited in frequency and coverage — you get it once or twice a year, and it covers a defined scope.
+
+Red teaming is adversary simulation at a higher level of sophistication — longer engagements, realistic threat actor emulation, focus on objectives rather than vulnerability lists. Extremely valuable. Also expensive, slow, and episodic.
+
+BAS is continuous and broad. It doesn't replace pentesting or red teaming — it changes what those engagements need to accomplish. If BAS is running continuously, your annual pentest doesn't need to re-validate basic control effectiveness. It can focus on the things BAS can't do: chained exploitation, social engineering, physical access, complex business logic attacks. The two complement each other.
+
+## The MITRE ATT&CK Connection
+
+ATT&CK is the taxonomy that makes BAS operationally useful. Without a common framework for describing attack techniques, BAS findings are hard to prioritize, hard to communicate, and hard to track over time. With ATT&CK, every finding maps to a specific technique ID — you can track your coverage across the matrix, identify systematic gaps, and communicate results in a language that threat intelligence teams, SOC analysts, and security architects all share.
+
+A mature BAS program produces an ATT&CK coverage map that shows, for each technique, whether your controls prevent it, detect it, or miss it entirely. That map is one of the most honest representations of your actual security posture available — more honest than a compliance checklist, more current than a pentest report.
+
+## The Operational Reality
+
+BAS requires investment beyond the platform license. Someone needs to review findings, triage results, and drive remediation. If BAS output goes into a dashboard that nobody acts on, you've bought an expensive way to confirm your controls are broken without fixing them.
+
+The teams that get the most value from BAS treat it as a closed loop: simulation runs, findings triage, remediation tickets open, fixes deploy, simulation re-runs to confirm the fix worked. That loop needs to be fast — days, not weeks. Control gaps that sit open for months after they've been identified are worse than not knowing, because now you have documented evidence of a known gap.
+
+## Where BAS Fits in the Broader Program
+
+BAS is the validation stage of CTEM. You've scoped your environment, discovered your exposures, and prioritized what matters. BAS answers the question that prioritization can't: is this exposure actually exploitable given your current control set? A vulnerability with a working exploit that your EDR catches is different from the same vulnerability that bypasses your detection entirely. BAS tells you which is which.
+
+BAS also feeds your SOC directly. Simulation results that trigger no alerts are detection gaps — specific techniques your analysts will not see when a real attacker uses them. That's tuning input, not just a risk finding.
+
+## Actionable Takeaways
+
+**Pick five ATT&CK techniques that are commonly used by threat actors targeting your industry and ask your SOC whether they have validated detection for each one.** Not "we have a rule" — validated, tested, confirmed to fire. The answer will tell you more about your actual detection capability than any dashboard metric.
+
+**If you ran a BAS simulation today and it produced zero alerts in your SIEM, the correct conclusion is not that your environment is clean.** It means your simulation isn't reaching your detection layer, your detection layer isn't working, or both. Either way, that's the finding — and it's more important than anything on your vulnerability list.
