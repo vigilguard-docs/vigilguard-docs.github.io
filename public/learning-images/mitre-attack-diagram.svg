@@ -1,0 +1,70 @@
+<svg width="100%" viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="520" fill="var(--bg-primary, #0b0c0e)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="14" font-weight="700" fill="var(--text-primary, #ffffff)" x="380" y="38" text-anchor="middle">MITRE ATT&amp;CK — ADVERARY BEHAVIOR MATRIX</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-secondary, #5c5f70)" x="380" y="56" text-anchor="middle">A knowledge base of tactics, techniques, and procedures observed in real attacks</text>
+
+  <rect x="40" y="84" width="600" height="72" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--brand-purple, #7367f0)" x="380" y="108" text-anchor="middle">TACTICS = THE ATTACKER’S GOAL</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="380" y="126" text-anchor="middle">Why the attacker is doing something, not just what tool they used</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="380" y="143" text-anchor="middle">Examples: Initial Access · Persistence · Discovery · Exfiltration · Impact</text>
+
+  <rect x="40" y="176" width="140" height="220" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="110" y="200" text-anchor="middle">INITIAL ACCESS</text>
+  <rect x="58" y="214" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="110" y="228" text-anchor="middle">Phishing</text>
+  <rect x="58" y="242" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="110" y="256" text-anchor="middle">Valid Accounts</text>
+  <rect x="58" y="270" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.1"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="110" y="284" text-anchor="middle">Exploit Public-Facing App</text>
+  <rect x="58" y="298" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="110" y="312" text-anchor="middle">Drive-by</text>
+  <rect x="58" y="326" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="110" y="340" text-anchor="middle">Supply Chain</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="110" y="365" text-anchor="middle">First foothold</text>
+
+  <rect x="192" y="176" width="140" height="220" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="262" y="200" text-anchor="middle">PERSISTENCE</text>
+  <rect x="210" y="214" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="262" y="228" text-anchor="middle">Scheduled tsk</text>
+  <rect x="210" y="242" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="262" y="256" text-anchor="middle">Startup Item</text>
+  <rect x="210" y="270" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.1"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="262" y="284" text-anchor="middle">Create Account</text>
+  <rect x="210" y="298" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="262" y="312" text-anchor="middle">Registry Run Keys</text>
+  <rect x="210" y="326" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="262" y="340" text-anchor="middle">Web Shell</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="262" y="365" text-anchor="middle">Stay in place</text>
+
+  <rect x="344" y="176" width="140" height="220" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="414" y="200" text-anchor="middle">DISCOVERY</text>
+  <rect x="362" y="214" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="414" y="228" text-anchor="middle">System Info</text>
+  <rect x="362" y="242" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="414" y="256" text-anchor="middle">Network Scan</text>
+  <rect x="362" y="270" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.1"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="414" y="284" text-anchor="middle">Cloud Service Discovery</text>
+  <rect x="362" y="298" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="414" y="312" text-anchor="middle">Account Discovery</text>
+  <rect x="362" y="326" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="414" y="340" text-anchor="middle">Lateral Mapping</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="414" y="365" text-anchor="middle">Find targets</text>
+
+  <rect x="496" y="176" width="140" height="220" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="566" y="200" text-anchor="middle">EXFILTRATION</text>
+  <rect x="514" y="214" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="566" y="228" text-anchor="middle">Archive Collected Data</text>
+  <rect x="514" y="242" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="566" y="256" text-anchor="middle">Exfiltration Over C2</text>
+  <rect x="514" y="270" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.1"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="566" y="284" text-anchor="middle">Data from Cloud Storage</text>
+  <rect x="514" y="298" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="566" y="312" text-anchor="middle">Steal Credentials</text>
+  <rect x="514" y="326" width="104" height="20" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="566" y="340" text-anchor="middle">Impact Actions</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="566" y="365" text-anchor="middle">Objective reached</text>
+
+  <rect x="40" y="426" width="10" height="10" rx="2" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="56" y="436">ATT&amp;CK helps map detection coverage to real attacker behavior.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="380" y="486" text-anchor="middle">Use the matrix to understand what attackers do, where you can detect them, and where coverage is missing.</text>
+</svg>

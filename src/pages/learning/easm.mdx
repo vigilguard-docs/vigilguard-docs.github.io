@@ -1,0 +1,51 @@
+---
+title: "EASM: External Attack Surface Management"
+date: 2026-04-11
+layout: ../../layouts/Layout.astro
+---
+
+import InlineSvg from '../../components/InlineSvg.astro';
+
+# External Attack Surface Management (EASM)
+Your security team is protecting a perimeter that no longer exists — and attackers know exactly what you've left exposed. EASM is the discipline of finding out before they do.
+## What It Actually Is
+External Attack Surface Management is the continuous process of discovering, inventorying, and monitoring all internet-facing assets your organization owns or is associated with — and identifying which of those assets represent exploitable risk.
+The operative word is *continuous*. A point-in-time scan is not EASM. A pentest is not EASM. EASM is an ongoing capability that reflects the dynamic reality of your environment: cloud instances spun up and forgotten, subdomains provisioned by a dev team, third-party portals running on infrastructure tied to your domain, APIs exposed during a migration that never got cleaned up.
+## Why This Problem Is Harder Than It Looks
+Most organizations do not have an accurate inventory of their external footprint. This is not negligence — it's the structural reality of how modern infrastructure evolves.
+Shadow IT, M&A activity, decentralized cloud provisioning, SaaS sprawl, and contractor-managed systems all contribute to an external surface that the security team has partial visibility into at best. The average enterprise has thousands of internet-facing assets. A meaningful percentage of those were provisioned without security review and are never audited post-deployment.
+Attackers don't need a sophisticated exploit chain when there's an unpatched service running on a forgotten subdomain. Reconnaissance is cheap. Initial access through neglected infrastructure is one of the most common breach patterns in real incident data.
+## What EASM Covers
+A mature EASM program tracks:
+**Domains and subdomains** — including dangling DNS records and subdomain takeover opportunities, where an attacker can claim a subdomain pointing to a deprovisioned cloud resource.
+**IP ranges and ASN associations** — both owned and co-located infrastructure that can be attributed to your organization.
+**Exposed services and ports** — open RDP, SSH, databases, admin panels, and APIs that should not be internet-accessible.
+**TLS/SSL certificates** — certificate transparency logs reveal new hostnames as they're provisioned, often before internal teams are aware. Attackers use this as a live feed of organizational activity.
+**Cloud assets** — S3 buckets, storage accounts, misconfigured cloud-native services that are publicly accessible by default unless explicitly locked down.
+**Technology stack fingerprinting** — what software is running, what version, and whether it has known CVEs.
+**Third-party exposure** — infrastructure that isn't yours but is tied to your brand or operations: outsourced portals, partner integrations, vendor-hosted systems bearing your domain.
+<div class="diagram-container" style="margin: 2rem 0;">
+<InlineSvg src="/learning-images/easm-diagram.svg" />
+</div>
+## What Good EASM Looks Like in Practice
+Discovery has to be attacker-equivalent. If your EASM tooling isn't finding assets the same way a threat actor doing passive reconnaissance would — through certificate transparency, WHOIS, DNS enumeration, ASN lookups, and web crawling — it's not comprehensive enough.
+Inventory without context is noise. Every discovered asset needs enrichment: what's running on it, who owns it internally, when it was last seen, what its exposure profile looks like. An IP with port 443 open is not inherently a problem. An IP with port 443 open running an end-of-life version of a web framework with a known RCE is.
+Prioritization has to be risk-based. Volume of findings is the wrong metric. A CISO needs to know: which of these exposures represent actual exploitable risk right now, and which asset owner needs to act today. Severity, exploitability, asset criticality, and exposure duration all factor in.
+Remediation workflow matters. EASM without a path to remediation is a reporting tool, not a security program. Findings need to route to the right team — infrastructure, DevOps, a specific business unit — with enough context for them to act without requiring a security analyst to explain it every time.
+## Where EASM Fits in the Broader Program
+EASM feeds directly into CTEM (Continuous Threat Exposure Management) — it's the discovery and scoping phase of that broader framework. It also provides ground truth for vulnerability management: you can't prioritize CVEs on assets you don't know exist.
+For third-party risk, EASM extends to vendor infrastructure. Running the same discovery process against your critical vendors' external footprint gives you a continuous signal on their posture without waiting for a questionnaire response.
+## What to Demand from an EASM Solution
+- Continuous discovery, not scheduled scans
+- Attribution accuracy — false positives waste analyst time and erode trust in the program
+- Coverage across passive and active discovery techniques
+- Integration with your existing ticketing and vulnerability management workflows
+- Trend data — is your attack surface growing or shrinking? Is exposure duration increasing?
+- Vendor/subsidiary coverage, not just your primary organization
+## The Honest Limitation
+EASM shows you what's exposed. It doesn't tell you whether an attacker has already used it. It's a preventive and detection capability, not a forensic one. If you need to know whether an asset has been actively probed or compromised, you need threat intelligence and log correlation alongside it.
+The organizations that get the most value from EASM treat it as a continuous operational feed — not a compliance artifact, not an annual exercise. Your external surface changes daily. Your visibility into it should too.
+## Actionable Takeaways
+**If you can't answer "what new hostnames appeared on our external surface in the last 48 hours," you don't have EASM — you have a spreadsheet.** Pull your Certificate Transparency logs right now. crt.sh is free. What you find will be uncomfortable.
+**Ask your team how long it takes to go from asset discovery to ticket assigned to the right owner.** If the answer is measured in days or involves a manual step, your EASM program will consistently lose to an attacker whose reconnaissance takes hours.
+**If you haven't audited your Certificate Transparency logs** in the last 24 hours, you aren't doing EASM — you're doing history.

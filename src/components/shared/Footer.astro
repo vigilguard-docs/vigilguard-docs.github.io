@@ -1,0 +1,366 @@
+---
+import { Icon } from "astro-icon/components";
+import VigilScanLogo from "../../assets/vigilscan.svg";
+import VendorGuardLogo from "../../assets/vendorguard.svg";
+import ScanNowLogo from "../../assets/scannow.svg";
+import BlueskyLogo from "../../assets/bluesky.svg";
+import DocsLogo from "../../assets/vigilguard-docs.svg";
+import vigilguardBlogLogo from "../../assets/vigilguard-blog.svg";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-column">
+        <h3 class="footer-heading">External Risk</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="/vigilscan">
+              <img src={VigilScanLogo.src} class="product-logo" alt="" />
+              <span>VigilScan EASM</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://vigilscan.vigilguard.com" class="login-link">
+              <Icon name="lucide:log-in" class="icon" />
+              <span>VigilScan Login</span>
+            </a>
+          </li>
+          <li>
+            <a href="/crisisready">
+              <img src={VigilScanLogo.src} class="product-logo" alt="" />
+              <span>CrisisReady</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://crisisready.vigilguard.com" class="login-link">
+              <Icon name="lucide:log-in" class="icon" />
+              <span>CrisisReady Login</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">Vendor Risk</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="https://vigilguard.com/vendorguard">
+              <img src={VendorGuardLogo.src} class="product-logo" alt="" />
+              <span>VendorGuard VRM</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://vendorguard.vigilguard.com" class="login-link">
+              <Icon name="lucide:shield-check" class="icon" />
+              <span>Enterprise Login</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://vendors.vendorguard.vigilguard.com"
+              class="login-link"
+            >
+              <Icon name="lucide:users" class="icon" />
+              <span>Vendor Portal</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="https://scannow.vigilguard.com">
+              <img src={ScanNowLogo.src} class="product-logo" alt="" />
+              <span>ScanNow Tools</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.vigilguard.com">
+              <img src={DocsLogo.src} class="product-logo" alt="" />
+              <span>Documentation</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.vigilguard.com/learning">
+              <img src={vigilguardBlogLogo.src} class="product-logo" alt="" />
+              <span>Learning Center</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://docs.vigilguard.com/blog">
+              <img src={vigilguardBlogLogo.src} class="product-logo" alt="" />
+              <span>Security Blog</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">Company</h3>
+        <ul class="footer-links">
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/contact">Contact Support</a></li>
+          <li><a href="/terms-and-privacy">Terms & Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <div class="bottom-left">
+        <ul class="social-links">
+          <li>
+            <a
+              href="https://github.com/vigilguard"
+              target="_blank"
+              aria-label="GitHub"><Icon name="lucide:github" class="icon" /></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/company/vigilguard"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><Icon name="lucide:linkedin" class="icon" /></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://x.com/VigilGuardCom"
+              target="_blank"
+              aria-label="Twitter"
+              ><Icon name="lucide:twitter" class="icon" /></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://bsky.app/profile/vigilguard.com"
+              target="_blank"
+              aria-label="Bluesky"
+              ><img src={BlueskyLogo.src} class="icon" alt="" /></a
+            >
+          </li>
+          <li>
+            <a href="mailto:info@vigilguard.com" aria-label="Email"
+              ><Icon name="lucide:mail" class="icon" /></a
+            >
+          </li>
+        </ul>
+        <div class="bottom-divider"></div>
+        <a
+          href="https://vigilguard.statuspage.io"
+          target="_blank"
+          class="status-link"
+        >
+          <Icon name="lucide:activity" class="status-icon" />
+          <span>Systems Operational</span>
+        </a>
+      </div>
+
+      <div class="bottom-right">
+        <span class="copyright-text"
+          >&copy; {currentYear} VigilGuard. All rights reserved.</span
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border-secondary);
+    background: rgba(var(--bg-primary-rgb), 0.9);
+    color: var(--text-secondary);
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+    justify-items: center;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-heading {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--brand-purple);
+  }
+
+  .login-link {
+    color: var(--brand-purple) !important;
+  }
+
+  .product-logo,
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Bottom Row */
+  .footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-secondary);
+    padding-top: 25px;
+  }
+
+  .bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .bottom-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--border-secondary);
+  }
+
+  .social-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .social-links a {
+    color: var(--text-secondary);
+    transition:
+      transform 0.2s,
+      color 0.2s;
+    display: flex;
+  }
+
+  .social-links a:hover {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+  }
+
+  .copyright-text {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
+  .status-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  .status-link:hover {
+    color: #596ef8;
+  }
+
+  .status-icon {
+    width: 18px;
+    height: 18px;
+    color: #aa9cf7;
+  }
+
+  @media (max-width: 900px) {
+    .footer-bottom-row {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    .bottom-left {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .bottom-divider {
+      display: none;
+    }
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Remove align-items: center */
+  }
+
+  .footer-heading {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0; /* Reset margin */
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    /* Remove justify-content: center */
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

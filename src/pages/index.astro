@@ -1,0 +1,193 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="VigilScan Documentation Access">
+  <div class="page">
+
+    <div class="badge">
+      <span class="dot"></span>
+      Documentation Access
+    </div>
+
+    <h1 class="headline">
+      1000+ Signals, translated into scanners.<br />
+      <em>Request access to get started.</em>
+    </h1>
+
+    <p class="desc">
+      Our scanner documentation is maintained in a private repository to protect
+      methodology and prevent adversarial reverse-engineering. Request access via GitHub
+      or open the docs if you're already approved.
+    </p>
+
+    <div class="actions">
+      <a
+        href="https://github.com/vigilguard-docs/vigilguard-docs.github.io/issues/new?template=request_access.yml"
+        class="btn-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        Request Access via GitHub
+        ↗
+      </a>
+
+      <a
+        href="https://github.com/vigilguard-docs/vigilscan-docs"
+        class="btn-ghost"
+        target="_blank"
+        rel="noopener"
+      >
+        Already have access? Open Docs →
+      </a>
+    </div>
+
+    <div class="meta">
+      <div class="meta-item">
+        <span class="meta-num">997+</span>
+        <span class="meta-label">Scanners documented</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-num">12</span>
+        <span class="meta-label">Risk dimensions</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-num">Private</span>
+        <span class="meta-label">Access controlled</span>
+      </div>
+    </div>
+
+  </div>
+</Layout>
+
+<style>
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 120px 4vw 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 32px;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-purple);
+    border: 1px solid rgba(115, 103, 240, 0.3);
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(115, 103, 240, 0.06);
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-purple);
+    box-shadow: 0 0 8px var(--brand-purple);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .headline {
+    font-size: clamp(2.8rem, 5vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  .headline em {
+    font-style: normal;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 540px;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-ghost {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--brand-purple); }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-translucent);
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-num { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.03em; line-height: 1; }
+  .meta-label { font-size: 0.7rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .meta-divider { width: 1px; height: 32px; background: var(--border-translucent); }
+
+
+.headline, .desc, .meta {
+  max-width: none;
+  width: 100%;
+}
+
+  @media (max-width: 768px) {
+    .page { padding: 100px 24px 60px; align-items: center; text-align: center; }
+    .desc { max-width: 100%; }
+    .actions { justify-content: center; }
+    .meta { justify-content: center; }
+  }
+</style>

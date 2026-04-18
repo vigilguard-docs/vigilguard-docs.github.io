@@ -1,0 +1,110 @@
+<style>
+  :root {
+    --bg-primary: #0b0c0e;
+    --bg-secondary: #1a1b26;
+    --text-primary: #ffffff;
+    --text-muted: #c6c5c5;
+    --text-secondary: #a0a1b0;
+    --border-primary: #3a3c5a;
+    --brand-purple: #7367f0;
+  }
+</style>
+
+
+<svg width="100%" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="680" height="380" fill="var(--bg-primary, #0b0c0e)"/>
+  <!-- Title -->
+  <text font-family="Space Grotesk,sans-serif" font-size="13" font-weight="700" fill="var(--text-primary, #ffffff)" x="340" y="36" text-anchor="middle">THE CTEM PROGRAM CYCLE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-secondary, #5c5f70)" x="340" y="52" text-anchor="middle">Continuous Threat Exposure Management — Gartner Framework</text>
+  <!-- Feedback loop base line -->
+  <path d="M 600 290 Q 600 330 340 330 Q 80 330 80 290" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="1" stroke-dasharray="4 3" opacity="0.35" marker-end="url(#arr)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="348" text-anchor="middle">cycle repeats continuously as surface changes</text>
+  <!-- Stage boxes: width=96, gap=20, start x=40 -->
+  <!-- Box 1: SCOPING -->
+  <rect x="40" y="75" width="96" height="200" rx="6" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5"/>
+  <rect x="40" y="75" width="96" height="30" rx="6" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="0.5"/>
+  <rect x="40" y="93" width="96" height="12" fill="var(--bg-secondary, #1a1b26)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="88" y="95" text-anchor="middle">01</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-primary, #ffffff)" x="88" y="122" text-anchor="middle">SCOPING</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="88" y="146" text-anchor="middle">Define what</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="88" y="159" text-anchor="middle">you protect</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="88" y="180" text-anchor="middle">Crown jewels</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="88" y="193" text-anchor="middle">Threat actors</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="88" y="206" text-anchor="middle">Risk appetite</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="88" y="219" text-anchor="middle">Business context</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="88" y="232" text-anchor="middle">Industry threats</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="88" y="245" text-anchor="middle">Geography</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="88" y="258" text-anchor="middle">Asset criticality</text>
+  <line x1="136" y1="175" x2="156" y2="175" stroke="var(--brand-purple, #7367f0)" stroke-width="1" opacity="0.6" fill="none" marker-end="url(#arr)"/>
+  <!-- Box 2: DISCOVERY -->
+  <rect x="156" y="75" width="96" height="200" rx="6" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5"/>
+  <rect x="156" y="75" width="96" height="30" rx="6" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="0.5"/>
+  <rect x="156" y="93" width="96" height="12" fill="var(--bg-secondary, #1a1b26)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="204" y="95" text-anchor="middle">02</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-primary, #ffffff)" x="204" y="122" text-anchor="middle">DISCOVERY</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="204" y="146" text-anchor="middle">Find all exposures</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="204" y="159" text-anchor="middle">across the surface</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="204" y="180" text-anchor="middle">EASM scan</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="204" y="193" text-anchor="middle">CVEs · Vulns</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="204" y="206" text-anchor="middle">Misconfigs</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="204" y="219" text-anchor="middle">Cloud posture</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="204" y="232" text-anchor="middle">IAM exposure</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="204" y="245" text-anchor="middle">Shadow IT</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="204" y="258" text-anchor="middle">Third-party risk</text>
+  <line x1="252" y1="175" x2="272" y2="175" stroke="var(--brand-purple, #7367f0)" stroke-width="1" opacity="0.6" fill="none" marker-end="url(#arr)"/>
+  <!-- Box 3: PRIORITIZATION — taller, highlighted -->
+  <rect x="272" y="65" width="96" height="220" rx="6" fill="var(--bg-secondary, #1a1b26)" stroke="var(--brand-purple, #7367f0)" stroke-width="1"/>
+  <rect x="272" y="65" width="96" height="30" rx="6" fill="var(--brand-purple, #7367f0)" opacity="0.15"/>
+  <rect x="272" y="83" width="96" height="12" fill="var(--bg-secondary, #1a1b26)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="320" y="85" text-anchor="middle">03</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-primary, #ffffff)" x="320" y="112" text-anchor="middle">PRIORITIZE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="320" y="136" text-anchor="middle">Risk-based ranking</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="320" y="149" text-anchor="middle">not CVSS order</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="320" y="170" text-anchor="middle">Exploitability</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="320" y="183" text-anchor="middle">Asset criticality</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="320" y="196" text-anchor="middle">Threat intel</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="320" y="209" text-anchor="middle">Reachability</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="320" y="222" text-anchor="middle">Attack path</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="320" y="235" text-anchor="middle">Business impact</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="320" y="248" text-anchor="middle">Exposure duration</text>
+  <!-- tag -->
+  <rect x="280" y="258" width="80" height="16" rx="4" fill="var(--brand-purple, #7367f0)" opacity="0.12"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--brand-purple, #7367f0)" x="320" y="269" text-anchor="middle">where most fail</text>
+  <line x1="368" y1="175" x2="388" y2="175" stroke="var(--brand-purple, #7367f0)" stroke-width="1" opacity="0.6" fill="none" marker-end="url(#arr)"/>
+  <!-- Box 4: VALIDATION -->
+  <rect x="388" y="75" width="96" height="200" rx="6" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5"/>
+  <rect x="388" y="75" width="96" height="30" rx="6" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="0.5"/>
+  <rect x="388" y="93" width="96" height="12" fill="var(--bg-secondary, #1a1b26)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="436" y="95" text-anchor="middle">04</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-primary, #ffffff)" x="436" y="122" text-anchor="middle">VALIDATION</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="436" y="146" text-anchor="middle">Confirm exploitable</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="436" y="159" text-anchor="middle">controls work</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="436" y="180" text-anchor="middle">BAS testing</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="436" y="193" text-anchor="middle">Pentest findings</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="436" y="206" text-anchor="middle">Detection gaps</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="436" y="219" text-anchor="middle">Attack simulation</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="436" y="232" text-anchor="middle">Control efficacy</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="436" y="245" text-anchor="middle">Path analysis</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="436" y="258" text-anchor="middle">Red team intel</text>
+  <line x1="484" y1="175" x2="504" y2="175" stroke="var(--brand-purple, #7367f0)" stroke-width="1" opacity="0.6" fill="none" marker-end="url(#arr)"/>
+  <!-- Box 5: MOBILIZE -->
+  <rect x="504" y="75" width="96" height="200" rx="6" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5"/>
+  <rect x="504" y="75" width="96" height="30" rx="6" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="0.5"/>
+  <rect x="504" y="93" width="96" height="12" fill="var(--bg-secondary, #1a1b26)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="552" y="95" text-anchor="middle">05</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-primary, #ffffff)" x="552" y="122" text-anchor="middle">MOBILIZE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="552" y="146" text-anchor="middle">Execute remediation</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="552" y="159" text-anchor="middle">close the loop</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="552" y="180" text-anchor="middle">Route to owners</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="552" y="193" text-anchor="middle">Track remediation</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="552" y="206" text-anchor="middle">Accept or mitigate</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="552" y="219" text-anchor="middle">Verify fix worked</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="552" y="232" text-anchor="middle">Update risk register</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="552" y="245" text-anchor="middle">Board reporting</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="552" y="258" text-anchor="middle">Lessons learned</text>
+</svg>

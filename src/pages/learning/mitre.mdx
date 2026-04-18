@@ -1,0 +1,53 @@
+---
+title: "MITRE ATT&CK"
+date: 2026-04-18
+layout: ../../layouts/Layout.astro
+---
+
+import InlineSvg from '../../components/InlineSvg.astro';
+
+# MITRE ATT&CK
+MITRE ATT&CK is not a control framework — it is a knowledge base of how real adversaries behave. It helps defenders understand attacker tactics, techniques, and procedures so they can detect, hunt, and respond more effectively.
+
+## What It Actually Is
+MITRE ATT&CK is a globally accessible knowledge base built from real-world observations of adversary behavior. It organizes those behaviors into tactics, techniques, and procedures, giving security teams a common language for describing attacks and defenses.
+
+The framework is especially useful because it focuses on behavior rather than malware names or vendor-specific alerts. That makes it practical for threat intelligence, detection engineering, red teaming, and incident response.
+
+## Why It Matters
+Most defensive tools tell you that something is happening. ATT&CK helps you understand what the attacker is trying to do and where they are in the attack path. That difference matters when you are deciding whether a signal is noise or an active compromise.
+
+It also gives teams a standard way to compare coverage. If a detection rule maps to a known technique, you can measure how much of the adversary playbook you can actually see.
+
+## Tactics, Techniques, Procedures
+**Tactics** are the attacker’s goals, such as Initial Access, Persistence, Discovery, or Exfiltration. In ATT&CK, tactics answer the question: why is the attacker doing this?
+
+**Techniques** are the methods used to achieve those goals, such as phishing, valid accounts, scheduled tasks, or cloud service discovery. Techniques answer the question: how is the attacker doing it?
+
+**Procedures** are the specific real-world implementations observed in the wild. They answer the question: exactly how did this actor carry out the technique in this case?
+
+<div class="diagram-container" style="margin: 2rem 0;">
+<InlineSvg src="/learning-images/mitre-attack-diagram.svg" />
+</div>
+
+## The Matrix Structure
+The Enterprise ATT&CK matrix is organized as a set of tactics across the top, with techniques underneath each tactic. The matrix is designed to show how adversary behavior progresses across a campaign rather than as a linear checklist.
+
+MITRE also maintains matrix views for different environments, including enterprise, mobile, and ICS. That makes ATT&CK useful in cloud, endpoint, identity, and industrial settings, not just traditional IT networks.
+
+## How Teams Use It
+Security teams use ATT&CK to map detections, hunt for missed behaviors, and identify coverage gaps. It is common to map SIEM rules, EDR logic, and incident response playbooks back to ATT&CK techniques.
+
+Threat intelligence teams use it to describe what a threat actor does in a way that is consistent across incidents. Red and purple teams use it to plan realistic adversary simulations and validate whether defenses catch them.
+
+## Where It Can Be Misused
+ATT&CK is powerful, but it is easy to turn it into a vanity metric. A large number of mapped detections does not automatically mean strong defense if the detections are shallow, noisy, or poorly maintained.
+
+It is also not a replacement for asset visibility, vulnerability management, or basic hardening. ATT&CK helps you understand attacker behavior, but it does not tell you whether your environment is complete or well-managed.
+
+## Actionable Takeaways
+**Map your top detection rules to ATT&CK techniques.** That quickly shows whether your visibility is concentrated in a few easy cases or spread across meaningful attacker behavior.
+
+**Use ATT&CK in purple-team exercises.** Test whether your controls actually detect the behaviors that matter most in your environment, not just the ones your tools already know how to label.
+
+**Focus on gaps in high-risk tactics first.** Initial Access, Privilege Escalation, Defense Evasion, and Exfiltration usually matter more than collecting broad coverage for its own sake.

@@ -1,0 +1,84 @@
+<svg width="100%" viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#E24B4A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#2ec97a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="680" height="480" fill="var(--bg-primary, #0b0c0e)"/>
+  <!-- Title -->
+  <text font-family="Space Grotesk,sans-serif" font-size="13" font-weight="700" fill="var(--text-primary, #ffffff)" x="340" y="36" text-anchor="middle">IAM — IDENTITY AS THE ATTACK SURFACE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-secondary, #5c5f70)" x="340" y="52" text-anchor="middle">Attackers don't break in. They log in. Identity is the new perimeter.</text>
+  <!-- Left: Identity types -->
+  <rect x="40" y="70" width="160" height="320" rx="8" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="120" y="92" text-anchor="middle">IDENTITY TYPES</text>
+  <rect x="56" y="104" width="128" height="28" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="120" y="122" text-anchor="middle">Human users</text>
+  <rect x="56" y="140" width="128" height="28" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="120" y="158" text-anchor="middle">Service accounts</text>
+  <rect x="56" y="176" width="128" height="28" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="120" y="194" text-anchor="middle">API keys · Tokens</text>
+  <rect x="56" y="212" width="128" height="28" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="120" y="230" text-anchor="middle">CI/CD pipelines</text>
+  <rect x="56" y="248" width="128" height="28" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="120" y="266" text-anchor="middle">Dormant accounts</text>
+  <rect x="56" y="284" width="128" height="28" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="120" y="302" text-anchor="middle">Over-privileged roles</text>
+  <rect x="56" y="320" width="128" height="28" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="120" y="338" text-anchor="middle">OAuth grants</text>
+  <!-- Center: Controls -->
+  <rect x="240" y="70" width="200" height="320" rx="8" fill="var(--bg-secondary, #1a1b26)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="92" text-anchor="middle">IAM CONTROLS</text>
+  <rect x="256" y="108" width="168" height="32" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="122" text-anchor="middle">Phishing-resistant MFA</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="340" y="134" text-anchor="middle">Hardware keys · Passkeys</text>
+  <rect x="256" y="148" width="168" height="32" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="162" text-anchor="middle">Least Privilege Access</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="340" y="174" text-anchor="middle">Minimum required · Nothing more</text>
+  <rect x="256" y="188" width="168" height="32" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="202" text-anchor="middle">PAM</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="340" y="214" text-anchor="middle">JIT · Vaulting · Session recording</text>
+  <rect x="256" y="228" width="168" height="32" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="242" text-anchor="middle">Lifecycle Management</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="340" y="254" text-anchor="middle">Joiner · Mover · Leaver</text>
+  <rect x="256" y="268" width="168" height="32" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="282" text-anchor="middle">Access Reviews</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="340" y="294" text-anchor="middle">Continuous · Auto-revoke stale access</text>
+  <rect x="256" y="308" width="168" height="32" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="322" text-anchor="middle">ITDR</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="340" y="334" text-anchor="middle">Identity threat detection &amp; response</text>
+  <!-- Arrows left to center -->
+  <line x1="200" y1="230" x2="238" y2="230" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2" opacity="0.9" fill="none" marker-end="url(#arr)"/>
+  <!-- Right: Outcomes -->
+  <rect x="480" y="70" width="160" height="320" rx="8" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="560" y="92" text-anchor="middle">OUTCOMES</text>
+  <rect x="496" y="108" width="128" height="36" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#2ec97a" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#2ec97a" x="560" y="124" text-anchor="middle">Breach prevented</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="560" y="138" text-anchor="middle">Credential theft fails</text>
+  <rect x="496" y="152" width="128" height="36" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#2ec97a" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#2ec97a" x="560" y="168" text-anchor="middle">Blast radius limited</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="560" y="182" text-anchor="middle">Least privilege contains damage</text>
+  <rect x="496" y="196" width="128" height="36" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#2ec97a" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#2ec97a" x="560" y="212" text-anchor="middle">Early detection</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="560" y="226" text-anchor="middle">Anomaly flagged by ITDR</text>
+  <rect x="496" y="240" width="128" height="36" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#E24B4A" x="560" y="256" text-anchor="middle">Credential breach</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="560" y="270" text-anchor="middle">No MFA · Password only</text>
+  <rect x="496" y="284" width="128" height="36" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#E24B4A" x="560" y="300" text-anchor="middle">Lateral movement</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="560" y="314" text-anchor="middle">Excess privileges exploited</text>
+  <rect x="496" y="328" width="128" height="36" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#E24B4A" x="560" y="344" text-anchor="middle">Silent compromise</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="560" y="358" text-anchor="middle">Dormant account abused</text>
+  <!-- Arrow center to right -->
+  <line x1="440" y1="230" x2="478" y2="230" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2" opacity="0.9" fill="none" marker-end="url(#arr)"/>
+  <!-- Bottom note -->
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="418" text-anchor="middle">Non-human identities now outnumber human identities in most enterprise environments.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="434" text-anchor="middle">Service accounts, API keys, and OAuth grants are the fastest-growing attack surface in IAM.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="460" text-anchor="middle">Apply the same lifecycle management to non-human identities as to human ones.</text>
+</svg>

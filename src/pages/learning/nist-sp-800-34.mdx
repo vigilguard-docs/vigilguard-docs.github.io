@@ -1,0 +1,59 @@
+---
+title: "NIST SP 800-34"
+date: 2026-04-18
+layout: ../../layouts/Layout.astro
+---
+
+import InlineSvg from '../../components/InlineSvg.astro';
+
+# NIST SP 800-34
+NIST SP 800-34 is the contingency planning guide for information systems. It helps organizations prepare for disruptions, recover services, and restore normal operations with less chaos and less guesswork.
+
+## What It Actually Is
+NIST SP 800-34 is guidance for building information system contingency plans. The document is meant to help organizations understand the purpose, process, and format of contingency planning, along with the priorities that shape recovery.
+
+At its core, it treats contingency planning as a structured way to define interim measures that restore services after a disruption. That can include alternate sites, backup systems, manual workarounds, and planned reconstitution of the affected environment.
+
+## Why It Matters
+Most recovery plans fail because they are vague. SP 800-34 forces teams to define what gets recovered, in what order, and with what resources before the outage happens.
+
+That makes it directly useful for cybersecurity, business continuity, and disaster recovery. It also helps organizations move from “we have backups” to “we can actually restore service under pressure.”
+
+## The Contingency Planning Process
+**Preliminary planning** — define scope, roles, responsibilities, and assumptions before writing the plan.
+
+**Business impact analysis** — identify critical functions, dependencies, and the time-based impact of disruption.
+
+**Contingency strategy** — choose the recovery approach, such as alternate sites, redundant systems, or manual processing.
+
+**Plan development** — document the information system contingency plan and the procedures needed to activate it.
+
+**Testing, training, and exercises** — validate that the plan works in practice, not just on paper.
+
+**Plan maintenance** — update the plan as systems, dependencies, and recovery requirements change.
+
+<div class="diagram-container" style="margin: 2rem 0;">
+<InlineSvg src="/learning-images/nist-sp-800-34-diagram.svg" />
+</div>
+
+## Recovery Phases
+SP 800-34 describes recovery in terms of moving from disruption to restored operations. The older guidance is often summarized in three phases: Notification/Activation, Recovery, and Reconstitution.
+
+Notification/Activation is about recognizing the incident, notifying the right people, and assessing damage. Recovery is about restoring operations using the approved contingency strategy. Reconstitution is about returning the system to normal operations after the temporary recovery state.
+
+## How It Connects To Other Frameworks
+SP 800-34 does not stand alone. It aligns naturally with BIA work, risk management, contingency controls, and broader resilience planning.
+
+In practice, it overlaps with business continuity and disaster recovery programs, while also supporting the recovery-related controls found in other NIST guidance. That makes it especially relevant for organizations that need both technical recovery and operational continuity.
+
+## Where Teams Get It Wrong
+A common mistake is treating contingency planning as a documentation exercise. A plan that has not been tested is an assumption, not a recovery capability.
+
+Another mistake is writing one generic plan for every system. Different platforms, dependencies, and business priorities require different recovery strategies, or the plan will fail at the exact moment it matters.
+
+## Actionable Takeaways
+**Start with your most critical system and walk through recovery end to end.** If the team cannot explain how to restore it, the plan is incomplete.
+
+**Test the manual steps, not just the backup technology.** Real recovery usually fails at coordination, not at theory.
+
+**Review the plan whenever dependencies change.** New vendors, new cloud services, and new workflows can invalidate old assumptions very quickly.
