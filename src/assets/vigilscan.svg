@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vgGradient" x1="30" x2="30" y1="4" y2="57" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ce9ffc"/>
+      <stop offset="1" stop-color="#7367f0"/>
+    </linearGradient>
+
+    <!-- White = visible, Black = cut out -->
+    <mask id="scannerMask" maskUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="white"/>
+      <!-- Center dot hole -->
+      <circle cx="30" cy="32" r="3" fill="black"/>
+      <!-- Ring 1 hole -->
+      <circle cx="30" cy="32" r="7" fill="none" stroke="black" stroke-width="4"/>
+      <!-- Ring 2 hole -->
+      <circle cx="30" cy="32" r="13" fill="none" stroke="black" stroke-width="4"/>
+    </mask>
+  </defs>
+
+  <!-- Shield -->
+  <path
+    fill="url(#vgGradient)"
+    mask="url(#scannerMask)"
+    d="M51 15c-12.47 0-18.03-7.61-19.55-10.17A1.67 1.67 0 0 0 30 4c-.6 0-1.14.32-1.45.83C27.03 7.39 21.47 15 9 15a2 2 0 0 0-2 2v10c0 19.1 16.57 27.65 20.95 29.57.65.29 1.34.43 2.05.43s1.4-.14 2.05-.43C36.42 54.65 53 46.1 53 27V17a2 2 0 0 0-2-2z"
+  />
+</svg>
+

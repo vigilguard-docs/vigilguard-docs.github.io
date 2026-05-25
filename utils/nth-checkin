@@ -1,0 +1,5 @@
+git checkout main
+git checkout --orphan clean-main
+git add -A
+git commit -m "Clean snapshot"
+git push --force origin clean-main:main

@@ -1,0 +1,68 @@
+---
+title: "BIA: Business Impact Analysis"
+date: 2026-04-17
+layout: ../../layouts/Layout.astro
+---
+
+import InlineSvg from '../../components/InlineSvg.astro';
+
+# Business Impact Analysis (BIA)
+Every disruption has a cost — operational, financial, legal, or reputational. Business Impact Analysis is the discipline of understanding those costs before an incident forces you to learn them the hard way.
+
+## What It Actually Is
+Business Impact Analysis is the structured process of identifying critical business functions, assessing the impact of their disruption over time, and defining recovery requirements. It answers a simple but essential question: what matters most, and how quickly do we need it back?
+
+BIA goes beyond listing systems or assets. It ties business processes to the underlying infrastructure, data, and dependencies that support them — mapping technical components to real-world business impact. The output is a prioritized view of operations based on how damaging their interruption would be.
+
+## Why BIA Is Often Done Poorly
+Most organizations treat BIA as a compliance exercise — static documents created once a year and rarely revisited. That approach fails because business environments change constantly.
+
+New products launch. Dependencies shift to third-party SaaS providers. Internal systems get replaced or re-architected. What was once a non-critical system can become business-critical without ever being reclassified.
+
+There’s also a disconnect between business and technical teams. Business units define criticality in terms of revenue and operations, while technical teams think in terms of systems and uptime. Without aligning those perspectives, BIA outputs become vague or misleading.
+
+## What a Complete BIA Covers
+**Business processes** — revenue-generating activities, customer-facing services, internal operations, and regulatory obligations.
+
+**Impact dimensions** — financial loss, customer impact, regulatory penalties, reputational damage, and operational disruption.
+
+**Time sensitivity** — how impact escalates over time (e.g., 1 hour vs 24 hours vs 72 hours of downtime).
+
+**Dependencies** — applications, infrastructure, third-party services, personnel, and data required to sustain each process.
+
+**Recovery objectives** — Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for each critical function.
+
+**Single points of failure** — systems, vendors, or processes where failure causes disproportionate disruption.
+
+<div class="diagram-container" style="margin: 2rem 0;">
+<InlineSvg src="/learning-images/bia-diagram.svg" />
+</div>
+
+## BIA vs. Risk Assessment — The Distinction That Matters
+These concepts are related but not interchangeable.
+
+Risk assessment evaluates the likelihood and impact of potential threats. It asks: what could go wrong, and how likely is it?
+
+BIA assumes disruption has already happened. It asks: if this function is unavailable, what is the consequence, and how fast do we need to recover?
+
+In practice, BIA informs risk prioritization. You can’t meaningfully assess risk without understanding which business functions are most critical.
+
+## The Role of Time in BIA
+Impact is not static — it compounds.
+
+A payroll system being down for one hour may be negligible. Down for three days, it becomes a financial and legal issue. A customer-facing API outage might be tolerable briefly but quickly escalates into revenue loss and churn.
+
+BIA captures this through impact-over-time analysis, which drives recovery prioritization. This is where RTO and RPO are derived — not arbitrarily, but based on when disruption becomes unacceptable.
+
+## Where BIA Connects to the Broader Program
+BIA is foundational to business continuity and disaster recovery (BCDR). Recovery plans are only as good as the priorities defined by BIA — without it, organizations often restore systems in the wrong order.
+
+It also feeds incident response. During an active incident, BIA context helps teams decide what to restore first, what to isolate, and what risks are acceptable in the moment.
+
+In security programs, BIA provides critical context for prioritization. Not all vulnerabilities or exposures matter equally — those affecting high-impact business functions should be addressed first.
+
+## Actionable Takeaways
+**Map one critical business process end-to-end — including every system, dependency, and third-party service it relies on.** Most organizations discover hidden dependencies and single points of failure immediately when they attempt this.
+
+**Validate your RTOs against reality.** If a system has a 4-hour RTO but restoration actually takes 12 hours in practice, your BIA is giving you false confidence — and your recovery strategy needs adjustment.
+

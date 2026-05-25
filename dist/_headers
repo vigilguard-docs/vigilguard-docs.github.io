@@ -1,0 +1,13 @@
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/banner.webp
+  Cache-Control: public, max-age=31536000, immutable
+/light.webp
+  Cache-Control: public, max-age=31536000, immutable
+/dark.webp
+  Cache-Control: public, max-age=31536000, immutable
+/og-image.png
+  Cache-Control: public, max-age=31536000, immutable
+/favicon.svg
+  Cache-Control: public, max-age=31536000, immutable

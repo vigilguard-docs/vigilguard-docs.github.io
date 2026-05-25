@@ -1,0 +1,99 @@
+<style>
+  :root {
+    --bg-primary: #0b0c0e;
+    --bg-secondary: #1a1b26;
+    --text-primary: #ffffff;
+    --text-muted: #c6c5c5;
+    --text-secondary: #a0a1b0;
+    --border-primary: #3a3c5a;
+    --brand-purple: #7367f0;
+  }
+</style>
+
+
+<svg width="100%" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#E24B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#2ec97a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="680" height="460" fill="var(--bg-primary, #0b0c0e)"/>
+  <!-- Title -->
+  <text font-family="Space Grotesk,sans-serif" font-size="13" font-weight="700" fill="var(--text-primary, #ffffff)" x="340" y="36" text-anchor="middle">BAS — BREACH &amp; ATTACK SIMULATION LIFECYCLE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-secondary, #5c5f70)" x="340" y="52" text-anchor="middle">Continuous automated testing of controls across the full attack chain</text>
+  <!-- Column headers -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="100" y="80" text-anchor="middle">ATTACK TECHNIQUE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="340" y="80" text-anchor="middle">CONTROL TESTED</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--brand-purple, #7367f0)" x="560" y="80" text-anchor="middle">RESULT</text>
+  <!-- Divider lines -->
+  <line x1="220" y1="68" x2="220" y2="420" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5"/>
+  <line x1="460" y1="68" x2="460" y2="420" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5"/>
+  <line x1="40" y1="88" x2="640" y2="88" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5"/>
+  <!-- Row 1: Phishing -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="100" y="116" text-anchor="middle">Phishing payload</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="100" y="130" text-anchor="middle">T1566 · Initial Access</text>
+  <line x1="220" y1="118" x2="236" y2="118" stroke="var(--brand-purple, #7367f0)" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="340" y="116" text-anchor="middle">Email security · EDR</text>
+  <line x1="460" y1="118" x2="476" y2="118" stroke="#2ec97a" stroke-width="0.75" fill="none" marker-end="url(#arr-green)"/>
+  <rect x="494" y="106" width="72" height="20" rx="4" fill="#2ec97a" opacity="0.12"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="#2ec97a" x="530" y="120" text-anchor="middle">BLOCKED</text>
+  <line x1="40" y1="136" x2="640" y2="136" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5" opacity="0.3"/>
+  <!-- Row 2: Pass the Hash -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="100" y="160" text-anchor="middle">Pass-the-Hash</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="100" y="174" text-anchor="middle">T1550 · Lateral Movement</text>
+  <line x1="220" y1="162" x2="236" y2="162" stroke="var(--brand-purple, #7367f0)" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="340" y="160" text-anchor="middle">SIEM · EDR detection</text>
+  <line x1="460" y1="162" x2="476" y2="162" stroke="#E24B4A" stroke-width="0.75" fill="none" marker-end="url(#arr-red)"/>
+  <rect x="484" y="150" width="86" height="20" rx="4" fill="#E24B4A" opacity="0.12"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="#E24B4A" x="527" y="164" text-anchor="middle">NOT DETECTED</text>
+  <line x1="40" y1="180" x2="640" y2="180" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5" opacity="0.3"/>
+  <!-- Row 3: C2 Beacon -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="100" y="204" text-anchor="middle">C2 Beacon traffic</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="100" y="218" text-anchor="middle">T1071 · Command &amp; Control</text>
+  <line x1="220" y1="206" x2="236" y2="206" stroke="var(--brand-purple, #7367f0)" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="340" y="204" text-anchor="middle">Proxy · Firewall · NDR</text>
+  <line x1="460" y1="206" x2="476" y2="206" stroke="#2ec97a" stroke-width="0.75" fill="none" marker-end="url(#arr-green)"/>
+  <rect x="494" y="194" width="72" height="20" rx="4" fill="#2ec97a" opacity="0.12"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="#2ec97a" x="530" y="208" text-anchor="middle">BLOCKED</text>
+  <line x1="40" y1="224" x2="640" y2="224" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5" opacity="0.3"/>
+  <!-- Row 4: Kerberoasting -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="100" y="248" text-anchor="middle">Kerberoasting</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="100" y="262" text-anchor="middle">T1558 · Privilege Escalation</text>
+  <line x1="220" y1="250" x2="236" y2="250" stroke="var(--brand-purple, #7367f0)" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="340" y="248" text-anchor="middle">IAM · SIEM rules</text>
+  <line x1="460" y1="250" x2="476" y2="250" stroke="#E24B4A" stroke-width="0.75" fill="none" marker-end="url(#arr-red)"/>
+  <rect x="484" y="238" width="86" height="20" rx="4" fill="#E24B4A" opacity="0.12"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="#E24B4A" x="527" y="252" text-anchor="middle">NOT DETECTED</text>
+  <line x1="40" y1="268" x2="640" y2="268" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5" opacity="0.3"/>
+  <!-- Row 5: Data Exfil -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="100" y="292" text-anchor="middle">DNS exfiltration</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="100" y="306" text-anchor="middle">T1048 · Exfiltration</text>
+  <line x1="220" y1="294" x2="236" y2="294" stroke="var(--brand-purple, #7367f0)" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="340" y="292" text-anchor="middle">DLP · DNS monitoring</text>
+  <line x1="460" y1="294" x2="476" y2="294" stroke="#e6a817" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
+  <rect x="484" y="282" width="84" height="20" rx="4" fill="#e6a817" opacity="0.12"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="#e6a817" x="526" y="296" text-anchor="middle">PARTIAL ALERT</text>
+  <line x1="40" y1="312" x2="640" y2="312" stroke="var(--border-primary, #3a3c5a)" stroke-width="0.5" opacity="0.3"/>
+  <!-- Row 6: Living off land -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="100" y="336" text-anchor="middle">LOLBin abuse</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="100" y="350" text-anchor="middle">T1218 · Defense Evasion</text>
+  <line x1="220" y1="338" x2="236" y2="338" stroke="var(--brand-purple, #7367f0)" stroke-width="0.75" fill="none" marker-end="url(#arr)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="340" y="336" text-anchor="middle">EDR · UEBA</text>
+  <line x1="460" y1="338" x2="476" y2="338" stroke="#E24B4A" stroke-width="0.75" fill="none" marker-end="url(#arr-red)"/>
+  <rect x="484" y="326" width="86" height="20" rx="4" fill="#E24B4A" opacity="0.12"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="#E24B4A" x="527" y="340" text-anchor="middle">NOT DETECTED</text>
+  <!-- Legend -->
+  <rect x="40" y="400" width="10" height="10" rx="2" fill="#2ec97a" opacity="0.8"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="56" y="410">Blocked / Detected</text>
+  <rect x="190" y="400" width="10" height="10" rx="2" fill="#e6a817" opacity="0.8"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="206" y="410">Partial detection</text>
+  <rect x="330" y="400" width="10" height="10" rx="2" fill="#E24B4A" opacity="0.8"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="346" y="410">Not detected — detection gap</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="440" text-anchor="middle">ATT&amp;CK technique IDs shown. Gaps become detection engineering tickets.</text>
+</svg>

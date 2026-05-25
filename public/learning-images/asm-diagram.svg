@@ -1,0 +1,59 @@
+<svg width="100%" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="680" height="460" fill="var(--bg-primary, #0b0c0e)"/>
+  <!-- Title -->
+  <text font-family="Space Grotesk,sans-serif" font-size="13" font-weight="700" fill="var(--text-primary, #ffffff)" x="340" y="36" text-anchor="middle">ASM — THE COMPLETE ATTACK SURFACE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-secondary, #5c5f70)" x="340" y="52" text-anchor="middle">EASM covers the external slice. ASM is the full picture — internal and external.</text>
+  <!-- External surface — left panel -->
+  <rect x="40" y="70" width="270" height="330" rx="8" fill="var(--bg-secondary, #1a1b26)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--brand-purple, #7367f0)" x="175" y="94" text-anchor="middle">EXTERNAL SURFACE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="175" y="108" text-anchor="middle">Internet-facing · Attacker-visible</text>
+  <!-- External items -->
+  <rect x="60" y="120" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="175" y="136" text-anchor="middle">Domains &amp; Subdomains</text>
+  <rect x="60" y="152" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="175" y="168" text-anchor="middle">IP Ranges · ASN blocks</text>
+  <rect x="60" y="184" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="175" y="200" text-anchor="middle">Exposed APIs &amp; Services</text>
+  <rect x="60" y="216" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="175" y="232" text-anchor="middle">TLS Certificates</text>
+  <rect x="60" y="248" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="#E24B4A" x="175" y="264" text-anchor="middle">Forgotten assets · Shadow IT</text>
+  <rect x="60" y="280" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="#E24B4A" x="175" y="296" text-anchor="middle">Cloud misconfigurations</text>
+  <rect x="60" y="312" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="#E24B4A" x="175" y="328" text-anchor="middle">Dangling DNS · Subdomain takeover</text>
+  <rect x="60" y="344" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="175" y="360" text-anchor="middle">Third-party exposure</text>
+  <!-- Center divider label -->
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--text-secondary, #5c5f70)" x="340" y="240" text-anchor="middle">+</text>
+  <!-- Internal surface — right panel -->
+  <rect x="370" y="70" width="270" height="330" rx="8" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="505" y="94" text-anchor="middle">INTERNAL SURFACE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="505" y="108" text-anchor="middle">Behind the perimeter · Post-breach risk</text>
+  <!-- Internal items -->
+  <rect x="390" y="120" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="505" y="136" text-anchor="middle">Servers · Workstations</text>
+  <rect x="390" y="152" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="505" y="168" text-anchor="middle">Internal applications</text>
+  <rect x="390" y="184" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="505" y="200" text-anchor="middle">Databases · File shares</text>
+  <rect x="390" y="216" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="#E24B4A" x="505" y="232" text-anchor="middle">Overprivileged service accounts</text>
+  <rect x="390" y="248" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="505" y="264" text-anchor="middle">Network devices · OT systems</text>
+  <rect x="390" y="280" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="#E24B4A" x="505" y="296" text-anchor="middle">Unmanaged endpoints</text>
+  <rect x="390" y="312" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-muted, #c6c5c5)" x="505" y="328" text-anchor="middle">API keys · Hardcoded credentials</text>
+  <rect x="390" y="344" width="230" height="24" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="#E24B4A" x="505" y="360" text-anchor="middle">Unsanctioned SaaS · Shadow apps</text>
+  <!-- Bottom note -->
+  <rect x="40" y="418" width="10" height="10" rx="2" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="56" y="428">High-risk exposure — requires immediate inventory and monitoring</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="450" text-anchor="middle">ASM without continuous discovery is a spreadsheet. The surface changes daily.</text>
+</svg>

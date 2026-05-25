@@ -1,0 +1,47 @@
+<svg width="100%" viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="520" fill="var(--bg-primary, #0b0c0e)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="14" font-weight="700" fill="var(--text-primary, #ffffff)" x="380" y="38" text-anchor="middle">NIST SP 800-34 — CONTINGENCY PLANNING</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-secondary, #5c5f70)" x="380" y="56" text-anchor="middle">A structured path from disruption to restored operations</text>
+  <rect x="40" y="86" width="680" height="76" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--brand-purple, #7367f0)" x="380" y="110" text-anchor="middle">PREPARATION</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="380" y="128" text-anchor="middle">Scope · roles · BIA · recovery strategy · contingency plan</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="380" y="145" text-anchor="middle">Build the plan before the outage happens</text>
+  <path d="M380 162 L380 184" stroke="var(--brand-purple, #7367f0)" stroke-width="1.4"/>
+  <path d="M380 184 L360 178 L380 200 L400 178 Z" fill="var(--brand-purple, #7367f0)" opacity="0.9"/>
+  <rect x="50" y="206" width="210" height="186" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="155" y="230" text-anchor="middle">NOTIFICATION / ACTIVATION</text>
+  <rect x="68" y="242" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="155" y="257" text-anchor="middle">Detect disruption</text>
+  <rect x="68" y="272" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="155" y="287" text-anchor="middle">Notify recovery team</text>
+  <rect x="68" y="302" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.1"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="155" y="317" text-anchor="middle">Assess damage</text>
+  <rect x="68" y="332" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="155" y="347" text-anchor="middle">Declare recovery path</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="155" y="368" text-anchor="middle">Trigger the plan</text>
+  <rect x="275" y="206" width="210" height="186" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="380" y="230" text-anchor="middle">RECOVERY</text>
+  <rect x="293" y="242" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="380" y="257" text-anchor="middle">Restore service</text>
+  <rect x="293" y="272" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="380" y="287" text-anchor="middle">Use alternate site or system</text>
+  <rect x="293" y="302" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.1"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="380" y="317" text-anchor="middle">Manual workaround</text>
+  <rect x="293" y="332" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="380" y="347" text-anchor="middle">Meet RTO / RPO targets</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="380" y="368" text-anchor="middle">Operate in contingency mode</text>
+  <rect x="500" y="206" width="210" height="186" rx="10" fill="var(--bg-secondary, #1a1b26)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" fill="var(--text-muted, #c6c5c5)" x="605" y="230" text-anchor="middle">RECONSTITUTION</text>
+  <rect x="518" y="242" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="605" y="257" text-anchor="middle">Return to normal operations</text>
+  <rect x="518" y="272" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="605" y="287" text-anchor="middle">Validate integrity</text>
+  <rect x="518" y="302" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="#E24B4A" stroke-width="1.1"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="605" y="317" text-anchor="middle">Transition from temporary state</text>
+  <rect x="518" y="332" width="174" height="22" rx="4" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="605" y="347" text-anchor="middle">Close incident lessons learned</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="605" y="368" text-anchor="middle">Restore and improve</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="380" y="456" text-anchor="middle">SP 800-34 turns recovery into a repeatable process, not a panic response.</text>
+  <rect x="40" y="430" width="10" height="10" rx="2" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="56" y="440">Plans only work when they are tested, updated, and understood.</text>
+</svg>
