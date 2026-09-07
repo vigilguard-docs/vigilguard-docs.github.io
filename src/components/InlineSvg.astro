@@ -1,0 +1,22 @@
+---
+// src/components/InlineSvg.astro
+import fs from "node:fs";
+import path from "node:path";
+
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+
+// This resolves to your public folder
+const filePath = path.join(process.cwd(), 'public', src);
+
+let svgContent = "";
+try {
+  svgContent = fs.readFileSync(filePath, "utf-8");
+} catch (e) {
+  console.error(`Could not find SVG at ${filePath}`);
+}
+---
+<Fragment set:html={svgContent} />

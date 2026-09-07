@@ -1,0 +1,98 @@
+<svg width="100%" viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="680" height="480" fill="var(--bg-primary, #0b0c0e)"/>
+  <!-- Title -->
+  <text font-family="Space Grotesk,sans-serif" font-size="13" font-weight="700" fill="var(--text-primary, #ffffff)" x="340" y="36" text-anchor="middle">IRM — INTEGRATED RISK REGISTER</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" fill="var(--text-secondary, #5c5f70)" x="340" y="52" text-anchor="middle">Risk quantified, owned, and tracked — not logged and forgotten</text>
+  <!-- Column headers -->
+  <line x1="40" y1="70" x2="640" y2="70" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="100" y="86" text-anchor="middle">RISK</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="220" y="86" text-anchor="middle">SOURCE</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="320" y="86" text-anchor="middle">LIKELIHOOD</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="410" y="86" text-anchor="middle">IMPACT</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="510" y="86" text-anchor="middle">OWNER</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="var(--brand-purple, #7367f0)" x="610" y="86" text-anchor="middle">STATUS</text>
+  <line x1="40" y1="92" x2="640" y2="92" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <!-- Row 1 -->
+  <rect x="40" y="96" width="600" height="40" rx="0" fill="var(--bg-secondary, #1a1b26)" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="60" y="114" text-anchor="start">Critical vendor breach</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="60" y="128" text-anchor="start">Unassessed payment processor</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="220" y="120" text-anchor="middle">TPRM</text>
+  <!-- Likelihood bar -->
+  <rect x="276" y="108" width="88" height="14" rx="3" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <rect x="276" y="108" width="66" height="14" rx="3" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-primary, #ffffff)" x="320" y="119" text-anchor="middle">High</text>
+  <!-- Impact -->
+  <rect x="368" y="108" width="84" height="14" rx="3" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#E24B4A" x="410" y="119" text-anchor="middle">$4.2M est.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="510" y="120" text-anchor="middle">CFO · Legal</text>
+  <rect x="576" y="108" width="58" height="14" rx="3" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="605" y="119" text-anchor="middle">OPEN</text>
+  <line x1="40" y1="136" x2="640" y2="136" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2" opacity="0.9"/>
+  <!-- Row 2 -->
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="60" y="154" text-anchor="start">Ransomware — legacy infra</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="60" y="168" text-anchor="start">Unpatched on-prem servers</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="220" y="160" text-anchor="middle">EASM · VM</text>
+  <rect x="276" y="148" width="88" height="14" rx="3" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <rect x="276" y="148" width="55" height="14" rx="3" fill="#e6a817" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-primary, #ffffff)" x="320" y="159" text-anchor="middle">Medium</text>
+  <rect x="368" y="148" width="84" height="14" rx="3" fill="#e6a817" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#e6a817" x="410" y="159" text-anchor="middle">$1.8M est.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="510" y="160" text-anchor="middle">IT Ops</text>
+  <rect x="576" y="148" width="58" height="14" rx="3" fill="#e6a817" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#e6a817" x="605" y="159" text-anchor="middle">IN PROG</text>
+  <line x1="40" y1="176" x2="640" y2="176" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2" opacity="0.9"/>
+  <!-- Row 3 -->
+  <rect x="40" y="180" width="600" height="40" rx="0" fill="var(--bg-secondary, #1a1b26)" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="60" y="198" text-anchor="start">GDPR regulatory fine</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="60" y="212" text-anchor="start">Data handling non-compliance</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="220" y="200" text-anchor="middle">GRC · Legal</text>
+  <rect x="276" y="192" width="88" height="14" rx="3" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <rect x="276" y="192" width="33" height="14" rx="3" fill="#2ec97a" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-primary, #ffffff)" x="320" y="203" text-anchor="middle">Low</text>
+  <rect x="368" y="192" width="84" height="14" rx="3" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#E24B4A" x="410" y="203" text-anchor="middle">$8.5M est.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="510" y="200" text-anchor="middle">DPO · Legal</text>
+  <rect x="576" y="192" width="58" height="14" rx="3" fill="#2ec97a" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#2ec97a" x="605" y="203" text-anchor="middle">MANAGED</text>
+  <line x1="40" y1="220" x2="640" y2="220" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2" opacity="0.9"/>
+  <!-- Row 4 -->
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="60" y="238" text-anchor="start">Identity compromise</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="60" y="252" text-anchor="start">No phishing-resistant MFA</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="220" y="240" text-anchor="middle">IAM</text>
+  <rect x="276" y="232" width="88" height="14" rx="3" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <rect x="276" y="232" width="66" height="14" rx="3" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-primary, #ffffff)" x="320" y="243" text-anchor="middle">High</text>
+  <rect x="368" y="232" width="84" height="14" rx="3" fill="#e6a817" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#e6a817" x="410" y="243" text-anchor="middle">$2.1M est.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="510" y="240" text-anchor="middle">CISO · IT</text>
+  <rect x="576" y="232" width="58" height="14" rx="3" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#E24B4A" x="605" y="243" text-anchor="middle">OPEN</text>
+  <line x1="40" y1="260" x2="640" y2="260" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2" opacity="0.9"/>
+  <!-- Row 5 -->
+  <rect x="40" y="264" width="600" height="40" rx="0" fill="var(--bg-secondary, #1a1b26)" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="60" y="282" text-anchor="start">Supply chain attack</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-secondary, #5c5f70)" x="60" y="296" text-anchor="start">Fourth-party software dependency</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="220" y="280" text-anchor="middle">TPRM · ASM</text>
+  <rect x="276" y="276" width="88" height="14" rx="3" fill="var(--bg-primary, #0b0c0e)" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2"/>
+  <rect x="276" y="276" width="44" height="14" rx="3" fill="#e6a817" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="8" fill="var(--text-primary, #ffffff)" x="320" y="287" text-anchor="middle">Medium</text>
+  <rect x="368" y="276" width="84" height="14" rx="3" fill="#E24B4A" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#E24B4A" x="410" y="287" text-anchor="middle">$6.0M est.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-muted, #c6c5c5)" x="510" y="284" text-anchor="middle">Procurement</text>
+  <rect x="576" y="276" width="58" height="14" rx="3" fill="#e6a817" opacity="0.4"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="#e6a817" x="605" y="287" text-anchor="middle">REVIEW</text>
+  <line x1="40" y1="304" x2="640" y2="304" stroke="var(--border-primary, #3a3c5a)" stroke-width="1.2" opacity="0.9"/>
+  <!-- Total exposure summary -->
+  <rect x="40" y="318" width="600" height="50" rx="6" fill="var(--bg-secondary, #1a1b26)" stroke="var(--brand-purple, #7367f0)" stroke-width="1.2"/>
+  <text font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="var(--text-primary, #ffffff)" x="60" y="340">Total estimated annualised exposure:</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="16" font-weight="700" fill="var(--brand-purple, #7367f0)" x="620" y="348" text-anchor="end">$22.6M</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="60" y="358">3 open risks · 1 in progress · 1 managed. Board reporting cadence: quarterly.</text>
+  <!-- Bottom -->
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="400" text-anchor="middle">IRM translates technical exposure into financial risk the board can act on.</text>
+  <text font-family="Space Grotesk,sans-serif" font-size="9" fill="var(--text-secondary, #5c5f70)" x="340" y="416" text-anchor="middle">Every risk needs a named owner, a financial estimate, and a documented response decision.</text>
+</svg>

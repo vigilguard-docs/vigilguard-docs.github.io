@@ -1,0 +1,46 @@
+---
+title: "SOC: Security Operations Center"
+date: 2026-04-11
+layout: ../../layouts/Layout.astro
+---
+
+import InlineSvg from '../../components/InlineSvg.astro';
+
+# Security Operations Center (SOC)
+A SOC is not a room full of screens. It's the operational core of your detection and response capability — and most organizations either don't have one, have one that isn't working, or have outsourced one without understanding what they actually bought.
+## What It Actually Is
+A Security Operations Center is the combination of people, processes, and technology responsible for continuously monitoring an organization's environment for threats, detecting security incidents, and responding to them. The SOC is where threat intelligence, detection engineering, incident response, and forensics converge into an operational function.
+The scope has expanded significantly. A traditional SOC monitored network traffic and SIEM alerts. A modern SOC monitors endpoints, cloud infrastructure, identity systems, SaaS applications, and operational technology — across an environment that has no clear boundary and generates log volumes that no human team can manually review. The tooling has evolved accordingly: SIEM, SOAR, EDR, NDR, UEBA, and CNAPP platforms all feed the modern SOC. The challenge is that more tools produce more alerts, and alert volume without detection quality is a different kind of blindness.
+<div class="diagram-container" style="margin: 2rem 0;">
+<InlineSvg src="/learning-images/soc-diagram.svg" />
+</div>
+## The Detection Problem
+The single most important metric for a SOC is not the number of alerts processed. It's the mean time to detect a real threat — and the percentage of real threats that get detected at all.
+Most SOCs are optimized for the wrong thing. Alert triage velocity, tickets closed per analyst, SLA compliance on response times — these measure activity, not outcomes. An organization can have a SOC that closes 10,000 alerts per month and completely miss a threat actor who has been in the environment for 60 days because the attacker's techniques don't trigger any of the existing detection rules.
+The dwell time problem is the honest test of SOC effectiveness. If an attacker entered your environment today using techniques that are publicly documented in MITRE ATT&CK, how long would it take your SOC to detect them? The industry average dwell time — the gap between initial compromise and detection — remains measured in weeks. For organizations without mature detection engineering, it's measured in months.
+## Detection Engineering vs. Alert Triage
+There is a critical distinction between a SOC that triages alerts and a SOC that engineers detection.
+Alert triage is reactive: tools generate alerts, analysts review them, false positives get closed, true positives get escalated. This is necessary but insufficient. The quality of what gets detected is entirely determined by the quality of the detection rules — and if nobody is actively improving those rules, detection quality decays as the threat landscape evolves.
+Detection engineering is proactive: analysts and engineers study adversary TTPs, develop hypotheses about how those TTPs would manifest in your specific environment's logs, write detection logic to surface those patterns, test that logic against real data, and tune it to minimize false positives without creating blind spots. This is the function that actually improves detection over time.
+SOCs without detection engineering capability are maintaining a static detection posture in a dynamic threat environment. Every month that passes without new detection logic is a month that adversaries who have evolved their techniques can operate undetected.
+## The Tier Model and Its Limitations
+Most SOCs are structured in tiers: Tier 1 analysts handle initial alert triage, Tier 2 analysts handle escalations and deeper investigation, Tier 3 analysts handle complex incidents and threat hunting. This structure manages workload distribution but creates its own problems.
+Tier 1 burnout is a chronic SOC problem. Entry-level analysts processing high volumes of repetitive alerts — most of which are false positives — burn out quickly and leave. The turnover rate in Tier 1 SOC roles is among the highest in security. This creates a perpetual training burden and means institutional knowledge drains continuously out of the function.
+Automation and SOAR platforms can absorb the most repetitive Tier 1 work — log parsing, enrichment, basic triage decisions on well-understood alert types — but require significant investment to implement effectively. Organizations that buy SOAR platforms and don't invest in building playbooks get expensive automation of nothing.
+The alternative model — smaller teams of senior analysts with broader scope — trades coverage breadth for analytical depth. Neither model is universally correct. The right structure depends on environment complexity, threat profile, and available talent.
+## Build vs. Buy vs. Hybrid
+The build-versus-MSSP decision is among the most consequential a CISO makes, and it's frequently made on the wrong criteria.
+An internal SOC provides deep context about your specific environment, direct integration with your business operations and incident response teams, and control over detection logic and response procedures. It's expensive — fully loaded, a 24/7 internal SOC with genuine detection engineering capability requires significant headcount and tooling investment. It takes years to mature.
+A Managed Security Service Provider (MSSP) provides immediate coverage and predictable cost. What most MSSPs don't provide is detection logic tuned to your specific environment, analysts who understand your business context, or response capability that goes beyond escalating to your internal team. The "eyes on glass" model — analysts watching a dashboard and calling you when something turns red — is not a SOC. It's a monitoring service.
+The honest question for the MSSP evaluation is: what does their detection look like? Can they show you the detection rules they'd run in your environment? Can they demonstrate threat hunting capability? Can they show you their mean time to detect on real incidents? If those questions produce vague answers, you're buying alert volume management, not threat detection.
+Hybrid models — using an MSSP for coverage breadth and volume management while building internal capability for detection engineering, threat hunting, and incident response — often represent the most practical path for mid-sized organizations.
+## The Threat Hunting Layer
+Reactive detection — waiting for alerts — will never find everything. Threat hunting is the proactive complement: analysts forming hypotheses about adversary behavior in your environment and going looking for evidence of it, independent of alert queues.
+Effective threat hunting requires three things most SOCs lack: time (analysts freed from alert triage to pursue hypotheses), data (comprehensive, queryable log coverage across the environment), and skill (analysts who understand adversary TTPs well enough to form testable hypotheses and recognize subtle indicators).
+Threat hunting findings that come back negative aren't failures — they're validation. Findings that surface previously undetected activity convert to detection rules, closing the gap between what your tools catch and what's actually happening in your environment.
+## Where SOC Connects to the Broader Program
+The SOC is the operational layer where threat intelligence becomes detection, where CTEM validation findings become tuning input, and where BAS results become evidence of detection gaps. A SOC operating without CTI input is detecting generically. A SOC that doesn't receive BAS findings is missing systematic validation of whether its detection logic actually fires on real attack techniques.
+The SOC is also the function that makes Zero Trust operationally real — the identity anomalies, access pattern deviations, and behavioral signals that ZTA generates need a detection and response function to act on them.
+## Actionable Takeaways
+**Run a tabletop against your SOC using a realistic attack scenario — not a generic ransomware playbook, but a scenario based on the TTPs of a threat actor group that actually targets your industry.** Time how long it takes from initial compromise indicator to detection, escalation, and containment decision. The result will tell you more about your actual SOC capability than any metric on your security dashboard.
+**Pull the last 90 days of SOC metrics and identify what percentage of closed alerts were true positives versus false positives.** If your false positive rate exceeds 90% — which is common — your analysts are spending the majority of their time on noise. That's a detection engineering problem, not a staffing problem. Adding analysts to a broken detection model produces more expensive noise processing, not better security outcomes.

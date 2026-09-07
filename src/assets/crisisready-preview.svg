@@ -1,0 +1,84 @@
+<svg viewBox="0 0 180 280" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <defs>
+    <linearGradient id="cr-logo-grad" gradientUnits="userSpaceOnUse" x1="30" x2="30" y1="3" y2="57">
+      <stop offset="0" stop-color="#ce9ffc"/>
+      <stop offset="1" stop-color="#7367f0"/>
+    </linearGradient>
+    <style>
+      .bg  { fill: var(--color-background-secondary, #f4f4f6) }
+      .bg2 { fill: var(--color-background-primary, #ffffff) }
+      .t1  { fill: var(--color-text-primary, #111) }
+      .t2  { fill: var(--color-text-secondary, #555) }
+      .t3  { fill: var(--color-text-tertiary, #999) }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="180" height="280" rx="10" class="bg" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="0" y="0" width="180" height="3" rx="2" fill="#7367f0"/>
+
+  <!-- logo top-right (crisisready: shield + cross) -->
+  <g transform="translate(146, 10) scale(0.367)">
+    <path d="m51 14c-12.467-.005-18.034-7.609-19.551-10.17-.304-.514-.851-.83-1.449-.83s-1.144.316-1.449.83c-1.517 2.561-7.084 10.165-19.551 10.17-1.104 0-2 .896-2 2v11c0 19.096 16.575 27.645 20.951 29.568.649.285 1.341.432 2.049.432s1.4-.147 2.049-.432c4.376-1.923 20.951-10.472 20.951-29.568v-11c0-1.104-.896-2-2-2z" fill="url(#cr-logo-grad)"/>
+    <circle cx="30" cy="30" r="12" fill="none" stroke="white" stroke-width="2.5"/>
+    <line x1="30" y1="22" x2="30" y2="38" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="22" y1="30" x2="38" y2="30" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <text x="14" y="24" font-size="7" letter-spacing="1" class="t3">CRISISREADY · IRM</text>
+
+  <!-- scenario card -->
+  <rect x="14" y="32" width="152" height="42" rx="5" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="108" y="35" width="54" height="11" rx="2" fill="rgba(224,92,122,0.15)"/>
+  <text x="113" y="44" font-size="7" fill="#e05c7a">● CRITICAL</text>
+  <text x="20" y="48" font-size="8" font-weight="700" class="t1">Ransomware via</text>
+  <text x="20" y="62" font-size="8" font-weight="700" class="t1">Compromised Vendor</text>
+
+  <!-- triggers -->
+  <text x="14" y="86" font-size="7" letter-spacing="1" class="t3">TRIGGERED BY</text>
+  <circle cx="19" cy="95" r="2.5" fill="#7367f0"/>
+  <text x="25" y="98" font-size="7.5" class="t2">sqli.union.extract</text>
+  <circle cx="19" cy="108" r="2.5" fill="#0096c7"/>
+  <text x="25" y="111" font-size="7.5" class="t2">vendor.bcp.missing</text>
+
+  <line x1="14" y1="120" x2="166" y2="120" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))" stroke-width="0.5"/>
+
+  <!-- live signals -->
+  <text x="14" y="132" font-size="7" letter-spacing="1" class="t3">LIVE RISK SIGNALS</text>
+  <circle cx="19" cy="142" r="2.5" fill="#7367f0"/>
+  <text x="25" y="145" font-size="7.5" class="t2">VigilScan</text>
+  <text x="166" y="145" font-size="7.5" fill="#e05c7a" text-anchor="end">14 exposures</text>
+  <circle cx="19" cy="156" r="2.5" fill="#0096c7"/>
+  <text x="25" y="159" font-size="7.5" class="t2">VendorGuard</text>
+  <text x="166" y="159" font-size="7.5" fill="#f0a350" text-anchor="end">3 risk flags</text>
+
+  <line x1="14" y1="167" x2="166" y2="167" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))" stroke-width="0.5"/>
+
+  <!-- progress bars -->
+  <text x="14" y="179" font-size="7" letter-spacing="1" class="t3">EXERCISE PROGRESS</text>
+
+  <text x="14" y="194" font-size="7.5" class="t2">Detection</text>
+  <rect x="14" y="197" width="152" height="5" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="14" y="197" width="122" height="5" rx="2" fill="#7367f0" opacity="0.65"/>
+
+  <text x="14" y="212" font-size="7.5" class="t2">Comms &amp; Escalation</text>
+  <rect x="14" y="215" width="152" height="5" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="14" y="215" width="76" height="5" rx="2" fill="#0096c7" opacity="0.65"/>
+
+  <text x="14" y="230" font-size="7.5" class="t2">Recovery</text>
+  <rect x="14" y="233" width="152" height="5" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="14" y="233" width="30" height="5" rx="2" fill="#5ecaa5" opacity="0.65"/>
+
+  <line x1="14" y1="246" x2="166" y2="246" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))" stroke-width="0.5"/>
+
+  <!-- role tags -->
+  <rect x="14" y="252" width="28" height="10" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="19" y="260" font-size="6.5" class="t3">CISO</text>
+  <rect x="46" y="252" width="32" height="10" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="51" y="260" font-size="6.5" class="t3">LEGAL</text>
+  <rect x="82" y="252" width="24" height="10" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="87" y="260" font-size="6.5" class="t3">CRO</text>
+  <rect x="110" y="252" width="32" height="10" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="114" y="260" font-size="6.5" class="t3">IT OPS</text>
+
+  <text x="14" y="275" font-size="7" class="t3">1h 22m · 4 participants active</text>
+</svg>

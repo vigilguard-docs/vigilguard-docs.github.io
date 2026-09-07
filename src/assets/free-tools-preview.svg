@@ -1,0 +1,89 @@
+<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <style>
+    .bg  { fill: var(--color-background-secondary, #f4f4f6) }
+    .bg2 { fill: var(--color-background-primary, #ffffff) }
+    .t1  { fill: var(--color-text-primary, #111) }
+    .t2  { fill: var(--color-text-secondary, #555) }
+    .t3  { fill: var(--color-text-tertiary, #999) }
+    .bd  { stroke: var(--color-border-tertiary, rgba(0,0,0,0.1)) }
+  </style>
+
+  <!-- card bg -->
+  <rect width="320" height="200" rx="12" class="bg" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <rect width="320" height="3" rx="2" fill="#7367f0"/>
+
+  <!-- header row -->
+  <text x="14" y="22" font-size="7" letter-spacing="1" class="t3">SCANNOW · FREE TOOLS</text>
+  <rect x="248" y="11" width="58" height="12" rx="3" fill="rgba(94,202,165,0.15)"/>
+  <text x="253" y="21" font-size="7.5" fill="#5ecaa5">● ALL CLEAR</text>
+
+  <!-- divider -->
+  <line x1="14" y1="30" x2="306" y2="30" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))" stroke-width="0.5"/>
+
+  <!-- col 1: Email -->
+  <text x="14" y="44" font-size="7" letter-spacing="1" class="t3">EMAIL</text>
+  <rect x="14" y="49" width="86" height="30" rx="4" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <text x="20" y="61" font-size="7.5" class="t2">SPF / DKIM</text>
+  <rect x="20" y="65" width="50" height="4" rx="2" fill="rgba(94,202,165,0.2)"/>
+  <rect x="20" y="65" width="44" height="4" rx="2" fill="#5ecaa5" opacity="0.7"/>
+  <text x="72" y="69" font-size="6.5" fill="#5ecaa5">OK</text>
+  <text x="20" y="76" font-size="7" class="t3">DMARC enforced</text>
+
+  <!-- col 2: DNS -->
+  <text x="110" y="44" font-size="7" letter-spacing="1" class="t3">DNS</text>
+  <rect x="110" y="49" width="86" height="30" rx="4" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <text x="116" y="61" font-size="7.5" class="t2">Health Check</text>
+  <rect x="116" y="65" width="50" height="4" rx="2" fill="rgba(94,202,165,0.2)"/>
+  <rect x="116" y="65" width="50" height="4" rx="2" fill="#5ecaa5" opacity="0.7"/>
+  <text x="168" y="69" font-size="6.5" fill="#5ecaa5">OK</text>
+  <text x="116" y="76" font-size="7" class="t3">No lame delegates</text>
+
+  <!-- col 3: SSL -->
+  <text x="206" y="44" font-size="7" letter-spacing="1" class="t3">SSL / TLS</text>
+  <rect x="206" y="49" width="100" height="30" rx="4" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <text x="212" y="61" font-size="7.5" class="t2">Certificate</text>
+  <rect x="212" y="65" width="60" height="4" rx="2" fill="rgba(240,163,80,0.2)"/>
+  <rect x="212" y="65" width="38" height="4" rx="2" fill="#f0a350" opacity="0.7"/>
+  <text x="274" y="69" font-size="6.5" fill="#f0a350">42d</text>
+  <text x="212" y="76" font-size="7" class="t3">Expires in 42 days</text>
+
+  <!-- divider -->
+  <line x1="14" y1="90" x2="306" y2="90" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))" stroke-width="0.5"/>
+
+  <!-- scan results table -->
+  <text x="14" y="103" font-size="7" letter-spacing="1" class="t3">RECENT SCANS</text>
+
+  <!-- row 1 -->
+  <rect x="14" y="108" width="292" height="13" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <text x="20" y="118" font-size="7.5" class="t2">acme.io</text>
+  <text x="90" y="118" font-size="7.5" class="t3">MX · SPF · DKIM · DMARC</text>
+  <rect x="258" y="110" width="44" height="9" rx="2" fill="rgba(94,202,165,0.15)"/>
+  <text x="264" y="118" font-size="7" fill="#5ecaa5">PASSED</text>
+
+  <!-- row 2 -->
+  <rect x="14" y="124" width="292" height="13" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <text x="20" y="134" font-size="7.5" class="t2">api.acme.io</text>
+  <text x="90" y="134" font-size="7.5" class="t3">SSL · HTTP Headers</text>
+  <rect x="254" y="126" width="52" height="9" rx="2" fill="rgba(240,163,80,0.15)"/>
+  <text x="258" y="134" font-size="7" fill="#f0a350">2 WARNINGS</text>
+
+  <!-- row 3 -->
+  <rect x="14" y="140" width="292" height="13" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <text x="20" y="150" font-size="7.5" class="t2">mail.acme.io</text>
+  <text x="90" y="150" font-size="7.5" class="t3">Blacklist · MX · DNS</text>
+  <rect x="258" y="142" width="44" height="9" rx="2" fill="rgba(94,202,165,0.15)"/>
+  <text x="264" y="150" font-size="7" fill="#5ecaa5">PASSED</text>
+
+  <!-- row 4 -->
+  <rect x="14" y="156" width="292" height="13" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))"/>
+  <text x="20" y="166" font-size="7.5" class="t2">legacy.acme.io</text>
+  <text x="90" y="166" font-size="7.5" class="t3">SSL · Whois · Headers</text>
+  <rect x="258" y="158" width="44" height="9" rx="2" fill="rgba(224,92,122,0.15)"/>
+  <text x="261" y="166" font-size="7" fill="#e05c7a">CRITICAL</text>
+
+  <!-- footer -->
+  <line x1="14" y1="178" x2="306" y2="178" stroke="var(--color-border-tertiary,rgba(0,0,0,0.1))" stroke-width="0.5"/>
+  <text x="14" y="191" font-size="7" class="t3">7 tools · no account required · scannow.vigilguard.com</text>
+  <rect x="240" y="182" width="66" height="11" rx="3" fill="#7367f0" opacity="0.15"/>
+  <text x="248" y="191" font-size="7.5" fill="#7367f0">Run a scan →</text>
+</svg>

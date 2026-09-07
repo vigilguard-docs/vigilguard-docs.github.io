@@ -1,0 +1,88 @@
+<svg viewBox="0 0 180 280" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <defs>
+    <linearGradient id="vs-logo-grad" x1="30" x2="30" y1="4" y2="57" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ce9ffc"/>
+      <stop offset="1" stop-color="#7367f0"/>
+    </linearGradient>
+    <mask id="vs-scan-mask" maskUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="white"/>
+      <circle cx="30" cy="32" r="3" fill="black"/>
+      <circle cx="30" cy="32" r="7" fill="none" stroke="black" stroke-width="4"/>
+      <circle cx="30" cy="32" r="13" fill="none" stroke="black" stroke-width="4"/>
+    </mask>
+    <style>
+      .bg  { fill: var(--color-background-secondary, #f4f4f6) }
+      .bg2 { fill: var(--color-background-primary, #ffffff) }
+      .t1  { fill: var(--color-text-primary, #111) }
+      .t2  { fill: var(--color-text-secondary, #555) }
+      .t3  { fill: var(--color-text-tertiary, #999) }
+      .bd  { stroke: var(--color-border-tertiary, rgba(0,0,0,0.12)); fill: none }
+    </style>
+  </defs>
+
+  <!-- card bg -->
+  <rect x="0" y="0" width="180" height="280" rx="10" class="bg" stroke-width="0.5" stroke="var(--color-border-tertiary, rgba(0,0,0,0.12))"/>
+  <!-- top accent -->
+  <rect x="0" y="0" width="180" height="3" rx="2" fill="#7367f0"/>
+
+  <!-- logo top-right (scaled to 22px) -->
+  <g transform="translate(146, 10) scale(0.367)">
+    <path fill="url(#vs-logo-grad)" mask="url(#vs-scan-mask)"
+      d="M51 15c-12.47 0-18.03-7.61-19.55-10.17A1.67 1.67 0 0 0 30 4c-.6 0-1.14.32-1.45.83C27.03 7.39 21.47 15 9 15a2 2 0 0 0-2 2v10c0 19.1 16.57 27.65 20.95 29.57.65.29 1.34.43 2.05.43s1.4-.14 2.05-.43C36.42 54.65 53 46.1 53 27V17a2 2 0 0 0-2-2z"/>
+  </g>
+
+  <!-- label -->
+  <text x="14" y="24" font-size="7" letter-spacing="1" class="t3">VIGILSCAN · EASM</text>
+
+  <!-- big number -->
+  <text x="14" y="54" font-size="30" font-weight="700" class="t1">247</text>
+  <text x="14" y="68" font-size="8" class="t2">assets monitored</text>
+
+  <!-- bar chart -->
+  <text x="14" y="88" font-size="7" letter-spacing="1" class="t3">RISK BREAKDOWN</text>
+
+  <rect x="14" y="93" width="8" height="56" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="14" y="117" width="8" height="32" rx="2" fill="#e05c7a"/>
+
+  <rect x="26" y="93" width="8" height="56" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="26" y="108" width="8" height="41" rx="2" fill="#f0a350"/>
+
+  <rect x="38" y="93" width="8" height="56" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="38" y="112" width="8" height="37" rx="2" fill="#7367f0"/>
+
+  <rect x="50" y="93" width="8" height="56" rx="2" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <rect x="50" y="122" width="8" height="27" rx="2" fill="#5ecaa5"/>
+
+  <!-- legend -->
+  <rect x="70" y="100" width="6" height="6" rx="1" fill="#e05c7a"/><text x="79" y="106" font-size="7.5" class="t2">Critical   18</text>
+  <rect x="70" y="112" width="6" height="6" rx="1" fill="#f0a350"/><text x="79" y="118" font-size="7.5" class="t2">High       71</text>
+  <rect x="70" y="124" width="6" height="6" rx="1" fill="#7367f0"/><text x="79" y="130" font-size="7.5" class="t2">Medium  63</text>
+  <rect x="70" y="136" width="6" height="6" rx="1" fill="#5ecaa5"/><text x="79" y="142" font-size="7.5" class="t2">Low        95</text>
+
+  <line x1="14" y1="160" x2="166" y2="160" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))" stroke-width="0.5"/>
+
+  <!-- asset rows -->
+  <text x="14" y="173" font-size="7" letter-spacing="1" class="t3">RECENT FINDINGS</text>
+
+  <rect x="14" y="178" width="152" height="14" rx="3" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="20" y="188" font-size="7.5" class="t2">api.acme.io</text>
+  <rect x="134" y="180" width="28" height="10" rx="2" fill="rgba(224,92,122,0.15)"/>
+  <text x="138" y="188" font-size="7" fill="#e05c7a">CRIT</text>
+
+  <rect x="14" y="195" width="152" height="14" rx="3" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="20" y="205" font-size="7.5" class="t2">s3.acme-backup</text>
+  <rect x="134" y="197" width="28" height="10" rx="2" fill="rgba(240,163,80,0.15)"/>
+  <text x="138" y="205" font-size="7" fill="#f0a350">HIGH</text>
+
+  <rect x="14" y="212" width="152" height="14" rx="3" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="20" y="222" font-size="7.5" class="t2">staging.auth.acme</text>
+  <rect x="134" y="214" width="28" height="10" rx="2" fill="rgba(224,92,122,0.15)"/>
+  <text x="138" y="222" font-size="7" fill="#e05c7a">CRIT</text>
+
+  <rect x="14" y="229" width="152" height="14" rx="3" class="bg2" stroke-width="0.5" stroke="var(--color-border-tertiary,rgba(0,0,0,0.12))"/>
+  <text x="20" y="239" font-size="7.5" class="t2">legacy.portal.io</text>
+  <rect x="134" y="231" width="28" height="10" rx="2" fill="rgba(240,163,80,0.15)"/>
+  <text x="138" y="239" font-size="7" fill="#f0a350">HIGH</text>
+
+  <text x="14" y="265" font-size="7" class="t3">Last scan: 4 min ago</text>
+</svg>

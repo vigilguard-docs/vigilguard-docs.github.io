@@ -1,0 +1,1099 @@
+---
+import { Icon } from "astro-icon/components";
+import logo from "../../assets/vigilguard.svg";
+import vigilscanLogo from "../../assets/vigilscan.svg";
+import vendorguardLogo from "../../assets/vendorguard.svg";
+import crisisreadyLogo from "../../assets/crisisready.svg";
+import scannowLogo from "../../assets/scannow.svg";
+import Building from "lucide-static/icons/building.svg";
+import Briefcase from "lucide-static/icons/briefcase.svg";
+import ShieldCheck from "lucide-static/icons/shield-check.svg";
+import vigilguardocLogo from "../../assets/vigilguard-docs.svg";
+import vigilguardBlogLogo from "../../assets/vigilguard-blog.svg";
+import vigilscanPreview from "../../assets/vigilscan-preview.svg";
+import vendorguardPreview from "../../assets/vendorguard-preview.svg";
+import crisisreadyPreview from "../../assets/crisisready-preview.svg";
+import freeToolsPreview from "../../assets/free-tools-preview.svg";
+
+const productGroups = [
+  {
+    title: "EXTERNAL RISK INTELLIGENCE",
+    links: [
+      {
+        name: "VigilScan",
+        href: "https://vigilguard.com/vigilscan",
+        logo: vigilscanLogo,
+        previewImg: vigilscanPreview,
+        desc: "Continuously discover, map, and monitor your external attack surface across domains, cloud assets, and exposed services with real-time visibility into evolving risk.\n\nWithout active mapping, 'Shadow IT' and forgotten assets become the easiest entry points for attackers. Failing to monitor these exposures in real-time allows vulnerabilities to persist undetected until they are exploited in a breach.",
+      },
+    ],
+  },
+  {
+    title: "VENDOR RISK MANAGEMENT",
+    links: [
+      {
+        name: "VendorGuard",
+        href: "https://vigilguard.com/vendorguard",
+        logo: vendorguardLogo,
+        previewImg: vendorguardPreview,
+        desc: "Automate vendor risk assessments and continuously manage third-party exposure with structured workflows, real-time insights, and full lifecycle visibility across your supply chain.\n\nA single compromised vendor can bypass all your internal defenses. Relying on manual, point-in-time assessments leaves you blind to your vendors' shifting security postures, significantly increasing the likelihood of a third-party data breach.",
+      },
+    ],
+  },
+  {
+    title: "CRISIS SIMULATION",
+    links: [
+      {
+        name: "CrisisReady",
+        href: "https://vigilguard.com/crisisready",
+        logo: crisisreadyLogo,
+        previewImg: crisisreadyPreview,
+        desc: "Run realistic, data-driven crisis simulations powered by your live VigilScan environment to evaluate response, decision-making, and organizational resilience under pressure.\n\nTheoretical security plans often crumble during a real attack. Without regular pressure-testing of your leadership and technical teams, you remain unaware of critical communication gaps that lead to delayed containment and increased recovery costs.",
+      },
+    ],
+  },
+];
+
+const freeToolsGroups = [
+  {
+    title: "EMAIL SECURITY",
+    links: [
+      {
+        name: "MX Record Checker",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This tool validates your Mail Exchanger (MX) records to ensure mail servers are correctly configured, prioritized, and redundant. \n\nFailure to maintain proper MX configurations can lead to total email downtime or 'black-holed' communications.",
+      },
+      {
+        name: "SPF/DKIM/DMARC Scan",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This scan audits your email authentication protocols (SPF, DKIM, and DMARC) to verify that only authorized servers can send mail on your behalf. \n\nWeak authentication is the primary vector for domain spoofing and phishing.",
+      },
+      {
+        name: "Email Blacklist Check",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This check cross-references your sending IP and domain against over 100 global Real-time Blackhole Lists (RBLs). \n\nBeing blacklisted means your legitimate business emails will be automatically blocked by major providers.",
+      },
+    ],
+  },
+  {
+    title: "DNS & NETWORK",
+    links: [
+      {
+        name: "DNS Health Check",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This diagnostic identifies DNS misconfigurations, lame delegations, and missing records. \n\nDNS is the 'phonebook' of the internet; a single error can make your entire digital presence vanish.",
+      },
+      {
+        name: "Whois Lookup",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This tool retrieves registration ownership, registrar details, and administrative contact data. \n\nLosing track of registration data often leads to accidental domain expiration, which is frequently exploited by squatters.",
+      },
+    ],
+  },
+  {
+    title: "WEB & ENCRYPTION",
+    links: [
+      {
+        name: "SSL/TLS Inspector",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This inspector evaluates certificate validity, encryption suite strength, and protocol support. \n\nExpired or weak certificates trigger security warnings, driving users away from your site.",
+      },
+      {
+        name: "HTTP Header Security",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "This tool analyzes critical security headers like HSTS, CSP, and X-Frame-Options. \n\nMissing headers leave your site wide open to Cross-Site Scripting (XSS) and Clickjacking.",
+      },
+    ],
+  },
+  {
+    title: "CRISIS READINESS",
+    links: [
+      {
+        name: "Business Impact Analysis Tool",
+        href: "https://scannow.vigilguard.com",
+        logo: scannowLogo,
+        desc: "Create a quick view of your business impact analysis (BIA) to identify critical assets and prioritize your crisis simulation scenarios.",
+      },
+    ],
+  },
+];
+
+const loginGroups = [
+  {
+    title: "EXTERNAL RISK INTELLIGENCE",
+    links: [
+      {
+        name: "VigilScan Login",
+        href: "https://vigilscan.vigilguard.com/",
+        logo: vigilscanLogo,
+        previewImg: vigilscanPreview,
+        desc: "Your EASM dashboard.\nDiscover, monitor, and prioritize exposed assets in real time.",
+      },
+    ],
+  },
+  {
+    title: "VENDOR RISK MANAGEMENT",
+    links: [
+      {
+        name: "VendorGuard Login",
+        href: "https://vendorguard.vigilguard.com",
+        logo: vendorguardLogo,
+        previewImg: vendorguardPreview,
+        desc: "Your TPRM dashboard.\nAutomate assessments and track vendor risk across your supply chain.",
+      },
+      {
+        name: "Vendor Portal Login",
+        href: "https://vendors.vendorguard.vigilguard.com",
+        logo: vendorguardLogo,
+        previewImg: vendorguardPreview,
+        desc: "Vendor portal.\nSubmit security evidence and fulfill obligations in one place.",
+      },
+    ],
+  },
+  {
+    title: "CRISIS SIMULATION",
+    links: [
+      {
+        name: "CrisisReady Login",
+        href: "https://crisisready.vigilguard.com",
+        logo: crisisreadyLogo,
+        previewImg: crisisreadyPreview,
+        desc: "Launch breach and attack simulations based on your real-world attack surface data.\n\nRegular simulation ensures your detection and response workflows are functional before a real threat actor strikes.",
+      },
+    ],
+  },
+];
+
+const companyGroups = [
+  {
+    title: "RESOURCES",
+    links: [
+      {
+        name: "Docs",
+        href: "https://docs.vigilguard.com",
+        icon: vigilguardocLogo,
+        desc: "Technical documentation and API references.\n\nOperating without clear guardrails leads to misconfigurations. Proper docs ensure defenses are implemented correctly.",
+      },
+      {
+        name: "Learning Center",
+        href: "https://docs.vigilguard.com/learning",
+        logo: vigilguardBlogLogo,
+        desc: "Security frameworks without the fluff. \n\nClear definitions of EASM, CTEM, TPRM, and the concepts that shape how modern security programs are built and measured.",
+      },
+      {
+        name: "Blog",
+        href: "https://docs.vigilguard.com/blog",
+        logo: vigilguardBlogLogo,
+        desc: "Latest threat intelligence and security research.\n\nFailing to stay updated leaves your organization reactive rather than proactive against emerging attack vectors.",
+      },
+    ],
+  },
+  {
+    title: "COMPANY",
+    links: [
+      {
+        name: "About Us",
+        href: "https://vigilguard.com/aboutus",
+        icon: Building,
+        desc: "Our mission to secure the digital frontier.\n\nUnderstanding the expertise behind your security partners is essential to ensuring your risk strategy is aligned.",
+      },
+      {
+        name: "Careers",
+        href: "https://vigilguard.com/careers",
+        icon: Briefcase,
+        desc: "Join our team of risk strategists.\n\nWe constantly recruit top-tier talent to stay ahead of sophisticated adversaries.",
+      },
+      {
+        name: "Terms & Conditions",
+        href: "https://vigilguard.com/terms-and-privacy",
+        icon: ShieldCheck,
+        desc: "Legal framework and data privacy commitments.\n\nNon-compliance poses a massive financial threat. Clearly defined standards protect both parties.",
+      },
+    ],
+  },
+];
+---
+
+<header class="header">
+  <div class="header-container">
+    <div class="left-section">
+      <a
+        href="https://vigilguard.com"
+        class="logo-link"
+        aria-label="VigilGuard Home"
+      >
+        <img
+          src={logo.src}
+          alt="VigilGuard Logo"
+          class="logo-img"
+          width="24"
+          height="24"
+        />
+        <span class="logo-text">VigilGuard</span>
+      </a>
+    </div>
+
+    <nav class="desktop-nav">
+      <!-- Products -->
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger"
+          >Products<Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              productGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => (
+                    <a
+                      href={link.href}
+                      class="popdown-link product-link"
+                      data-desc={link.desc}
+                      data-preview={link.previewImg?.src ?? ""}
+                    >
+                      <img src={link.logo.src} alt="" width="18" height="18" />
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <div class="preview-img-stack">
+              <img
+                src={vigilscanPreview.src}
+                alt="VigilScan"
+                class="preview-img-static"
+              />
+              <img
+                src={vendorguardPreview.src}
+                alt="VendorGuard"
+                class="preview-img-static"
+              />
+              <img
+                src={crisisreadyPreview.src}
+                alt="CrisisReady"
+                class="preview-img-static"
+              />
+            </div>
+            <img class="preview-img" src="" alt="" aria-hidden="true" />
+            <p class="preview-desc">
+              <strong
+                >Unified intelligence across your external attack surface.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Free Tools -->
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger nav-link-animated"
+          ><span>Free Tools</span><Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              freeToolsGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => (
+                    <a
+                      href={link.href}
+                      class="popdown-link product-link"
+                      data-desc={link.desc}
+                    >
+                      <img src={link.logo.src} alt="" width="18" height="18" />
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <div class="preview-img-stack">
+              <img
+                src={freeToolsPreview.src}
+                alt="Free Tools"
+                class="preview-img-static"
+                style="width: 100%;"
+              />
+            </div>
+            <p class="preview-desc">
+              <strong
+                >Instant security intelligence for your infrastructure.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Login -->
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger"
+          >Login<Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              loginGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => (
+                    <a
+                      href={link.href}
+                      class="popdown-link product-link"
+                      target="_blank"
+                      data-desc={link.desc}
+                      data-preview={link.logo?.src ?? ""}
+                    >
+                      <img src={link.logo.src} alt="" width="18" height="18" />
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <div class="preview-img-stack">
+              <img
+                src={vigilscanPreview.src}
+                alt="VigilScan"
+                class="preview-img-static"
+              />
+              <img
+                src={vendorguardPreview.src}
+                alt="VendorGuard"
+                class="preview-img-static"
+              />
+              <img
+                src={crisisreadyPreview.src}
+                alt="CrisisReady"
+                class="preview-img-static"
+              />
+            </div>
+            <img class="preview-img" src="" alt="" aria-hidden="true" />
+
+            <img
+              class="preview-img login-logo"
+              src=""
+              alt=""
+              aria-hidden="true"
+            />
+            <p class="preview-desc">
+              <strong
+                >Secure access to your VigilGuard protection suites.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="popdown-wrapper">
+        <button class="popdown-trigger"
+          >Company<Icon
+            name="lucide:chevron-down"
+            class="company-caret"
+          /></button
+        >
+        <div class="popdown-content hidden">
+          <div class="popdown-left">
+            {
+              companyGroups.map((group) => (
+                <div class="popdown-group">
+                  <span class="popdown-title">{group.title}</span>
+                  {group.links.map((link) => {
+                    const IconComp = link.icon;
+                    return (
+                      <a
+                        href={link.href}
+                        class="popdown-link product-link"
+                        data-desc={link.desc}
+                      >
+                        {link.logo && (
+                          <img
+                            src={link.logo.src}
+                            alt=""
+                            width="18"
+                            height="18"
+                          />
+                        )}
+                        {link.iconName && (
+                          <Icon name={link.iconName} class="icon-small" />
+                        )}
+                        {!link.logo && !link.iconName && IconComp && (
+                          <IconComp class="icon-small" />
+                        )}
+                        {link.name}
+                      </a>
+                    );
+                  })}
+                </div>
+              ))
+            }
+          </div>
+          <div class="popdown-right">
+            <div class="preview-img-stack">
+              <img
+                src={logo.src}
+                alt="VigilScan"
+                class="preview-img-static-logo"
+              />
+              <img
+                src={vigilscanLogo.src}
+                alt="VigilScan"
+                class="preview-img-static-logo"
+              />
+              <img
+                src={vendorguardLogo.src}
+                alt="VendorGuard"
+                class="preview-img-static-logo"
+              />
+              <img
+                src={crisisreadyLogo.src}
+                alt="CrisisReady"
+                class="preview-img-static-logo"
+              />
+            </div>
+
+            <p class="preview-desc">
+              <strong>Inside the mission to secure the digital frontier.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="https://vigilguard.com/pricing"
+        class="popdown-trigger pricing-link">Pricing</a
+      >
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://vigilguard.com/contact" class="contact-btn">Contact Us</a
+      >
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        class="theme-toggle"
+      >
+        <Icon name="lucide:sun" id="theme-icon-sun" class="icon" />
+        <Icon name="lucide:moon" id="theme-icon-moon" class="icon hidden" />
+      </button>
+      <button
+        id="mobile-menu-btn"
+        aria-label="Toggle mobile menu"
+        type="button"
+        class="mobile-menu-btn"
+      >
+        <Icon name="lucide:menu" id="menu-icon-open" class="icon" />
+        <Icon name="lucide:x" id="menu-icon-close" class="icon hidden" />
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <span class="mobile-group-label">PRODUCTS</span>
+    <a href="/vigilscan" class="mobile-nav-link">VigilScan</a>
+    <a href="/vendorguard" class="mobile-nav-link">VendorGuard</a>
+    <a href="/crisisready" class="mobile-nav-link">CrisisReady</a>
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">TOOLS</span>
+    <a href="https://scannow.vigilguard.com" class="mobile-nav-link"
+      >Free Scan</a
+    >
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">LOGIN</span>
+    <a
+      href="https://vigilscan.vigilguard.com/"
+      class="mobile-nav-link login-mobile-link">VigilScan Login</a
+    >
+    <a
+      href="https://vendorguard.vigilguard.com"
+      class="mobile-nav-link login-mobile-link">VendorGuard Login</a
+    >
+    <a
+      href="https://vendors.vendorguard.vigilguard.com"
+      class="mobile-nav-link login-mobile-link">Vendor Portal Login</a
+    >
+    <a
+      href="https://crisisready.vigilguard.com"
+      class="mobile-nav-link login-mobile-link">CrisisReady Login</a
+    >
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">RESOURCES</span>
+    <a href="https://docs.vigilguard.com" class="mobile-nav-link">Docs</a>
+    <a href="/aboutus" class="mobile-nav-link">About Us</a>
+    <a href="/careers" class="mobile-nav-link">Careers</a>
+    <a href="/terms-and-privacy" class="mobile-nav-link">Terms & Privacy</a>
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">PLANS</span>
+    <a href="/pricing" class="mobile-nav-link">Pricing</a>
+
+    <a href="/contact" class="mobile-contact-btn">Contact Us</a>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <span class="mobile-group-label">PRODUCTS</span>
+    <a href="https://vigilguard.com/vigilscan" class="mobile-nav-link">VigilScan</a>
+    <a href="https://vigilguard.com/vendorguard" class="mobile-nav-link">VendorGuard</a>
+    <a href="https://vigilguard.com/crisisready" class="mobile-nav-link">CrisisReady</a>
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">TOOLS</span>
+    <a href="https://scannow.vigilguard.com" class="mobile-nav-link"
+      >Free Scan</a
+    >
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">LOGIN</span>
+    <a
+      href="https://vigilscan.vigilguard.com/"
+      class="mobile-nav-link login-mobile-link">VigilScan Login</a
+    >
+    <a
+      href="https://vendorguard.vigilguard.com"
+      class="mobile-nav-link login-mobile-link">VendorGuard Login</a
+    >
+    <a
+      href="https://vendors.vendorguard.vigilguard.com"
+      class="mobile-nav-link login-mobile-link">Vendor Portal Login</a
+    >
+    <a
+      href="https://crisisready.vigilguard.com"
+      class="mobile-nav-link login-mobile-link">CrisisReady Login</a
+    >
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">RESOURCES</span>
+    <a href="https://docs.vigilguard.com" class="mobile-nav-link">Docs</a>
+    <a href="https://vigilguard.com/aboutus" class="mobile-nav-link">About Us</a>
+    <a href="https://vigilguard.com/careers" class="mobile-nav-link">Careers</a>
+    <a href="https://vigilguard.com/terms-and-privacy" class="mobile-nav-link">Terms & Privacy</a>
+
+    <div class="mobile-divider"></div>
+
+    <span class="mobile-group-label">PLANS</span>
+    <a href="https://vigilguard.com/pricing" class="mobile-nav-link">Pricing</a>
+
+    <a href="https://vigilguard.com/contact" class="mobile-contact-btn">Contact Us</a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--header-gradient);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid var(--border-translucent);
+  }
+
+  .header-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    position: relative;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  .logo-text {
+    font-weight: 700;
+    background: linear-gradient(
+      to right,
+      var(--brand-pink),
+      var(--brand-purple)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .contact-btn {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .desktop-nav {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .mobile-menu-btn {
+      display: none !important;
+    }
+    .contact-btn {
+      display: flex !important;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      text-decoration: none;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .popdown-trigger {
+    background: none;
+    border: none;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+  .popdown-trigger:hover {
+    transform: scale(1.07);
+  }
+
+  .popdown-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    margin-top: 1rem;
+    width: 90vw;
+    max-width: 1100px;
+    background: var(--mobile-nav-bg);
+    border: 1px solid var(--border-translucent);
+    display: flex;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .popdown-left {
+    width: 40%;
+    padding: 1.5rem 2rem;
+    border-right: 1px solid var(--border-translucent);
+    white-space: nowrap;
+  }
+
+  .popdown-right {
+    width: 60%;
+    padding: 2rem;
+    background: rgb(206, 159, 252, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  /* Three static images in a row */
+  .preview-img-stack {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: flex-end;
+  }
+  .preview-img-static {
+    display: block !important;
+    width: 72px;
+    height: auto;
+    border-radius: 0.6rem;
+    border: 1px solid var(--border-translucent);
+    transform: perspective(600px) rotateY(-8deg) rotateX(2deg);
+    box-shadow:
+      6px 6px 0px rgba(115, 103, 240, 0.15),
+      12px 12px 0px rgba(115, 103, 240, 0.08),
+      0 20px 40px rgba(0, 0, 0, 0.25),
+      0 4px 12px rgba(115, 103, 240, 0.2);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .preview-img-static:hover {
+    transform: perspective(600px) rotateY(-4deg) rotateX(1deg) scale(1.05);
+    box-shadow:
+      8px 8px 0px rgba(115, 103, 240, 0.2),
+      16px 16px 0px rgba(115, 103, 240, 0.1),
+      0 28px 48px rgba(0, 0, 0, 0.3),
+      0 6px 16px rgba(115, 103, 240, 0.25);
+  }
+
+  .preview-img-static-logo {
+    display: block !important;
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(0 4px 16px rgba(115, 103, 240, 0.35));
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Hover-swap single preview image (hidden until link hovered) */
+  .preview-img {
+    display: none;
+    width: 120px;
+    height: auto;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-translucent);
+    flex-shrink: 0;
+    transform: perspective(600px) rotateY(-8deg) rotateX(2deg);
+    box-shadow:
+      6px 6px 0px rgba(115, 103, 240, 0.15),
+      12px 12px 0px rgba(115, 103, 240, 0.08),
+      0 20px 40px rgba(0, 0, 0, 0.25),
+      0 4px 12px rgba(115, 103, 240, 0.2);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .preview-img:hover {
+    transform: perspective(600px) rotateY(-4deg) rotateX(1deg) scale(1.03);
+    box-shadow:
+      8px 8px 0px rgba(115, 103, 240, 0.2),
+      16px 16px 0px rgba(115, 103, 240, 0.1),
+      0 28px 48px rgba(0, 0, 0, 0.3),
+      0 6px 16px rgba(115, 103, 240, 0.25);
+  }
+  .preview-img.visible {
+    display: block;
+  }
+  .preview-img.login-logo {
+    width: 72px;
+    height: 72px;
+    border: none;
+    border-radius: 0;
+    transform: none;
+    box-shadow: none;
+    filter: drop-shadow(0 4px 16px rgba(115, 103, 240, 0.35));
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+  }
+  .preview-img.login-logo:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 6px 24px rgba(115, 103, 240, 0.5));
+  }
+
+  .popdown-group {
+    margin-bottom: 1.25rem;
+  }
+  .popdown-title {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 0.75rem;
+  }
+
+  .popdown-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+  }
+  .popdown-link:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+
+  .preview-desc {
+    white-space: pre-line;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 95%;
+    text-align: left;
+  }
+
+  .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: var(--text-secondary);
+  }
+  .icon-small {
+    width: 18px;
+    height: 18px;
+    color: var(--text-secondary);
+  }
+  .company-caret {
+    height: 1rem;
+    width: 1rem;
+    transition: transform 0.2s;
+  }
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .theme-toggle,
+  .mobile-menu-btn {
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-translucent);
+    background: var(--bg-secondary);
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: var(--mobile-nav-bg);
+    border-top: 1px solid var(--border-translucent);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    z-index: 100;
+  }
+
+  .mobile-group-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 0.75rem 0.75rem 0.25rem;
+  }
+  .mobile-nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+  }
+  .mobile-divider {
+    height: 1px;
+    background: var(--border-translucent);
+    margin: 0.5rem 0;
+  }
+  .mobile-contact-btn {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    text-align: center;
+    border-radius: 0.375rem;
+    background: var(--btn-translucent-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .hidden {
+    display: none !important;
+  }
+
+  .pricing-link {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    text-decoration: none;
+    background: none;
+    border: none;
+  }
+  .pricing-link:hover {
+    color: var(--text-primary);
+  }
+
+  .nav-link-animated span {
+    background-image: linear-gradient(
+      -225deg,
+      var(--text-muted) 0%,
+      var(--brand-pink) 50%,
+      var(--text-primary) 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+  }
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+</style>
+
+<script>
+  const headerInit = () => {
+    const themeBtn = document.getElementById("theme-toggle");
+    const updateIcon = (t) => {
+      document
+        .getElementById("theme-icon-sun")
+        ?.classList.toggle("hidden", t === "light");
+      document
+        .getElementById("theme-icon-moon")
+        ?.classList.toggle("hidden", t !== "light");
+    };
+    updateIcon(document.documentElement.getAttribute("data-theme") || "dark");
+    themeBtn?.addEventListener("click", () => {
+      const newTheme =
+        document.documentElement.getAttribute("data-theme") === "light"
+          ? "dark"
+          : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      updateIcon(newTheme);
+    });
+
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+      document.getElementById("menu-icon-open")?.classList.toggle("hidden");
+      document.getElementById("menu-icon-close")?.classList.toggle("hidden");
+    });
+
+    const closeAll = () => {
+      document
+        .querySelectorAll(".popdown-content")
+        .forEach((m) => m.classList.add("hidden"));
+      document
+        .querySelectorAll(".company-caret")
+        .forEach((c) => c.classList.remove("rotate-180"));
+    };
+
+    const wrappers = document.querySelectorAll(".popdown-wrapper");
+    wrappers.forEach((wrap) => {
+      const menu = wrap.querySelector(".popdown-content");
+      const caret = wrap.querySelector(".company-caret");
+      const previewImg = wrap.querySelector(".popdown-right > .preview-img");
+      const previewDesc = wrap.querySelector(".preview-desc");
+      const links = wrap.querySelectorAll(".popdown-link");
+      const defaultDesc = previewDesc?.innerHTML;
+      let closeTimer;
+
+      const open = () => {
+        clearTimeout(closeTimer);
+        closeAll();
+        menu?.classList.remove("hidden");
+        caret?.classList.add("rotate-180");
+      };
+
+      const scheduleClose = () => {
+        closeTimer = setTimeout(() => {
+          menu?.classList.add("hidden");
+          caret?.classList.remove("rotate-180");
+        }, 100);
+      };
+
+      wrap.addEventListener("mouseenter", open);
+      wrap.addEventListener("mouseleave", scheduleClose);
+      menu?.addEventListener("mouseenter", () => clearTimeout(closeTimer));
+      menu?.addEventListener("mouseleave", scheduleClose);
+
+      const imgStack = wrap.querySelector(".preview-img-stack");
+
+      links.forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+          const desc = link.getAttribute("data-desc");
+          const preview = link.getAttribute("data-preview");
+
+          if (previewDesc && desc) previewDesc.textContent = desc;
+
+          if (previewImg && preview) {
+            previewImg.setAttribute("src", preview);
+            previewImg.classList.add("visible");
+            if (imgStack) imgStack.style.display = "none";
+            wrap.querySelector(".popdown-right").style.flexDirection = "row";
+            wrap.querySelector(".popdown-right").style.alignItems = "center";
+          } else if (previewImg) {
+            previewImg.classList.remove("visible");
+          }
+        });
+
+        link.addEventListener("mouseleave", () => {
+          if (previewDesc && defaultDesc) previewDesc.innerHTML = defaultDesc;
+          if (previewImg) {
+            previewImg.classList.remove("visible");
+            previewImg.setAttribute("src", "");
+          }
+          if (imgStack) imgStack.style.display = "flex";
+          const pr = wrap.querySelector(".popdown-right");
+          if (pr) {
+            pr.style.flexDirection = "";
+            pr.style.alignItems = "";
+          }
+        });
+      });
+    });
+
+    document.addEventListener("click", closeAll);
+  };
+
+  document.addEventListener("DOMContentLoaded", headerInit);
+  document.addEventListener("astro:after-swap", headerInit);
+</script>

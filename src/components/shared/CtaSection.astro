@@ -1,0 +1,92 @@
+---
+// src/components/shared/CtaSection.astro
+const { 
+  title = "VigilScan Documentation Access", 
+  subtitle = "Access to our library of 997+ automated security scanners is restricted.", 
+  buttonText = "Request Access via GitHub", 
+  buttonLink = "https://github.com/vigilguard/vigilguard-docs.github.io/issues/new?template=request_access.yml",
+  showProducts = false // We set this to false to hide the extra boxes
+} = Astro.props;
+---
+
+<section id="cta" class="content-section">
+  <h2 class="heading">{title}</h2>
+  <p class="subheading">{subtitle}</p>
+  
+  <div class="cta-main-wrapper">
+    <a href={buttonLink} class="cta-button">
+      {buttonText}
+    </a>
+  </div>
+
+  {showProducts && (
+    <div class="cta-container">
+      <div class="cta-box">
+        <h2>Ready to Secure Your Perimeter?</h2>
+        <p>Gain complete visibility of your external attack surface today.</p>
+        <a href="/vigilscan/" class="cta-button">Learn more about VigilScan</a>
+      </div>
+      <div class="cta-box">
+        <h2>Manage Your Supply Chain Risk</h2>
+        <p>Monitor your vendors' security posture in real-time.</p>
+        <a href="/vendorguard/" class="cta-button">Understand VendorGuard better</a>
+      </div>
+    </div>
+  )}
+</section>
+
+<style>
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(6rem, 15vh, 10rem) 2rem;
+  }
+  .heading {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    background: linear-gradient(to right, var(--brand-pink), var(--brand-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  .subheading {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+  }
+  .cta-button {
+    background: var(--accent-gradient);
+    color: #fff;
+    padding: 1.25rem 3rem;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px var(--glow-color);
+    transition: transform 0.2s ease;
+  }
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+  .cta-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 4rem;
+  }
+  .cta-box {
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid var(--border-translucent);
+    border-radius: 24px;
+    background: var(--bg-translucent);
+  }
+</style>

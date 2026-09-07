@@ -1,0 +1,41 @@
+---
+title: "CTI: Cyber Threat Intelligence"
+date: 2026-04-11
+layout: ../../layouts/Layout.astro
+---
+
+import InlineSvg from '../../components/InlineSvg.astro';
+
+# Cyber Threat Intelligence (CTI)
+Most organizations consume threat intelligence. Very few operationalize it. The difference between those two groups shows up in dwell time, detection rates, and breach outcomes.
+## What It Actually Is
+Cyber Threat Intelligence is the collection, processing, analysis, and dissemination of information about adversaries — their identity, motivation, capability, infrastructure, and tactics — to support defensive decision-making. The output isn't a feed of IOCs. It's finished intelligence: context that changes what your security team does, how fast they do it, and where they focus.
+The word *intelligence* is doing real work here. Raw data about threats is not intelligence. A list of malicious IP addresses is data. Understanding that a specific threat actor group is actively targeting financial services firms in your region using a specific phishing kit, with a specific C2 infrastructure pattern, during a specific campaign window — that's intelligence. One is a blocklist. The other changes your detection logic, your incident response posture, and potentially your board communication.
+<div class="diagram-container" style="margin: 2rem 0;">
+<InlineSvg src="/learning-images/cti-diagram.svg" />
+</div>
+## The Three Tiers
+CTI operates at three levels, and effective programs produce and consume all three.
+**Strategic intelligence** addresses the big picture: what threat actors are relevant to your organization, what their motivations are, how the geopolitical and criminal landscape is shifting, and what that means for your risk posture over the next 12-24 months. The audience is executive and board-level. The output informs budget decisions, security program priorities, and risk appetite discussions. Strategic intelligence doesn't contain IP addresses — it contains analysis.
+**Operational intelligence** focuses on active campaigns and imminent threats: who is targeting organizations like yours right now, what TTPs they're using, and what indicators suggest you may already be targeted. The audience is security leadership and senior analysts. The output changes your detection priorities, your hunting activities, and your incident response readiness in the near term.
+**Tactical intelligence** is the technical layer: specific indicators of compromise, malware signatures, C2 domains, exploit techniques, and ATT&CK technique mappings associated with current threats. The audience is SOC analysts, threat hunters, and detection engineers. The output feeds directly into SIEM rules, EDR configurations, firewall blocklists, and threat hunting queries.
+Most organizations only consume tactical intelligence — IOC feeds that get ingested into security tools automatically. That's the lowest-value tier. IOCs have short shelf lives (threat actors rotate infrastructure constantly), they're reactive (you're blocking infrastructure that was active last week), and they require no analysis to consume (which means no one is learning anything). Organizations that treat IOC ingestion as a CTI program are checking a box, not building a capability.
+## What Makes Intelligence Actionable
+Intelligence is only valuable if it changes behavior. The test for any piece of threat intelligence is simple: did someone do something differently because of it?
+**Relevance** is the first filter. Not all threat actors are relevant to your organization. A CTI program that monitors every known APT group and criminal syndicate produces noise. An effective program identifies the adversaries most likely to target your industry, geography, and asset profile — and focuses analytical depth on those. Threat actor profiling is the starting point, not an afterthought.
+**Timeliness** matters more than volume. Intelligence about a campaign that ended three months ago has limited defensive value. Intelligence about a campaign that started last week — with indicators your tools can act on today — is high value. CTI programs need pipelines that get relevant intelligence to the right teams fast enough to matter.
+**Context** is what separates intelligence from data. An IP address is not actionable. An IP address associated with a specific threat actor, used in a specific campaign targeting your sector, with a documented history of C2 activity and a confidence rating based on multiple source corroboration — that's actionable. The analytical work of adding context is where CTI teams create value.
+**Integration** determines whether intelligence gets used. CTI that lives in a portal nobody checks, or in reports that get emailed to a distribution list and archived, doesn't change defensive behavior. Intelligence needs to flow into the tools and workflows where analysts are operating — SIEM detection rules, EDR hunting queries, vulnerability prioritization, incident response playbooks.
+## The Internal Intelligence Problem
+External threat feeds get most of the attention. Internal intelligence — generated from your own environment — is frequently more valuable and almost always underutilized.
+Your logs contain evidence of adversary reconnaissance, credential testing, lateral movement attempts, and early-stage compromise that never reached the threshold of a formal incident. Your incident response history contains TTPs that were used against you specifically. Your threat hunting results contain hypotheses about adversary behavior in your environment that should feed back into detection logic.
+Organizations that treat CTI as purely an external input miss the closed loop: internal observations inform threat models, threat models inform hunting hypotheses, hunting results produce internal intelligence, internal intelligence refines detection. That loop is how detection programs improve faster than the threat landscape evolves.
+## The ISAC and Community Intelligence Layer
+Industry-specific Information Sharing and Analysis Centers (ISACs) provide threat intelligence relevant to your sector — shared by peers who are being targeted by the same adversaries. Financial services, healthcare, energy, and most other critical sectors have active ISACs. The intelligence shared there is often more operationally relevant than commercial feeds, because it comes from organizations with the same threat profile as yours.
+Participation is frequently underutilized. Organizations join ISACs, receive the feeds, and never contribute back. The value of community intelligence is proportional to contribution — and the organizations that contribute most consistently get the most back, both in direct reciprocity and in the analytical relationships that develop over time.
+## Where CTI Connects to the Broader Program
+CTI is the threat context layer that makes every other security discipline more effective. CTEM prioritization without threat intelligence produces lists sorted by CVSS. With threat intelligence, it produces lists sorted by what adversaries targeting your sector are actually exploiting. BAS without threat intelligence tests generic ATT&CK coverage. With threat intelligence, it tests the specific techniques used by the groups most likely to target you.
+TPRM benefits from threat intelligence on vendor-specific threats — if a critical vendor is known to be targeted by a specific group, that changes your monitoring posture for that vendor immediately, without waiting for a questionnaire cycle.
+## Actionable Takeaways
+**Identify the three threat actor groups most likely to target your organization based on your industry, geography, and asset profile. Then ask your SOC whether they have specific detection logic for the TTPs those groups are known to use.** Generic detection is not sufficient — adversaries who know your sector know which controls to evade. Detection tuned to their specific techniques is materially more effective.
+**Pull your last three security incidents and ask whether threat intelligence — internal or external — could have shortened the detection window.** The answer is almost always yes, and the follow-up question — why didn't it — will tell you exactly where your CTI program needs to improve.

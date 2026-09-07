@@ -1,0 +1,47 @@
+---
+title: "ASM: Attack Surface Management"
+date: 2026-04-11
+layout: ../../layouts/Layout.astro
+---
+
+import InlineSvg from '../../components/InlineSvg.astro';
+
+# Attack Surface Management (ASM)
+Every asset your organization owns, operates, or is associated with is a potential entry point. Attack Surface Management is the discipline of knowing what those assets are before an attacker finds them for you.
+## What It Actually Is
+Attack Surface Management is the continuous process of discovering, inventorying, classifying, and monitoring all assets — digital and physical — that could be targeted by an adversary. This includes internal infrastructure, external-facing systems, cloud environments, employee devices, third-party integrations, and anything else that represents an exploitable interface between your organization and a potential attacker.
+ASM is the broadest framing of the asset visibility problem. It encompasses both your internal attack surface — everything inside your network perimeter — and your external attack surface (EASM), which covers what's visible and reachable from the internet. If EASM is the view an attacker has from outside, ASM is the complete picture: outside and inside, known and unknown, managed and shadow.
+## ASM vs. EASM — The Distinction That Matters
+These terms get used interchangeably. They shouldn't be.
+EASM is specifically about your external footprint — what's internet-facing, discoverable through passive reconnaissance, and reachable without authenticated access to your internal network. It's the attacker's pre-breach view.
+ASM is the full scope — it adds internal infrastructure, on-premises systems, internal applications, employee endpoints, and the connections between all of those. It's the complete inventory problem, not just the external slice of it.
+In practice, most organizations should start with EASM — the external surface is where initial access happens, and it's where visibility is most often weakest. ASM is the mature state: complete, continuous visibility across the entire asset landscape, internal and external.
+## Why Asset Inventory Is Harder Than It Should Be
+In theory, every organization should know what assets it owns. In practice, asset inventories are incomplete, stale, and frequently wrong — for structural reasons that don't go away with better tooling alone.
+Cloud provisioning creates assets faster than any manual process can track. A developer spins up an EC2 instance for testing, forgets about it, and it runs unmanaged for months. A SaaS tool gets adopted by a business unit without IT involvement. An acquisition brings in an entirely new infrastructure environment that gets partially integrated and partially forgotten.
+Shadow IT compounds this. Security teams consistently underestimate the volume of unsanctioned tools, services, and systems operating within their environment. Research repeatedly shows that the actual count of cloud services in use at large organizations is multiples of what IT believes.
+M&A activity is particularly dangerous. Acquiring a company means inheriting its attack surface — including every unpatched system, forgotten credential, and misconfigured cloud resource the acquired company accumulated. Due diligence rarely surfaces all of it. The security debt gets inherited silently.
+<div class="diagram-container" style="margin: 2rem 0;">
+<InlineSvg src="/learning-images/asm-diagram.svg" />
+</div>
+## What a Complete ASM Program Covers
+**External assets** — domains, subdomains, IP ranges, cloud-hosted services, APIs, certificates, and anything else internet-facing. This is the EASM component.
+**Internal assets** — servers, workstations, network devices, on-premises applications, databases, and internal services. This requires integration with your CMDB, endpoint management, and network discovery tooling.
+**Cloud assets** — IaaS, PaaS, and SaaS resources across all cloud providers and accounts. Multi-cloud environments require unified visibility — individual provider consoles don't give you the cross-account, cross-provider picture.
+**Identity surface** — service accounts, API keys, OAuth grants, and privileged credentials represent attack surface as surely as network ports do. An overprivileged service account is an exploitable interface.
+**Third-party surface** — the assets your vendors operate on your behalf or with access to your environment. This is where ASM overlaps with TPRM.
+**Employee and contractor surface** — personal devices used for work, home network access, shadow accounts on corporate platforms. This is the hardest category to inventory and the one most organizations explicitly exclude from scope.
+## The Relationship Between ASM and Vulnerability Management
+Asset inventory is the prerequisite for vulnerability management — you cannot prioritize CVEs on assets you don't know exist. This is obvious in principle and chronically broken in practice.
+Vulnerability scanners only find vulnerabilities on assets they're pointed at. If an asset isn't in scope, it doesn't get scanned. If it doesn't get scanned, vulnerabilities on it don't appear in your vulnerability management program. The asset you don't know about is always the one that gets exploited.
+ASM closes that gap. Continuous asset discovery ensures that new assets enter your vulnerability management workflow automatically, rather than waiting for someone to manually add them to a scan scope.
+## Prioritization Within ASM
+Not all assets carry equal risk. An ASM program that treats every discovered asset identically will drown in undifferentiated noise.
+Effective ASM applies context to every asset: What data does it process or store? What network segments can it reach? Is it internet-facing? What's its patch status? Who owns it? Does it have known vulnerabilities? That context transforms a raw inventory into a risk-weighted asset register — where the assets that matter most are visible, monitored most closely, and remediated fastest when issues are found.
+## Where ASM Connects to the Broader Program
+ASM is the foundation layer of CTEM. The scoping and discovery stages of CTEM are, in practice, an ASM exercise — you can't scope what you haven't inventoried, and you can't discover exposures on assets you don't know exist.
+ASM also feeds your BAS program directly. Simulation coverage is only as good as your asset inventory. If your BAS platform isn't reaching a segment of your environment because that segment wasn't in scope, you have blind spots in your validation that mirror your blind spots in your inventory.
+At the organizational level, a mature ASM program is what allows a CISO to say with confidence: we know what we own, we know what's exposed, and we know what's at risk. That's a statement very few CISOs can make honestly today.
+## Actionable Takeaways
+**Run a discovery exercise against your own environment the way an attacker would — passively, from the outside, using only public information.** Compare what you find to your official asset inventory. The gap between those two lists is your unmanaged attack surface. In most organizations, it's larger than expected and contains at least one thing that should not be publicly accessible.
+**Ask your vulnerability management team what percentage of your known asset inventory is actively in scan scope.** If the answer is less than 95%, you have a coverage problem that no amount of patching velocity will fix — you're optimizing the assets you can see while ignoring the ones you can't.
